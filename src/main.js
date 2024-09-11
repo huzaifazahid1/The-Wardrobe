@@ -11,11 +11,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/About", (req, res) => {
-  res.sendFile("templates/About.html", { root: __dirname })
+  res.sendFile("templates/info/About.html", { root: __dirname })
 })
 
 app.get("/Contact", (req, res) => {
-  res.sendFile("templates/Contact.html", { root: __dirname })
+  res.sendFile("templates/info/Contact.html", { root: __dirname })
+})
+
+app.get("/Auth/Login", (req, res) => {
+  res.sendFile("templates/Auth/login.html", { root: __dirname })
 })
 
 app.listen(port, () => {

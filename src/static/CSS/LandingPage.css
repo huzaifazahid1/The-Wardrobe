@@ -341,7 +341,7 @@ body {
 }
 
 #Casual {
-  /* background: url("img/blog/b12.jpeg"); */
+  background: url("/static/Assets/img/blog/casual.png");
   background-size: cover;
   background-position: center;
 }
