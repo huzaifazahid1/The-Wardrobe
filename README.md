@@ -68,4 +68,9 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 
 ## Contributing
 
-We welcome contributions! If you'd like to contribute to "The Wardrobe," please Checkout the [CONTRIBUTING](https://github.com/GitCoder052023/The-Wardrobe/blob/main/CONTRIBUTING.md) file, and follow the steps.:
+We welcome contributions! If you'd like to contribute to "The Wardrobe," please Checkout the [CONTRIBUTING](https://github.com/GitCoder052023/The-Wardrobe/blob/main/CONTRIBUTING.md) file, and follow the steps.
+
+## License
+
+The Wardrobe © 2024 by GitCoder052023 is licensed under CC BY-NC 4.0.  
+To view a copy of this license, visit [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/).
