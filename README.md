@@ -72,5 +72,6 @@ We welcome contributions! If you'd like to contribute to "The Wardrobe," please 
 
 ## License
 
-The Wardrobe © 2024 by GitCoder052023 is licensed under CC BY-NC 4.0.  
+**The Wardrobe** © 2024 by **GitCoder052023** is licensed under **CC BY-NC 4.0.**
+  
 To view a copy of this license, visit [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/).
