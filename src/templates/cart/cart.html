@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/static/CSS/cart/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="cart-container">
+        <!-- Cart Items Section -->
+        <div class="cart-items">
+            <h2>Your Cart</h2>
+
+            <div class="cart-item">
+                <div class="item-details">
+                    <img src="/static/Assets/img/blog/Gemini_Generated_Image_cnod3vcnod3vcnod.jpeg" alt="Classic White Tee">
+                    <div>
+                        <h3>Classic White T-shirt</h3>
+                        <p>Size: M, Color: White</p>
+                        <span class="price">₹599</span>
+                    </div>
+                </div>
+                <div class="item-quantity">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                    <button class="remove-item">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <div class="item-details">
+                    <img src="/static/Assets/img/blog/Gemini_Generated_Image_1380nq1380nq1380.jpeg" alt="Denim Jeans">
+                    <div>
+                        <h3>Denim Jeans</h3>
+                        <p>Size: 32, Color: Blue</p>
+                        <span class="price">₹1299</span>
+                    </div>
+                </div>
+                <div class="item-quantity">
+                    <button>-</button>
+                    <span>2</span>
+                    <button>+</button>
+                    <button class="remove-item">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="continue-shopping">
+                <a href="/Shop"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+            </div>
+        </div>
+
+        <!-- Order Summary Section -->
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="summary-details">
+                <p>Subtotal <span>₹3197</span></p>
+                <p class="discount">Discount <span>-₹200</span></p>
+                <p class="total">Total <span>₹2997</span></p>
+                <p class="delivery">Estimated delivery: 22/9/2024</p>
+                <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+            </div>
+            <p class="free-delivery">Free delivery and returns for customers in Lucknow</p>
+        </div>
+    </div>
+    <script src="/static/JS/cart/cart.js"></script>
+</body>
+</html>

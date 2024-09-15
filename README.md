@@ -14,6 +14,8 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 - **Login Page:** A basic login page with a form is implemented.
 - **Signup page:** A basic signup page with a form is implemented 
 - **Shopping page:** A general shopping page is implemented
+- **Cart page:** An static cart page is implemented
+- **Checkout page:** An static Checkout page is implemented
 - **Node.js Server:** A simple server using Express.js serves static files and handles routing.
 
 ## Technologies Used
