@@ -26,6 +26,10 @@ app.get("/Auth/Register", (req, res) => {
   res.sendFile("templates/Auth/signup.html", { root: __dirname })
 })
 
+app.get("/Shop", (req, res) => {
+  res.sendFile("templates/Shop/Shop.html", { root: __dirname })
+})
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
