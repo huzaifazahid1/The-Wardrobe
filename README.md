@@ -49,25 +49,7 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
    node main.js
    ```
 
-5. **Access the Application:**  Open your web browser and go to `http://localhost:3000`.
-
-## Future Development Plans
-
-- **E-commerce Functionality:** 
-    - Product catalog and details pages.
-    - Shopping cart and checkout system.
-    - Order management.
-- **User Authentication:**
-    - Secure user registration and login.
-    - User profile management.
-- **Database Integration:**
-    - Choose and integrate a database (e.g., MongoDB, PostgreSQL) to store product data, user information, and orders.
-- **Admin Dashboard:** 
-    - Create an interface for managing products, orders, and users.
-- **Responsive Design:**
-    - Ensure the website adapts seamlessly to different screen sizes.
-- **Testing:**
-    - Implement unit and integration tests to ensure code quality and reliability.
+5. **Access the Application:**  Open your web browser and go to `http://localhost:3000`
 
 ## Contributing
 
