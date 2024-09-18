@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Wardrobe</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/CSS/Shop/Collection/MensCollection.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">The Wardrobe</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Accessories</a>
+        <a href="#">Sale</a>
+      </div>
+      <div class="nav-icons">
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        <!-- Promotional Banner -->
+        <div class="promo-banner">
+          <h2>New Arrivals: Summer Collection Now Available!</h2>
+          <p>Enjoy 20% off on selected items. Limited time offer.</p>
+        </div>
+
+        <div class="layout">
+          <!-- Sidebar (Categories, Sizes, Colors, Price Range) -->
+          <aside class="sidebar">
+            <h3 class="green">Categories</h3>
+            <ul class="category-list">
+              <li class="category">Shirts</li>
+              <li class="category">Trousers</li>
+              <li class="category">Jackets</li>
+              <li class="category">Shoes</li>
+              <li class="category">Watches</li>
+            </ul>
+
+            <h3 class="green">Size</h3>
+            <div class="sizes">
+              <button class="size">XS</button>
+              <button class="size">S</button>
+              <button class="size">M</button>
+              <button class="size">L</button>
+              <button class="size">XL</button>
+              <button class="size">XXL</button>
+            </div>
+
+            <h3 class="green">Color</h3>
+            <div class="colors">
+              <label><input type="checkbox" /> Black</label>
+              <label><input type="checkbox" /> White</label>
+              <label><input type="checkbox" /> Navy</label>
+              <label><input type="checkbox" /> Burgundy</label>
+              <label><input type="checkbox" /> Forest Green</label>
+            </div>
+
+            <h3 class="green">Price Range</h3>
+            <input type="range" min="0" max="1000" id="price-range" />
+            <div class="price-range-values">
+              <span>$0</span>
+              <span>$1000</span>
+            </div>
+          </aside>
+
+          <!-- Main Product List -->
+          <main class="product-list">
+            <div class="product-header">
+              <h2>Men's Collection</h2>
+              <div class="search-bar">
+                <input type="text" placeholder="Search" id="search" />
+                <i class="fas fa-search search-icon"></i>
+              </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products">
+              <div class="product-card">
+                <img
+                  src="/static/Assets/img/products/f1.jpg"
+                  alt="Classic t-shirt"
+                />
+                <div class="product-details">
+                  <h3>Classic t-shirt</h3>
+                  <p class="price">$59.99</p>
+                  <button>Quick View</button>
+                </div>
+              </div>
+              <div class="product-card">
+                <img
+                  src="/static/Assets/img/products/f2.jpg"
+                  alt="Classic t-shirt"
+                />
+                <div class="product-details">
+                  <h3>Classic t-shirt</h3>
+                  <p class="price">$79.99</p>
+                  <button>Quick View</button>
+                </div>
+              </div>
+              <div class="product-card">
+                <img
+                  src="/static/Assets/img/products/f3.jpg"
+                  alt="Classic t-shirt"
+                />
+                <div class="product-details">
+                  <h3>Classic t-shirt</h3>
+                  <p class="price">$199.99</p>
+                  <button>Quick View</button>
+                </div>
+              </div>
+              <div class="product-card">
+                <img
+                  src="/static/Assets/img/products/f4.jpg"
+                  alt="Classic t-shirt"
+                />
+                <div class="product-details">
+                  <h3>Classic t-shirt</h3>
+                  <p class="price">$129.99</p>
+                  <button>Quick View</button>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -9,6 +9,7 @@ const authRoutes = require("./routes/auth");
 const shopRoutes = require("./routes/shop");
 const infoRoutes = require("./routes/info")
 const cartRoute = require("./routes/cart")
+const CollectionRoutes = require("./routes/Collection")
 
 app.use(express.json());
 app.use("/static", express.static(path.join(__dirname, "Static")));
@@ -19,6 +20,7 @@ app.use("/info", infoRoutes)
 app.use("/Auth", authRoutes);
 app.use("/Shop", shopRoutes);
 app.use("/cart", cartRoute)
+app.use("/shop/Collection", CollectionRoutes)
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
