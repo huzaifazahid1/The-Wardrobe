@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Wardrobe Collection Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-900 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div class="container mx-auto px-4">
+        <nav class="flex items-center justify-between py-4">
+          <h1 class="text-2xl font-bold text-blue-600">The Wardrobe</h1>
+          <ul class="hidden md:flex space-x-6 flex-1 justify-center">
+            <li>
+              <a href="#" class="text-gray-600 hover:text-blue-600">Women</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-blue-600">Men</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-blue-600"
+                >Accessories</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-blue-600">Sale</a>
+            </li>
+          </ul>
+          <div class="flex items-center space-x-4">
+            <button class="bg-transparent border-none">
+              <i class="fas fa-search h-5 w-5"></i>
+            </button>
+            <button class="bg-transparent border-none">
+              <i class="fas fa-shopping-cart h-5 w-5"></i>
+            </button>
+            <button class="bg-transparent border-none">
+              <i class="fas fa-user h-5 w-5"></i>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <section class="container mx-auto px-4 py-12">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start gap-4 mb-8"
+        >
+          <h2
+            class="text-3xl font-bold mb-4 md:mb-0"
+            style="color: rgb(42 70 131); letter-spacing: 5px"
+          >
+            Featured Collection
+          </h2>
+          <div class="flex flex-wrap items-center gap-4">
+            <button
+              class="border border-gray-300 text-gray-700 px-4 py-2 flex items-center hover:border-blue-600 focus:border-blue-600 transition-colors"
+            >
+              <i class="fas fa-filter mr-2"></i> Filter
+            </button>
+            <select
+              class="appearance-none border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-600 hover:border-blue-600 focus:border-blue-600 transition-colors shadow-sm focus:outline-none"
+              style="
+                background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'24\' height=\'24\' fill=\'%236b7280\'><path d=\'M7 10l5 5 5-5z\'/></svg>');
+                background-repeat: no-repeat;
+                background-position: right 1rem center;
+                background-size: 1.5rem;
+              "
+            >
+              <option value="">Category</option>
+              <option value="all">All Categories</option>
+              <option value="clothing">Clothing</option>
+              <option value="shoes">Shoes</option>
+              <option value="accessories">Accessories</option>
+            </select>
+
+            <select
+              class="appearance-none border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-600 hover:border-blue-600 focus:border-blue-600 transition-colors shadow-sm focus:outline-none"
+              style="
+                background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'24\' height=\'24\' fill=\'%236b7280\'><path d=\'M7 10l5 5 5-5z\'/></svg>');
+                background-repeat: no-repeat;
+                background-position: right 1rem center;
+                background-size: 1.5rem;
+              "
+            >
+              <option value="">Sort by</option>
+              <option value="popular">Most Popular</option>
+              <option value="newest">Newest</option>
+              <option value="price-low-high">Price: Low to High</option>
+              <option value="price-high-low">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3
+              class="text-2xl font-bold mb-2"
+              style="
+                letter-spacing: 5px;
+                color: rgb(63 105 195);
+                font-size: xx-large;
+              "
+            >
+              Elegant Summer Dress
+            </h3>
+            <p class="mb-4">
+              Perfect for those warm summer evenings. Made from 100% organic
+              cotton.
+            </p>
+            <button class="bg-blue-600 text-white px-4 py-2 hover:bg-blue-700">
+              View Details
+            </button>
+          </div>
+          <div class="relative">
+            <img
+              src="/static/Assets/img/products/f6.jpg"
+              alt="Elegant Summer Dress"
+              class="rounded-lg shadow-lg"
+            />
+            <span
+              class="absolute top-4 right-4 bg-blue-600 text-white px-2 py-1 rounded"
+              >New Arrival</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Tabs Section -->
+      <section class="container mx-auto px-4 py-12">
+        <div class="mb-8 grid grid-cols-4">
+          <button class="text-lg border-b-2 border-blue-600 pb-2">All</button>
+          <button class="text-lg pb-2">Women</button>
+          <button class="text-lg pb-2">Men</button>
+          <button class="text-lg pb-2">Accessories</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
+          >
+            <img
+              src="/static/Assets/img/products/n1.jpg"
+              alt="Dresses"
+              class="w-full h-64 object-cover rounded-t-lg"
+            />
+            <div class="p-6">
+              <h4 class="text-xl mb-2">Dresses</h4>
+              <p>Explore our latest dresses collection</p>
+            </div>
+            <div class="p-6 pt-0">
+              <button
+                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
+              >
+                Shop Now <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
+          >
+            <img
+              src="/static/Assets/img/products/n2.jpg"
+              alt="Dresses"
+              class="w-full h-64 object-cover rounded-t-lg"
+            />
+            <div class="p-6">
+              <h4 class="text-xl mb-2">Dresses</h4>
+              <p>Explore our latest dresses collection</p>
+            </div>
+            <div class="p-6 pt-0">
+              <button
+                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
+              >
+                Shop Now <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
+          >
+            <img
+              src="/static/Assets/img/products/n3.jpg"
+              alt="Dresses"
+              class="w-full h-64 object-cover rounded-t-lg"
+            />
+            <div class="p-6">
+              <h4 class="text-xl mb-2">Dresses</h4>
+              <p>Explore our latest dresses collection</p>
+            </div>
+            <div class="p-6 pt-0">
+              <button
+                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
+              >
+                Shop Now <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
+          >
+            <img
+              src="/static/Assets/img/products/n4.jpg"
+              alt="Dresses"
+              class="w-full h-64 object-cover rounded-t-lg"
+            />
+            <div class="p-6">
+              <h4 class="text-xl mb-2">Dresses</h4>
+              <p>Explore our latest dresses collection</p>
+            </div>
+            <div class="p-6 pt-0">
+              <button
+                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
+              >
+                Shop Now <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
+          >
+            <img
+              src="/static/Assets/img/products/n5.jpg"
+              alt="Dresses"
+              class="w-full h-64 object-cover rounded-t-lg"
+            />
+            <div class="p-6">
+              <h4 class="text-xl mb-2">Dresses</h4>
+              <p>Explore our latest dresses collection</p>
+            </div>
+            <div class="p-6 pt-0">
+              <button
+                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
+              >
+                Shop Now <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
+          >
+            <img
+              src="/static/Assets/img/products/n6.jpg"
+              alt="Dresses"
+              class="w-full h-64 object-cover rounded-t-lg"
+            />
+            <div class="p-6">
+              <h4 class="text-xl mb-2">Dresses</h4>
+              <p>Explore our latest dresses collection</p>
+            </div>
+            <div class="p-6 pt-0">
+              <button
+                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
+              >
+                Shop Now <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
+          >
+            <img
+              src="/static/Assets/img/products/n7.jpg"
+              alt="Dresses"
+              class="w-full h-64 object-cover rounded-t-lg"
+            />
+            <div class="p-6">
+              <h4 class="text-xl mb-2">Dresses</h4>
+              <p>Explore our latest dresses collection</p>
+            </div>
+            <div class="p-6 pt-0">
+              <button
+                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
+              >
+                Shop Now <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
+          >
+            <img
+              src="/static/Assets/img/products/n8.jpg"
+              alt="Dresses"
+              class="w-full h-64 object-cover rounded-t-lg"
+            />
+            <div class="p-6">
+              <h4 class="text-xl mb-2">Dresses</h4>
+              <p>Explore our latest dresses collection</p>
+            </div>
+            <div class="p-6 pt-0">
+              <button
+                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
+              >
+                Shop Now <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Repeat similar structure for other categories -->
+        </div>
+      </section>
+
+      <!-- Top Products Section -->
+      <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-8 text-center">Top Products</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="border border-gray-300 rounded-lg overflow-hidden">
+              <div class="relative">
+                <img
+                  src="/static/Assets/img/products/f5.jpg"
+                  alt="Classic White Tee"
+                  class="w-full h-64 object-cover"
+                />
+                <span
+                  class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
+                  >New</span
+                >
+                <button
+                  class="absolute bottom-2 right-2 bg-gray-300 text-white p-2"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="p-4">
+                <h4 class="text-lg mb-2">Classic White Tee</h4>
+                <div class="flex justify-between items-center">
+                  <span>$29.99</span>
+                  <span class="flex items-center">
+                    <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
+                  </span>
+                </div>
+              </div>
+              <div class="p-4 pt-0">
+                <button
+                  class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="border border-gray-300 rounded-lg overflow-hidden">
+              <div class="relative">
+                <img
+                  src="/static/Assets/img/products/f5.jpg"
+                  alt="Classic White Tee"
+                  class="w-full h-64 object-cover"
+                />
+                <span
+                  class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
+                  >New</span
+                >
+                <button
+                  class="absolute bottom-2 right-2 bg-gray-300 text-white p-2"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="p-4">
+                <h4 class="text-lg mb-2">Classic White Tee</h4>
+                <div class="flex justify-between items-center">
+                  <span>$29.99</span>
+                  <span class="flex items-center">
+                    <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
+                  </span>
+                </div>
+              </div>
+              <div class="p-4 pt-0">
+                <button
+                  class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="border border-gray-300 rounded-lg overflow-hidden">
+              <div class="relative">
+                <img
+                  src="/static/Assets/img/products/f5.jpg"
+                  alt="Classic White Tee"
+                  class="w-full h-64 object-cover"
+                />
+                <span
+                  class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
+                  >New</span
+                >
+                <button
+                  class="absolute bottom-2 right-2 bg-gray-300 text-white p-2"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="p-4">
+                <h4 class="text-lg mb-2">Classic White Tee</h4>
+                <div class="flex justify-between items-center">
+                  <span>$29.99</span>
+                  <span class="flex items-center">
+                    <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
+                  </span>
+                </div>
+              </div>
+              <div class="p-4 pt-0">
+                <button
+                  class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="border border-gray-300 rounded-lg overflow-hidden">
+              <div class="relative">
+                <img
+                  src="/static/Assets/img/products/f5.jpg"
+                  alt="Classic White Tee"
+                  class="w-full h-64 object-cover"
+                />
+                <span
+                  class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
+                  >New</span
+                >
+                <button
+                  class="absolute bottom-2 right-2 bg-gray-300 text-white p-2"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="p-4">
+                <h4 class="text-lg mb-2">Classic White Tee</h4>
+                <div class="flex justify-between items-center">
+                  <span>$29.99</span>
+                  <span class="flex items-center">
+                    <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
+                  </span>
+                </div>
+              </div>
+              <div class="p-4 pt-0">
+                <button
+                  class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Repeat for other products -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">About The Wardrobe</h3>
+            <p class="text-sm text-gray-400">
+              We're passionate about bringing you the latest fashion trends with
+              a focus on quality and sustainability.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Our Story</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Size Guide</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Shipping & Returns</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors">FAQ</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Stay Connected</h3>
+            <form>
+              <div
+                class="flex items-center border border-gray-500 rounded-lg overflow-hidden"
+              >
+                <input
+                  type="email"
+                  class="w-full bg-gray-800 text-white px-4 py-2 focus:outline-none"
+                  placeholder="Your Email"
+                />
+                <button
+                  type="submit"
+                  class="bg-blue-600 px-4 py-2 hover:bg-blue-700"
+                >
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <p class="text-center text-gray-500 mt-12">
+          © 2024 The Wardrobe. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+  <script src="/static/JS/Shop/Collection/Collection.js"></script>  
+</html>

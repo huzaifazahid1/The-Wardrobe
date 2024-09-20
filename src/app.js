@@ -20,7 +20,7 @@ app.use("/info", infoRoutes)
 app.use("/Auth", authRoutes);
 app.use("/Shop", shopRoutes);
 app.use("/cart", cartRoute)
-app.use("/shop/Collection", CollectionRoutes)
+app.use("/shop/Collection/Categories", CollectionRoutes)
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
