@@ -9,11 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <style>
-      .hidden {
-        display: none;
-      }
-    </style>
+    <link rel="stylesheet" href="\static\CSS\Shop\Collection\Collection.css" />
   </head>
 
   <body class="bg-white text-gray-900 flex flex-col min-h-screen">
@@ -60,8 +56,8 @@
           class="flex flex-col md:flex-row justify-between items-start gap-4 mb-8"
         >
           <h2
-            class="text-3xl font-bold mb-4 md:mb-0"
-            style="color: rgb(42 70 131); letter-spacing: 5px"
+            class="text-3xl font-bold mb-4 md:mb-0 letter-spacing-wide"
+            style="color: rgb(42 70 131)"
           >
             Featured Collection
           </h2>
@@ -72,13 +68,7 @@
               <i class="fas fa-filter mr-2"></i> Filter
             </button>
             <select
-              class="appearance-none border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-600 hover:border-blue-600 focus:border-blue-600 transition-colors shadow-sm focus:outline-none"
-              style="
-                background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'24\' height=\'24\' fill=\'%236b7280\'><path d=\'M7 10l5 5 5-5z\'/></svg>');
-                background-repeat: no-repeat;
-                background-position: right 1rem center;
-                background-size: 1.5rem;
-              "
+              class="appearance-none border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-600 hover:border-blue-600 focus:border-blue-600 transition-colors shadow-sm focus:outline-none select-icon"
             >
               <option value="">Category</option>
               <option value="all">All Categories</option>
@@ -88,13 +78,7 @@
             </select>
 
             <select
-              class="appearance-none border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-600 hover:border-blue-600 focus:border-blue-600 transition-colors shadow-sm focus:outline-none"
-              style="
-                background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'24\' height=\'24\' fill=\'%236b7280\'><path d=\'M7 10l5 5 5-5z\'/></svg>');
-                background-repeat: no-repeat;
-                background-position: right 1rem center;
-                background-size: 1.5rem;
-              "
+              class="appearance-none border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-600 hover:border-blue-600 focus:border-blue-600 transition-colors shadow-sm focus:outline-none select-icon"
             >
               <option value="">Sort by</option>
               <option value="popular">Most Popular</option>
@@ -107,12 +91,8 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <h3
-              class="text-2xl font-bold mb-2"
-              style="
-                letter-spacing: 5px;
-                color: rgb(63 105 195);
-                font-size: xx-large;
-              "
+              class="text-2xl font-bold mb-2 letter-spacing-wide"
+              style="color: rgb(63 105 195); font-size: xx-large"
             >
               Elegant Summer Dress
             </h3>
@@ -147,168 +127,7 @@
           <button class="text-lg pb-2">Accessories</button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div
-            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
-          >
-            <img
-              src="/static/Assets/img/products/n1.jpg"
-              alt="Dresses"
-              class="w-full h-64 object-cover rounded-t-lg"
-            />
-            <div class="p-6">
-              <h4 class="text-xl mb-2">Dresses</h4>
-              <p>Explore our latest dresses collection</p>
-            </div>
-            <div class="p-6 pt-0">
-              <button
-                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
-              >
-                Shop Now <i class="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
-          >
-            <img
-              src="/static/Assets/img/products/n2.jpg"
-              alt="Dresses"
-              class="w-full h-64 object-cover rounded-t-lg"
-            />
-            <div class="p-6">
-              <h4 class="text-xl mb-2">Dresses</h4>
-              <p>Explore our latest dresses collection</p>
-            </div>
-            <div class="p-6 pt-0">
-              <button
-                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
-              >
-                Shop Now <i class="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
-          >
-            <img
-              src="/static/Assets/img/products/n3.jpg"
-              alt="Dresses"
-              class="w-full h-64 object-cover rounded-t-lg"
-            />
-            <div class="p-6">
-              <h4 class="text-xl mb-2">Dresses</h4>
-              <p>Explore our latest dresses collection</p>
-            </div>
-            <div class="p-6 pt-0">
-              <button
-                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
-              >
-                Shop Now <i class="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
-          >
-            <img
-              src="/static/Assets/img/products/n4.jpg"
-              alt="Dresses"
-              class="w-full h-64 object-cover rounded-t-lg"
-            />
-            <div class="p-6">
-              <h4 class="text-xl mb-2">Dresses</h4>
-              <p>Explore our latest dresses collection</p>
-            </div>
-            <div class="p-6 pt-0">
-              <button
-                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
-              >
-                Shop Now <i class="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
-          >
-            <img
-              src="/static/Assets/img/products/n5.jpg"
-              alt="Dresses"
-              class="w-full h-64 object-cover rounded-t-lg"
-            />
-            <div class="p-6">
-              <h4 class="text-xl mb-2">Dresses</h4>
-              <p>Explore our latest dresses collection</p>
-            </div>
-            <div class="p-6 pt-0">
-              <button
-                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
-              >
-                Shop Now <i class="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
-          >
-            <img
-              src="/static/Assets/img/products/n6.jpg"
-              alt="Dresses"
-              class="w-full h-64 object-cover rounded-t-lg"
-            />
-            <div class="p-6">
-              <h4 class="text-xl mb-2">Dresses</h4>
-              <p>Explore our latest dresses collection</p>
-            </div>
-            <div class="p-6 pt-0">
-              <button
-                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
-              >
-                Shop Now <i class="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
-          >
-            <img
-              src="/static/Assets/img/products/n7.jpg"
-              alt="Dresses"
-              class="w-full h-64 object-cover rounded-t-lg"
-            />
-            <div class="p-6">
-              <h4 class="text-xl mb-2">Dresses</h4>
-              <p>Explore our latest dresses collection</p>
-            </div>
-            <div class="p-6 pt-0">
-              <button
-                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
-              >
-                Shop Now <i class="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="group border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg"
-          >
-            <img
-              src="/static/Assets/img/products/n8.jpg"
-              alt="Dresses"
-              class="w-full h-64 object-cover rounded-t-lg"
-            />
-            <div class="p-6">
-              <h4 class="text-xl mb-2">Dresses</h4>
-              <p>Explore our latest dresses collection</p>
-            </div>
-            <div class="p-6 pt-0">
-              <button
-                class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white"
-              >
-                Shop Now <i class="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Repeat similar structure for other categories -->
+          <!-- Product items will be dynamically inserted here -->
         </div>
       </section>
 
@@ -552,5 +371,5 @@
       </div>
     </footer>
   </body>
-  <script src="/static/JS/Shop/Collection/Collection.js"></script>  
+  <script src="/static/JS/Shop/Collection/Collection.js"></script>
 </html>

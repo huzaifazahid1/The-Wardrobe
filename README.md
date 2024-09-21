@@ -17,6 +17,7 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 - **Cart page:** An static cart page is implemented
 - **Checkout page:** An static Checkout page is implemented
 - **Mens collection page:** An static Mens collection page is implemented 
+- **Collection page:** An partially dynamic collection page is implemented
 - **Node.js Server:** A simple server using Express.js serves static files and handles routing.
 
 ## Technologies Used
@@ -47,7 +48,7 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 4. **Run the Server:**
    ```bash
    cd src
-   node main.js
+   nodemon app.js
    ```
 
 5. **Access the Application:**  Open your web browser and go to `http://localhost:3000`.
