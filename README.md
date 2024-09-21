@@ -22,11 +22,12 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 
 ## Technologies Used
 
-- **HTML:** Structure and content.
-- **CSS:**  Styling the user interface.
-- **JavaScript:** Basic interactivity.
-- **Node.js:** Server-side runtime environment.
-- **Express.js:** Web application framework for Node.js.
+- **HTML**
+- **CSS**
+- **Tailwind CSS**
+- **JavaScript**
+- **Node.js** 
+- **Express.js** 
 
 ## Project Setup (For Developers)
 
@@ -52,6 +53,94 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
    ```
 
 5. **Access the Application:**  Open your web browser and go to `http://localhost:3000`.
+
+## System Architecture
+
+```bash
+The-Wardrobe
+|   .gitignore
+|   CODE_OF_CONDUCT.md
+|   CONTRIBUTING.md
+|   package-lock.json
+|   package.json
+|   README.md
+\---src
+    |   app.js
+    |
+    +---routes
+    |       auth.js
+    |       cart.js
+    |       Collection.js
+    |       info.js
+    |       main.js
+    |       shop.js
+    |
+    +---static
+    |   +---Assets
+    |   |   ---img
+    |   |
+    |   |   ---Videos
+    |   +---CSS
+    |   |   |   LandingPage.css
+    |   |   |
+    |   |   +---Auth
+    |   |   |       login.css
+    |   |   |       signup.css
+    |   |   |
+    |   |   +---cart
+    |   |   |       cart.css
+    |   |   |       checkout.css
+    |   |   |
+    |   |   +---info
+    |   |   |       About.css
+    |   |   |       Contact.css
+    |   |   |
+    |   |   \---Shop
+    |   |       |   Shop.css
+    |   |       |
+    |   |       \---Collection
+    |   |           |   Collection.css
+    |   |           |
+    |   |           \---Categories
+    |   |                   MensCollection.css
+    |   |
+    |   \---JS
+    |       |   LandingPage.js
+    |       |
+    |       +---cart
+    |       |       cart.js
+    |       |       checkout.js
+    |       |
+    |       \---Shop
+    |           |   Shop.js
+    |           |
+    |           \---Collection
+    |                   Collection.js
+    |
+    \---templates
+        |   LandingPage.html
+        |
+        +---Auth
+        |       login.html
+        |       signup.html
+        |
+        +---cart
+        |       cart.html
+        |       checkout.html
+        |
+        +---info
+        |       About.html
+        |       Contact.html
+        |
+        \---Shop
+            |   Shop.html
+            |
+            \---Collections
+                |   Collection.html
+                |
+                \---Categories
+                        MenCollection.html
+```
 
 ## Contributing
 
