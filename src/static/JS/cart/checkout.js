@@ -5,10 +5,10 @@ function updateSteps() {
     document.querySelectorAll('.w-10').forEach((el, index) => {
         if (index + 1 <= currentStep) {
             el.classList.remove('border-muted', 'text-muted-foreground');
-            el.classList.add('border-primary', 'bg-primary', 'text-white');
+            el.classList.add('border-primary', 'bg-primary');
         } else {
             el.classList.add('border-muted', 'text-muted-foreground');
-            el.classList.remove('border-primary', 'bg-primary', 'text-white');
+            el.classList.remove('border-primary', 'bg-primary');
         }
     });
 
