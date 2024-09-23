@@ -3,59 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About The Wardrobe</title>
-    <link rel="stylesheet" href="/static/CSS/info/About.css">
+    <title>About 'The Wardrobe'</title>
+    <link rel="stylesheet" href="/static/CSS/output.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-blue': '#007bff',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="about-text">
-            <h2 class="about-title">About 'The Wardrobe'</h2>
-            <h3 class="about-subtitle">Where Style meets comfort</h3>
-            <p class="about-description">
+<body class="font-sans bg-gray-50">
+    <section class="flex justify-between items-center px-[10%] py-16 bg-white hover:bg-gray-100 transition-colors duration-300">
+        <div class="max-w-[600px]">
+            <h2 class="text-4xl font-bold text-gray-900 mb-2.5 group-hover:text-custom-blue transition-colors duration-300">About 'The Wardrobe'</h2>
+            <h3 class="text-xl text-gray-600 font-medium mb-5">Where Style meets comfort</h3>
+            <p class="text-lg text-gray-600 leading-relaxed">
                 At 'The Wardrobe', we are dedicated to providing our customers with a fashion-forward collection of high-quality clothing, shoes, and watches that not only look great but also feel incredibly comfortable. Our journey has been driven by a passion for style and a commitment to delivering exceptional service to our local community.
             </p>
         </div>
         <div class="about-image">
-            <!-- Image placeholder (replace src with the actual image when available) -->
-            <img src="/static/Assets/img/blog/result-6gDB6Xmw4T.png" alt="About The Wardrobe Image">
+            <img src="/static/Assets/img/blog/result-6gDB6Xmw4T.png" alt="About The Wardrobe Image" class="w-[400px] h-[400px] rounded-xl bg-gray-50 shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
         </div>
     </section>
-    <section class="journey-section">
+
+    <section class="flex justify-between items-center px-[10%] py-16 bg-white hover:bg-gray-100 transition-colors duration-300">
         <div class="journey-image">
-            <!-- Image placeholder (replace with actual image when available) -->
-            <img src="/static/Assets/img/blog/Gemini_Generated_Image_onkkpwonkkpwonkk.jpeg" alt="Our Journey Image">
+            <img src="/static/Assets/img/blog/Gemini_Generated_Image_onkkpwonkkpwonkk.jpeg" alt="Our Journey Image" class="w-[400px] h-[400px] rounded-xl bg-gray-50 shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
         </div>
-        <div class="journey-text">
-            <h2 class="journey-title">Our Journey</h2>
-            <p class="journey-description">
+        <div class="max-w-[600px]">
+            <h2 class="text-4xl font-bold text-gray-900 mb-5 group-hover:text-custom-blue transition-colors duration-300">Our Journey</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
                 'The Wardrobe' was founded with a vision to offer our customers a diverse range of stylish and comfortable clothing, shoes, and watches. Our journey has been driven by a commitment to quality, innovation, and exceptional customer service. We take pride in our local roots and strive to support our community by providing a shopping experience that is both enjoyable and rewarding.
             </p>
         </div>
     </section>
-    <section class="achievements-section">
-        <div class="achievements-text">
-            <h2 class="achievements-title">Our Achievements</h2>
-            <p class="achievements-description">
+
+    <section class="flex justify-between items-start px-[10%] py-16 bg-white hover:bg-gray-100 transition-colors duration-300">
+        <div class="max-w-[50%]">
+            <h2 class="text-4xl font-bold text-gray-900 mb-5 group-hover:text-custom-blue transition-colors duration-300">Our Achievements</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-10">
                 At 'The Wardrobe', we are proud of the accolades and recognition we have received over the years. Our commitment to quality, innovation, and customer satisfaction has earned us numerous awards and industry honors, solidifying our position as a leading fashion brand in the local community and beyond.
             </p>
         </div>
-        <div class="achievements-grid">
-            <div class="achievement-card">
-                <span class="achievement-icon">🏅</span>
-                <p>Best Local Brand</p>
+        <div class="grid grid-cols-2 gap-5">
+            <div class="bg-white p-5 rounded-lg shadow-lg text-center flex flex-col items-center hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                <span class="text-4xl text-custom-blue mb-2.5 transform transition-transform duration-300 hover:scale-120">🏅</span>
+                <p class="text-lg font-semibold text-gray-900">Best Local Brand</p>
             </div>
-            <div class="achievement-card">
-                <span class="achievement-icon">🏅</span>
-                <p>Customer Service Excellence</p>
+            <div class="bg-white p-5 rounded-lg shadow-lg text-center flex flex-col items-center hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                <span class="text-4xl text-custom-blue mb-2.5 transform transition-transform duration-300 hover:scale-120">🏅</span>
+                <p class="text-lg font-semibold text-gray-900">Customer Service Excellence</p>
             </div>
-            <div class="achievement-card">
-                <span class="achievement-icon">🏅</span>
-                <p>Sustainable Fashion Leader</p>
+            <div class="bg-white p-5 rounded-lg shadow-lg text-center flex flex-col items-center hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                <span class="text-4xl text-custom-blue mb-2.5 transform transition-transform duration-300 hover:scale-120">🏅</span>
+                <p class="text-lg font-semibold text-gray-900">Sustainable Fashion Leader</p>
             </div>
-            <div class="achievement-card">
-                <span class="achievement-icon">🏅</span>
-                <p>Innovative Product Design</p>
+            <div class="bg-white p-5 rounded-lg shadow-lg text-center flex flex-col items-center hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                <span class="text-4xl text-custom-blue mb-2.5 transform transition-transform duration-300 hover:scale-120">🏅</span>
+                <p class="text-lg font-semibold text-gray-900">Innovative Product Design</p>
             </div>
         </div>
     </section>

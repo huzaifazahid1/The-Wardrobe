@@ -2,11 +2,23 @@ let currentStep = 1;
 const steps = ['shippingStep', 'paymentStep', 'reviewStep'];
 
 function updateSteps() {
-    document.querySelectorAll('.step-circle, .step-text').forEach((el, index) => {
+    document.querySelectorAll('.w-10').forEach((el, index) => {
         if (index + 1 <= currentStep) {
-            el.classList.add('active');
+            el.classList.remove('border-muted', 'text-muted-foreground');
+            el.classList.add('border-primary', 'bg-primary', 'text-white');
         } else {
-            el.classList.remove('active');
+            el.classList.add('border-muted', 'text-muted-foreground');
+            el.classList.remove('border-primary', 'bg-primary', 'text-white');
+        }
+    });
+
+    document.querySelectorAll('.text-sm').forEach((el, index) => {
+        if (index + 1 <= currentStep) {
+            el.classList.remove('text-muted-foreground');
+            el.classList.add('text-primary');
+        } else {
+            el.classList.add('text-muted-foreground');
+            el.classList.remove('text-primary');
         }
     });
 
@@ -14,19 +26,18 @@ function updateSteps() {
         const el = document.getElementById(step);
         if (index + 1 === currentStep) {
             el.classList.remove('hidden');
-            el.classList.add('fade-in');
+            el.classList.add('animate-fade-in');
         } else {
             el.classList.add('hidden');
-            el.classList.remove('fade-in');
+            el.classList.remove('animate-fade-in');
         }
     });
 
     const backButton = document.getElementById('backButton');
     const nextButton = document.getElementById('nextButton');
 
-    backButton.style.display = currentStep > 1 ? 'inline-block' : 'none';
+    backButton.classList.toggle('hidden', currentStep <= 1);
     nextButton.textContent = currentStep === 3 ? 'Place Order' : 'Next';
-    nextButton.innerHTML = currentStep === 3 ? 'Place Order' : 'Next <i class="fas fa-arrow-right"></i>';
 }
 
 document.getElementById('nextButton').addEventListener('click', () => {
@@ -50,12 +61,13 @@ document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
         const creditCardDetails = document.getElementById('creditCardDetails');
         if (e.target.value === 'credit-card') {
             creditCardDetails.classList.remove('hidden');
-            creditCardDetails.classList.add('fade-in');
+            creditCardDetails.classList.add('animate-fade-in');
         } else {
             creditCardDetails.classList.add('hidden');
-            creditCardDetails.classList.remove('fade-in');
+            creditCardDetails.classList.remove('animate-fade-in');
         }
     });
 });
 
 updateSteps();
+
