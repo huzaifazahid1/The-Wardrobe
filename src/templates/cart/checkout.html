@@ -1,132 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout - The Wardrobe</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/CSS/cart/checkout.css" />
-</head>
-<body>
-    <div class="card">
-        <div class="card-header">
-            <h1 class="card-title">Checkout - The Wardrobe</h1>
-        </div>
-        <div class="card-content">
-            <div class="steps">
-                <div class="step">
-                    <div class="step-circle active" id="step1">1</div>
-                    <span class="step-text active">Shipping</span>
-                </div>
-                <div class="step">
-                    <div class="step-circle" id="step2">2</div>
-                    <span class="step-text">Payment</span>
-                </div>
-                <div class="step">
-                    <div class="step-circle" id="step3">3</div>
-                    <span class="step-text">Review</span>
-                </div>
-            </div>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/CSS/output.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#333333",
+              secondary: "#f5f5f5",
+              muted: "#999999",
+              "muted-foreground": "#666666",
+              border: "#e0e0e0",
+            }
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="font-sans min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/5 text-primary"
+  >
+    <div class="bg-white rounded-lg shadow-2xl w-full max-w-4xl p-6">
+      <div class="border-b border-border p-6">
+        <h1 class="text-2xl text-primary flex items-center">
+          <i class="fas fa-shopping-cart mr-2"></i> Checkout - The Wardrobe
+        </h1>
+      </div>
 
-            <div id="shippingStep" class="fade-in">
-                <h2><i class="fas fa-truck"></i> Shipping Details</h2>
-                <div class="grid grid-cols-2">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="john@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" id="address" placeholder="123 Main St">
-                    </div>
-                    <div class="form-group">
-                        <label for="city">City</label>
-                        <input type="text" id="city" placeholder="New York">
-                    </div>
-                    <div class="form-group">
-                        <label for="country">Country</label>
-                        <select id="country">
-                            <option value="">Select a country</option>
-                            <option value="us">United States</option>
-                            <option value="ca">Canada</option>
-                            <option value="uk">United Kingdom</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="postal-code">Postal Code</label>
-                        <input type="text" id="postal-code" placeholder="12345">
-                    </div>
-                </div>
+      <div class="p-6">
+        <div class="flex justify-between mb-8">
+          <div class="flex flex-col items-center">
+            <div
+              id="step1"
+              class="w-10 h-10 rounded-full border-2 border-primary bg-primary border-black flex items-center justify-center transition-all duration-300"
+            >
+              <i class="fas fa-truck"></i>
             </div>
-
-            <div id="paymentStep" class="hidden">
-                <h2><i class="fas fa-credit-card"></i> Payment Information</h2>
-                <div class="radio-group">
-                    <label class="radio-item">
-                        <input type="radio" name="paymentMethod" value="credit-card" checked>
-                        Credit/Debit Card
-                        <i class="fas fa-credit-card" style="margin-left: auto;"></i>
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="paymentMethod" value="upi">
-                        UPI
-                        <img src="/api/placeholder/24/24" alt="UPI" style="margin-left: auto;">
-                    </label>
-                    <label class="radio-item">
-                        <input type="radio" name="paymentMethod" value="cod">
-                        Cash on Delivery
-                        <i class="fas fa-box" style="margin-left: auto;"></i>
-                    </label>
-                </div>
-                <div id="creditCardDetails" class="fade-in" style="margin-top: 1rem;">
-                    <div class="form-group">
-                        <label for="card-number">Card Number</label>
-                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
-                    </div>
-                    <div class="grid grid-cols-2">
-                        <div class="form-group">
-                            <label for="expiry-date">Expiry Date</label>
-                            <input type="text" id="expiry-date" placeholder="MM/YY">
-                        </div>
-                        <div class="form-group">
-                            <label for="cvv">CVV</label>
-                            <input type="text" id="cvv" placeholder="123">
-                        </div>
-                    </div>
-                </div>
+            <span class="mt-2 text-sm text-primary">Shipping</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              id="step2"
+              class="w-10 h-10 rounded-full border-2 border-muted text-muted-foreground flex items-center justify-center transition-all duration-300"
+            >
+              <i class="fas fa-credit-card"></i>
             </div>
-
-            <div id="reviewStep" class="hidden">
-                <h2><i class="fas fa-box"></i> Order Summary</h2>
-                <div style="border: 1px solid var(--border); border-radius: 0.5rem; padding: 1rem;">
-                    <div class="summary-item">
-                        <span>Subtotal</span>
-                        <span>$99.99</span>
-                    </div>
-                    <div class="summary-item">
-                        <span>Shipping</span>
-                        <span>$9.99</span>
-                    </div>
-                    <div class="summary-item">
-                        <span>Discount</span>
-                        <span style="color: #4CAF50;">-$10.00</span>
-                    </div>
-                    <div class="summary-item summary-total">
-                        <span>Total</span>
-                        <span style="color: var(--primary);">$99.98</span>
-                    </div>
-                </div>
+            <span class="mt-2 text-sm text-muted-foreground">Payment</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              id="step3"
+              class="w-10 h-10 rounded-full border-2 border-muted text-muted-foreground flex items-center justify-center transition-all duration-300"
+            >
+              <i class="fas fa-receipt"></i>
             </div>
+            <span class="mt-2 text-sm text-muted-foreground">Review</span>
+          </div>
         </div>
-        <div class="card-footer">
-            <button id="backButton" class="button button-outline" style="display: none;">Back</button>
-            <button id="nextButton" class="button">Next <i class="fas fa-arrow-right"></i></button>
+
+        <div id="shippingStep" class="animate-fade-in">
+          <h2 class="text-xl mb-4">
+            <i class="fas fa-truck mr-2"></i> Shipping Details
+          </h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="mb-4">
+              <label class="block mb-2" for="fullName"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                id="fullName"
+                class="w-full p-2 border border-border rounded focus:outline-none focus:border-primary transition duration-300 shadow-sm"
+              />
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2" for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="w-full p-2 border border-border rounded focus:outline-none focus:border-primary transition duration-300 shadow-sm"
+              />
+            </div>
+            <div class="mb-4 col-span-2">
+              <label class="block mb-2" for="address">Address</label>
+              <input
+                type="text"
+                id="address"
+                class="w-full p-2 border border-border rounded focus:outline-none focus:border-primary transition duration-300 shadow-sm"
+              />
+            </div>
+          </div>
         </div>
+
+        <div id="paymentStep" class="hidden">
+          <h2 class="text-xl mb-4">
+            <i class="fas fa-credit-card mr-2"></i> Payment Information
+          </h2>
+          <div class="space-y-4">
+            <label
+              class="flex items-center p-4 border border-border rounded cursor-pointer hover:bg-secondary transition"
+            >
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="credit-card"
+                class="mr-2"
+              />
+              <span
+                ><i class="fas fa-credit-card mr-2"></i> Credit/Debit Card</span
+              >
+            </label>
+            <label
+              class="flex items-center p-4 border border-border rounded cursor-pointer hover:bg-secondary transition"
+            >
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="upi"
+                class="mr-2"
+              />
+              <span><i class="fas fa-mobile-alt mr-2"></i> UPI</span>
+            </label>
+            <label
+              class="flex items-center p-4 border border-border rounded cursor-pointer hover:bg-secondary transition"
+            >
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="cod"
+                class="mr-2"
+              />
+              <span
+                ><i class="fas fa-money-bill-wave mr-2"></i> Cash on
+                Delivery</span
+              >
+            </label>
+          </div>
+          <div id="creditCardDetails" class="hidden mt-4 animate-fade-in">
+            <div class="mb-4">
+              <label class="block mb-2" for="cardNumber"
+                >Card Number</label
+              >
+              <input
+                type="text"
+                id="cardNumber"
+                class="w-full p-2 border border-border rounded focus:outline-none focus:border-primary transition duration-300 shadow-sm"
+              />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="mb-4">
+                <label class="block mb-2" for="expiryDate"
+                  >Expiry Date</label
+                >
+                <input
+                  type="text"
+                  id="expiryDate"
+                  class="w-full p-2 border border-border rounded focus:outline-none focus:border-primary transition duration-300 shadow-sm"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block mb-2" for="cvv">CVV</label>
+                <input
+                  type="text"
+                  id="cvv"
+                  class="w-full p-2 border border-border rounded focus:outline-none focus:border-primary transition duration-300 shadow-sm"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="reviewStep" class="hidden">
+          <h2 class="text-xl mb-4">
+            <i class="fas fa-receipt mr-2"></i> Order Summary
+          </h2>
+          <div class="border border-border rounded-lg p-4">
+            <div class="flex justify-between mb-2">
+              <span>Subtotal</span>
+              <span>$99.99</span>
+            </div>
+            <div class="flex justify-between mb-2">
+              <span>Shipping</span>
+              <span>$9.99</span>
+            </div>
+            <div class="flex justify-between mb-2">
+              <span>Discount</span>
+              <span class="text-green-500">-$10.00</span>
+            </div>
+            <div
+              class="flex justify-between border-t border-border pt-2 mt-2"
+            >
+              <span>Total</span>
+              <span class="text-primary">$99.98</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-border p-6 flex justify-between">
+        <button
+          id="backButton"
+          class="px-4 py-2 bg-transparent text-primary border border-primary rounded hidden transition duration-300"
+        >
+          <i class="fas fa-arrow-left mr-2"></i> Back
+        </button>
+        <button
+          id="nextButton"
+          class="px-4 py-2 bg-black text-white rounded transition duration-300 hover:bg-primary/80"
+        >
+          Next <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+      </div>
     </div>
+
     <script src="/static/JS/cart/checkout.js"></script>
-</body>
+  </body>
 </html>
