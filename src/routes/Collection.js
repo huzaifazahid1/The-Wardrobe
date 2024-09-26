@@ -10,4 +10,12 @@ router.get("/Mens", (req, res) => {
     res.sendFile("templates/Shop/Collections/Categories/MenCollection.html", { root: path.join(__dirname, "../") })
 })
 
+router.get("/Womens", (req, res) => {
+    res.sendFile("templates/Shop/Collections/Categories/WomenCollection.html", { root: path.join(__dirname, "../") })
+})
+
+router.get("/Accessories", (req, res) => {
+    res.sendFile("templates/Shop/Collections/Categories/AccessoriesCollection.html", { root: path.join(__dirname, "../") })
+})
+
 module.exports = router
