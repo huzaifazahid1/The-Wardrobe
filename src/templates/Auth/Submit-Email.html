@@ -10,16 +10,18 @@
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
         <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Forgot Password</h2>
         <p class="text-gray-600 text-sm mb-6 text-center">Enter your email to receive a one-time password</p>
-        <form>
+        <div>
             <div class="mb-4">
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email address</label>
                 <input type="email" id="email" name="email" placeholder="you@example.com" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
-            <button type="submit" class="w-full bg-gray-900 text-white py-2 px-4 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">Send OTP</button>
-        </form>
+            <button type="button" class="w-full bg-gray-900 text-white py-2 px-4 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50" id="submitOTP">Send OTP</button>
+        </div>
         <p class="mt-4 text-sm text-center">
-            <span class="text-gray-600 text-sm mb-6 text-center">Remember your password?</span><a href="/Auth/Login" class="text-blue-600 hover:underline px-2">Log in</a>
+            <span class="text-gray-600 text-sm mb-6 text-center">Remember your password?</span>
+            <a href="/Auth/Login" class="text-blue-600 hover:underline px-2">Log in</a>
         </p>
     </div>
+    <script src="/static/JS/Auth/Submit-Email.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 const loginButton = document.getElementById("loginBtn")
 const SignupBtn = document.getElementById("SignupBtn")
 const shopButton = document.getElementById("shopBtn")
+const shopButton_Secondery = document.getElementById("ShopBtn-Secendory")
 const ExploreButton = document.getElementById("ExpBtn")
 
 loginButton.addEventListener("click", ()=>{
@@ -12,6 +13,10 @@ SignupBtn.addEventListener("click", ()=>{
 })
 
 shopButton.addEventListener("click", ()=>{
+    window.location.href = "/Shop"
+})
+
+shopButton_Secondery.addEventListener("click", ()=>{
     window.location.href = "/Shop"
 })
 

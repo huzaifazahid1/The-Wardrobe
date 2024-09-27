@@ -17,8 +17,14 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 - **Cart page:** An static cart page is implemented
 - **Checkout page:** An static Checkout page is implemented
 - **Mens collection page:** An static Mens collection page is implemented 
+- **Womens collection page:** An static Womens collection page is implemented
+- **Accessories collection page:** An static Accessories collection page is implemented
 - **Collection page:** An partially dynamic collection page is implemented
+- **Submit Email page:** An static Submit Email page is implemented with some JavaScript, for reset password process
+- **Verify OTP page:** An static Verify OTP page is implemented with some JavaScript, for reset password process
+- **Reset Password page:** An static Reset Password page is implemented with some JavaScript, for reset password process
 - **Node.js Server:** A simple server using Express.js serves static files and handles routing.
+
 
 ## Technologies Used
 
