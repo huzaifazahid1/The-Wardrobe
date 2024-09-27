@@ -55,8 +55,7 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 
 4. **Run the Server:**
    ```bash
-   cd src
-   nodemon app.js
+   npm run start
    ```
 
 5. **Access the Application:**  Open your web browser and go to `http://localhost:3000`.
