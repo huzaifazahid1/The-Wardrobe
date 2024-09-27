@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wardrobe - Wearables Collection</title>
+    <link rel="stylesheet" href="/static/CSS/output.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-gray-800 text-2xl font-bold">The Wardrobe</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/Shop" class="text-gray-600 hover:text-gray-800">Home</a>
+                    <a href="/shop/Collection/Categories/Mens" class="text-gray-600 hover:text-gray-800">Men</a>
+                    <a href="/shop/Collection/Categories/Womens" class="text-gray-600 hover:text-gray-800">Women</a>
+                    <a href="/shop/Collection/Categories/Accessories" class="text-gray-600 hover:text-gray-800">Accessories</a>
+                    <a href="/shop/Collection/Categories/Wearables" class="text-gray-600 hover:text-gray-800">Wearables</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <i class="fas fa-shopping-cart" id="cart-icon"></i>
+                    </button>
+                    <button class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <button class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8" role="main">
+        <div class="bg-gray-100 rounded-lg p-6 mb-8 shadow-sm transform hover:scale-105 transition-transform duration-300">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">New Arrivals: Wearables Collection</h2>
+            <p class="text-gray-600 text-lg">Discover the latest in smart wearable technology. 15% off on selected items.</p>
+            <button class="mt-4 bg-gray-800 text-white px-6 py-2 rounded-full font-semibold hover:bg-gray-700 transition duration-300" id="ShopBtn">Shop Now</button>
+        </div>
+
+        <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/4 pr-8">
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Categories</h3>
+                    <ul class="flex flex-col gap-2">
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300">Smartwatches</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300">Fitness Trackers</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300">Smart Glasses</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300">Smart Rings</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300">Smart Clothing</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Features</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="px-3 py-1 border border-gray-300 rounded-full hover:bg-gray-200 hover:text-gray-800 transition duration-300">Heart Rate</button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-full hover:bg-gray-200 hover:text-gray-800 transition duration-300">GPS</button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-full hover:bg-gray-200 hover:text-gray-800 transition duration-300">Water Resistant</button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-full hover:bg-gray-200 hover:text-gray-800 transition duration-300">Sleep Tracking</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Brand</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="px-3 py-1 border border-gray-300 rounded-full hover:bg-gray-200 hover:text-gray-800 transition duration-300">Apple</button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-full hover:bg-gray-200 hover:text-gray-800 transition duration-300">Fitbit</button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-full hover:bg-gray-200 hover:text-gray-800 transition duration-300">Garmin</button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-full hover:bg-gray-200 hover:text-gray-800 transition duration-300">Samsung</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Price Range</h3>
+                    <div class="flex justify-between text-sm text-gray-600 mb-2">
+                        <span>$0</span>
+                        <span>$1000</span>
+                    </div>
+                    <input type="range" min="0" max="1000" value="500" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-gray-800" oninput="this.style.background = `linear-gradient(to right, #4B5563 0%, #4B5563 ${this.value/10}%, #E5E7EB ${this.value/10}%, #E5E7EB 100%)`; document.getElementById('rangeValue').textContent = '$' + this.value;">
+                    <div id="rangeValue" class="mt-2 text-center text-sm text-gray-600">$500</div>
+                </div>
+            </div>
+
+            <div class="md:w-3/4 mt-8 md:mt-0">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-3xl font-bold text-gray-800">Wearables Collection</h2>
+                    <div class="relative">
+                        <select class="appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-8 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">
+                            <option>Sort by</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="/static/Assets/img/products/f1.jpg" alt="Smart Watch" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Smart Watch Pro</h3>
+                            <p class="text-gray-800 font-bold mb-2">$299.99</p>
+                            <button class="w-full bg-gray-800 text-white py-2 rounded-full hover:bg-gray-700 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="/static/Assets/img/products/f2.jpg" alt="Fitness Tracker" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Fitness Tracker Elite</h3>
+                            <p class="text-gray-800 font-bold mb-2">$149.99</p>
+                            <button class="w-full bg-gray-800 text-white py-2 rounded-full hover:bg-gray-700 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="/static/Assets/img/products/f3.jpg" alt="Smart Glasses" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Smart Glasses X1</h3>
+                            <p class="text-gray-800 font-bold mb-2">$399.99</p>
+                            <button class="w-full bg-gray-800 text-white py-2 rounded-full hover:bg-gray-700 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/JS/Shop/Collection/Categories/WearablesCollection.js"></script>
+</body>
+
+</html>
