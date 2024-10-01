@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Wardrobe</title>
+    <link rel="stylesheet" href="/static/CSS/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blur-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+            filter: blur(100px);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gray-100 p-8 relative">
+
+    <!-- Background Design Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -left-1/4 -top-1/4 w-1/2 h-1/2 bg-gray-200 rounded-full blur-3xl"></div>
+        <div class="absolute -right-1/4 -bottom-1/4 w-1/2 h-1/2 bg-gray-300 rounded-full blur-3xl"></div>
+        <div class="absolute left-1/4 bottom-1/4 w-1/3 h-1/3 bg-gray-400 rounded-full blur-3xl opacity-30"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-8 relative z-10">
+        <h1 class="text-4xl font-bold text-gray-900">The Wardrobe</h1>
+        <div class="relative z-10">
+            <button id="dropdownButton"
+                class="h-12 w-12 rounded-full flex items-center justify-center bg-gray-200 hover:bg-gray-300 focus:outline-none">
+                <i class="fa-solid fa-user h-12 w-12 rounded-full mt-7"></i>
+            </button>
+            <!-- Dropdown Menu -->
+            <!-- Dropdown Menu -->
+            <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
+                <div class="px-4 py-2 text-gray-700">
+                    <p class="text-sm font-medium">Emily Johnson</p>
+                    <p class="text-xs text-gray-500">emily.johnson@example.com</p>
+                </div>
+                <div class="border-t border-gray-200"></div>
+                <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <i class="fas fa-user mr-2"></i> Profile
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <i class="fas fa-credit-card mr-2"></i> Billing
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <i class="fas fa-cog mr-2"></i> Settings
+                </a>
+                <div class="border-t border-gray-200"></div>
+                <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Log out
+                </a>
+            </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="mx-auto max-w-4xl bg-white bg-opacity-80 backdrop-blur-md relative z-10 rounded-lg shadow-lg">
+        <div class="p-6">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Your Profile</h2>
+
+            <!-- Tabs -->
+            <div>
+                <div class="flex border-b mb-8">
+                    <button
+                        class="tab-button px-4 py-2 text-gray-700 border-b-2 border-transparent focus:outline-none hover:text-gray-900"
+                        data-tab="personal">Personal Info</button>
+                    <button
+                        class="tab-button px-4 py-2 text-gray-700 border-b-2 border-transparent focus:outline-none hover:text-gray-900"
+                        data-tab="orders">Orders</button>
+                    <button
+                        class="tab-button px-4 py-2 text-gray-700 border-b-2 border-transparent focus:outline-none hover:text-gray-900"
+                        data-tab="wishlist">Wishlist</button>
+                </div>
+
+                <!-- Personal Info Tab -->
+                <div id="personal" class="tab-content">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Personal Information</h3>
+                        <button id="editButton"
+                            class="flex items-center px-3 py-1 border border-gray-400 rounded text-sm text-gray-700 hover:bg-gray-100 focus:outline-none">
+                            <i class="fas fa-edit mr-2"></i> Edit
+                        </button>
+                    </div>
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <div>
+                            <label for="name" class="block text-gray-700">Name</label>
+                            <input type="text" id="name" value="Emily Johnson" readonly
+                                class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700">Email Address</label>
+                            <div class="flex items-center mt-1">
+                                <i class="fas fa-envelope text-gray-500 mr-2"></i>
+                                <input type="email" id="email" value="emily.johnson@example.com" readonly
+                                    class="block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700">Phone Number</label>
+                            <div class="flex items-center mt-1">
+                                <i class="fas fa-phone text-gray-500 mr-2"></i>
+                                <input type="tel" id="phone" value="+1 (555) 123-4567" readonly
+                                    class="block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Address</h3>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div>
+                                <label for="locality" class="block text-gray-700">Locality</label>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-map-marker-alt text-gray-500 mr-2"></i>
+                                    <input type="text" id="locality" value="New York" readonly
+                                        class="block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="roadName" class="block text-gray-700">Road Name</label>
+                                <input type="text" id="roadName" value="Fashion Avenue" readonly
+                                    class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
+                            </div>
+                            <div>
+                                <label for="houseNumber" class="block text-gray-700">House Number</label>
+                                <input type="text" id="houseNumber" value="1234" readonly
+                                    class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
+                            </div>
+                            <div>
+                                <label for="landmark" class="block text-gray-700">Landmark</label>
+                                <input type="text" id="landmark" value="Near Central Park" readonly
+                                    class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orders Tab -->
+                <div id="orders" class="tab-content hidden">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Your Orders</h3>
+                    <!-- Order 1 -->
+                    <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="text-lg text-gray-900">Order #WD001</h4>
+                            <span class="px-2 py-1 text-sm text-white bg-green-500 rounded">Delivered</span>
+                        </div>
+                        <p class="text-sm text-gray-500">2023-06-15</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li class="text-sm text-gray-700">Floral Dress</li>
+                            <li class="text-sm text-gray-700">Leather Handbag</li>
+                        </ul>
+                    </div>
+                    <!-- Order 2 -->
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="text-lg text-gray-900">Order #WD002</h4>
+                            <span class="px-2 py-1 text-sm text-white bg-yellow-500 rounded">In Transit</span>
+                        </div>
+                        <p class="text-sm text-gray-500">2023-07-02</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li class="text-sm text-gray-700">Denim Jacket</li>
+                            <li class="text-sm text-gray-700">Sunglasses</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Wishlist Tab -->
+                <div id="wishlist" class="tab-content hidden">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Your Wishlist</h3>
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <!-- Wishlist Item 1 -->
+                        <div class="bg-gray-50 rounded-lg flex items-center justify-between p-4">
+                            <span class="text-gray-700">Silk Scarf</span>
+                            <i class="fas fa-heart text-gray-500"></i>
+                        </div>
+                        <!-- Wishlist Item 2 -->
+                        <div class="bg-gray-50 rounded-lg flex items-center justify-between p-4">
+                            <span class="text-gray-700">Ankle Boots</span>
+                            <i class="fas fa-heart text-gray-500"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-16 flex justify-center space-x-4 relative z-10">
+        <button class="flex items-center px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800">
+            <i class="fas fa-sign-out-alt mr-2"></i> Logout
+        </button>
+        <button
+            class="flex items-center px-4 py-2 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100">
+            <i class="fas fa-question-circle mr-2"></i> Support
+        </button>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/static/JS/User/Profile.js"></script>
+</body>
+
+</html>

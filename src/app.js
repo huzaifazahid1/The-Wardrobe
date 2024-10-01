@@ -1,7 +1,12 @@
 const express = require("express");
 const path = require("path");
+const dotenv = require("dotenv");
 const app = express();
-const port = 3000;
+
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
+
+// Set up the port
+const port = process.env.PORT;
 
 // Routes
 const mainRoutes = require("./routes/main");
@@ -10,6 +15,7 @@ const shopRoutes = require("./routes/shop");
 const infoRoutes = require("./routes/info")
 const cartRoute = require("./routes/cart")
 const CollectionRoutes = require("./routes/Collection")
+const UserRoutes = require("./routes/User")
 
 app.use(express.json());
 app.use("/static", express.static(path.join(__dirname, "Static")));
@@ -21,6 +27,7 @@ app.use("/Auth", authRoutes);
 app.use("/Shop", shopRoutes);
 app.use("/cart", cartRoute)
 app.use("/shop/Collection/Categories", CollectionRoutes)
+app.use("/User/Profile/", UserRoutes)
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

@@ -13,6 +13,7 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 - **Static Content Pages:**  Includes an "About Us" and "Contact Us" page.
 - **Login Page:** A basic login page with a form is implemented.
 - **Signup page:** A basic signup page with a form is implemented 
+- **Profile Page:** An static Profile page is implemented
 - **Shopping page:** A general shopping page is implemented
 - **Cart page:** An static cart page is implemented
 - **Checkout page:** An static Checkout page is implemented
@@ -21,6 +22,7 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 - **Accessories collection page:** An static Accessories collection page with some JavaScript is implemented
 - **Wearables Collection page:** An static Wearables Collection pag with some JavaScript is implemented
 - **Collection page:** An partially dynamic collection page is implemented
+- **Orders Page:** An static Orders page is implemented
 - **Submit Email page:** An static Submit Email page is implemented with some JavaScript, for reset password process
 - **Verify OTP page:** An static Verify OTP page is implemented with some JavaScript, for reset password process
 - **Reset Password page:** An static Reset Password page is implemented with some JavaScript, for reset password process
