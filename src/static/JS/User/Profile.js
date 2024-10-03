@@ -1,18 +1,3 @@
-// Dropdown Menu Toggle
-const dropdownButton = document.getElementById('dropdownButton');
-const dropdownMenu = document.getElementById('dropdownMenu');
-
-dropdownButton.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('hidden');
-});
-
-// Close dropdown when clicking outside
-window.addEventListener('click', (e) => {
-    if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
-        dropdownMenu.classList.add('hidden');
-    }
-});
-
 // Tabs Functionality
 const tabButtons = document.querySelectorAll('.tab-button');
 const tabContents = document.querySelectorAll('.tab-content');

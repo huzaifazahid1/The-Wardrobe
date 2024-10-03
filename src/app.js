@@ -6,7 +6,7 @@ const app = express();
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 // Set up the port
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 // Routes
 const mainRoutes = require("./routes/main");
