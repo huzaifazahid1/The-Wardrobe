@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Wardrobe - Login</title>
     <link rel="stylesheet" href="/static/CSS/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         input:focus {
             outline: none;
@@ -23,21 +24,27 @@
 <body class="bg-gray-100 min-h-screen flex items-start justify-center flex-col lg:flex-row p-8">
     <!-- Left side: Form -->
     <div class="bg-white rounded-lg shadow-md w-full max-w-3xl p-8 mb-8 lg:mb-0 lg:mr-8">
-        <h2 class="text-2xl font-semibold mb-6 text-gray-800">Login to your account</h2>
+        <h2 class="text-lg sm:text-2xl text-center lg:text-left font-semibold mb-6 text-gray-800">Login to your account</h2>
         <form class="space-y-4">
             <div class="lg:flex lg:space-x-4 space-y-4 lg:space-y-0">
-                <div class="lg:w-1/2">
-                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                    <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                <div class=" lg:w-1/2">
+                    <label for="name" class="hidden lg:block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300 lg:hidden" placeholder="Name" required>
+                    <input type="text" id="name" name="name" required class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300 hidden lg:block">
+
                 </div>
                 <div class="lg:w-1/2">
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                    <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                    <label for="email" class="hidden lg:block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300 lg:hidden" placeholder="Email Address" required>
+                    <input type="email" id="email" name="email" required class="mt-1 hidden w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300 lg:block">
+
                 </div>
             </div>
             <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" id="password" name="password" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                <label for="password" class="hidden lg:block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300 lg:hidden" placeholder="Password" required>
+                <input type="password" id="password" name="password" required class="mt-1 hidden w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300 lg:block">
+
             </div>
             <div class="flex items-center mt-4">
                 <input type="checkbox" id="remember" name="remember" class="h-4 w-4 text-black border-gray-300 rounded focus:ring-black">
@@ -63,8 +70,8 @@
     <div class="w-full lg:w-1/3 bg-gray-900 text-white p-8 rounded-lg flex flex-col justify-between relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
         <div class="relative z-10 animate-fadeIn">
-            <h1 class="text-5xl font-bold mb-6">The Wardrobe</h1>
-            <p class="text-lg mb-8">Elevate your style with Lucknow's premier fashion destination.</p>
+            <h1 class="text-2xl	sm:text-5xl lg:text-2xl font-bold mb-6 text-left sm:text-center">The Wardrobe</h1>
+            <p class="text-lg mb-8 md:text-center">Elevate your style with Lucknow's premier fashion destination.</p>
             <div class="space-y-4 mb-8">
                 <div class="flex items-center">
                     <div class="w-8 h-8 rounded-full bg-white text-gray-900 flex items-center justify-center font-bold mr-3">1</div>
