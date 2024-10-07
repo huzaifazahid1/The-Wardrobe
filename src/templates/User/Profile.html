@@ -1,163 +1,139 @@
+<!-- YouTube/The Wardrobe/src/templates/User/Profile.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Wardrobe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wardrobe - Profile Dashboard</title>
     <link rel="stylesheet" href="/static/CSS/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="min-h-screen bg-gray-100 p-8 relative">
+<body class="flex min-h-screen bg-gray-100">
 
-    <!-- Background Design Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute -left-1/4 -top-1/4 w-1/2 h-1/2 bg-gray-200 rounded-full blur-3xl"></div>
-        <div class="absolute -right-1/4 -bottom-1/4 w-1/2 h-1/2 bg-gray-300 rounded-full blur-3xl"></div>
-        <div class="absolute left-1/4 bottom-1/4 w-1/3 h-1/3 bg-gray-400 rounded-full blur-3xl opacity-30"></div>
-    </div>
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-lg">
+        <div class="p-6">
+            <h1 class="text-2xl font-bold text-gray-800">The Wardrobe</h1>
+            <nav class="mt-10">
+                <a href="/User/Profile/" class="flex items-center px-4 py-2 mt-2 text-gray-700 bg-gray-200 rounded-md">
+                    <i class="fas fa-user mr-3"></i> Profile
+                </a>
+                <a href="/User/Profile/Orders" class="flex items-center px-4 py-2 mt-2 text-gray-600 hover:bg-gray-200 rounded-md">
+                    <i class="fas fa-shopping-bag mr-3"></i> Orders
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 mt-2 text-gray-600 hover:bg-gray-200 rounded-md">
+                    <i class="fas fa-heart mr-3"></i> Wishlist
+                </a>
+                <a href="/settings" class="flex items-center px-4 py-2 mt-2 text-gray-600 hover:bg-gray-200 rounded-md">
+                    <i class="fas fa-cog mr-3"></i> Settings
+                </a>
+                <a href="/logout" class="flex items-center px-4 py-2 mt-2 text-gray-600 hover:bg-gray-200 rounded-md">
+                    <i class="fas fa-sign-out-alt mr-3"></i> Logout
+                </a>
+            </nav>
+        </div>
+    </aside>
 
     <!-- Main Content -->
-    <div class="mx-auto max-w-4xl bg-white bg-opacity-80 backdrop-blur-md relative z-10 rounded-lg shadow-lg">
-        <div class="p-6">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Your Profile</h2>
+    <main class="flex-1 p-8">
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Your Profile</h2>
 
-            <!-- Tabs -->
-            <div>
-                <div class="flex border-b mb-8">
-                    <button
-                        class="tab-button px-4 py-2 text-gray-700 border-b-2 border-transparent focus:outline-none hover:text-gray-900"
-                        data-tab="personal">Personal Info</button>
-                    <button
-                        class="tab-button px-4 py-2 text-gray-700 border-b-2 border-transparent focus:outline-none hover:text-gray-900"
-                        data-tab="orders">Orders</button>
-                    <button
-                        class="tab-button px-4 py-2 text-gray-700 border-b-2 border-transparent focus:outline-none hover:text-gray-900"
-                        data-tab="wishlist">Wishlist</button>
+            <!-- Personal Info Section -->
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold text-gray-700">Personal Information</h3>
+                <button id="editButton"
+                    class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none">
+                    <i class="fas fa-edit mr-2"></i> Edit
+                </button>
+            </div>
+
+            <!-- Personal Information Display -->
+            <div id="displaySection" class="grid gap-6 sm:grid-cols-2">
+                <div>
+                    <label class="block text-gray-600">Name</label>
+                    <p id="displayName" class="mt-1 text-gray-800">Emily Johnson</p>
                 </div>
-
-                <!-- Personal Info Tab -->
-                <div id="personal" class="tab-content">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Personal Information</h3>
-                        <button id="editButton"
-                            class="flex items-center px-3 py-1 border border-gray-400 rounded text-sm text-gray-700 hover:bg-gray-100 focus:outline-none">
-                            <i class="fas fa-edit mr-2"></i> Edit
-                        </button>
-                    </div>
-                    <div class="grid gap-4 sm:grid-cols-2">
-                        <div>
-                            <label for="name" class="block text-gray-700">Name</label>
-                            <input type="text" id="name" value="Emily Johnson" readonly
-                                class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-700">Email Address</label>
-                            <div class="flex items-center mt-1">
-                                <i class="fas fa-envelope text-gray-500 mr-2"></i>
-                                <input type="email" id="email" value="emily.johnson@example.com" readonly
-                                    class="block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-gray-700">Phone Number</label>
-                            <div class="flex items-center mt-1">
-                                <i class="fas fa-phone text-gray-500 mr-2"></i>
-                                <input type="tel" id="phone" value="+1 (555) 123-4567" readonly
-                                    class="block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Address</h3>
-                        <div class="grid gap-4 sm:grid-cols-2">
-                            <div>
-                                <label for="locality" class="block text-gray-700">Locality</label>
-                                <div class="flex items-center mt-1">
-                                    <i class="fas fa-map-marker-alt text-gray-500 mr-2"></i>
-                                    <input type="text" id="locality" value="Lucknow" readonly
-                                        class="block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
-                                </div>
-                            </div>
-                            <div>
-                                <label for="roadName" class="block text-gray-700">Road Name</label>
-                                <input type="text" id="roadName" value="Fashion Avenue" readonly
-                                    class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
-                            </div>
-                            <div>
-                                <label for="houseNumber" class="block text-gray-700">House Number</label>
-                                <input type="text" id="houseNumber" value="1234" readonly
-                                    class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
-                            </div>
-                            <div>
-                                <label for="landmark" class="block text-gray-700">Landmark</label>
-                                <input type="text" id="landmark" value="Near Central Park" readonly
-                                    class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-md p-2">
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                    <label class="block text-gray-600">Email Address</label>
+                    <p id="displayEmail" class="mt-1 text-gray-800">emily.johnson@example.com</p>
                 </div>
-
-                <!-- Orders Tab -->
-                <div id="orders" class="tab-content hidden">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Your Orders</h3>
-                    <!-- Order 1 -->
-                    <div class="bg-gray-50 rounded-lg p-4 mb-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="text-lg text-gray-900">Order #WD001</h4>
-                            <span class="px-2 py-1 text-sm text-white bg-green-500 rounded">Delivered</span>
-                        </div>
-                        <p class="text-sm text-gray-500">2023-06-15</p>
-                        <ul class="list-disc list-inside mt-2">
-                            <li class="text-sm text-gray-700">Floral Dress</li>
-                            <li class="text-sm text-gray-700">Leather Handbag</li>
-                        </ul>
-                    </div>
-                    <!-- Order 2 -->
-                    <div class="bg-gray-50 rounded-lg p-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="text-lg text-gray-900">Order #WD002</h4>
-                            <span class="px-2 py-1 text-sm text-white bg-yellow-500 rounded">In Transit</span>
-                        </div>
-                        <p class="text-sm text-gray-500">2023-07-02</p>
-                        <ul class="list-disc list-inside mt-2">
-                            <li class="text-sm text-gray-700">Denim Jacket</li>
-                            <li class="text-sm text-gray-700">Sunglasses</li>
-                        </ul>
-                    </div>
+                <div>
+                    <label class="block text-gray-600">Phone Number</label>
+                    <p id="displayPhone" class="mt-1 text-gray-800">+91 5551234567</p>
                 </div>
-
-                <!-- Wishlist Tab -->
-                <div id="wishlist" class="tab-content hidden">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Your Wishlist</h3>
-                    <div class="grid gap-4 sm:grid-cols-2">
-                        <!-- Wishlist Item 1 -->
-                        <div class="bg-gray-50 rounded-lg flex items-center justify-between p-4">
-                            <span class="text-gray-700">Silk Scarf</span>
-                            <i class="fas fa-heart text-gray-500"></i>
-                        </div>
-                        <!-- Wishlist Item 2 -->
-                        <div class="bg-gray-50 rounded-lg flex items-center justify-between p-4">
-                            <span class="text-gray-700">Ankle Boots</span>
-                            <i class="fas fa-heart text-gray-500"></i>
-                        </div>
-                    </div>
+                <div>
+                    <label class="block text-gray-600">Locality</label>
+                    <p id="displayLocality" class="mt-1 text-gray-800">Your Locality</p>
+                </div>
+                <div>
+                    <label class="block text-gray-600">Road Name</label>
+                    <p id="displayRoadName" class="mt-1 text-gray-800">Your Road Name</p>
+                </div>
+                <div>
+                    <label class="block text-gray-600">House Number</label>
+                    <p id="displayHouseNumber" class="mt-1 text-gray-800">1234</p>
+                </div>
+                <div>
+                    <label class="block text-gray-600">Landmark</label>
+                    <p id="displayLandmark" class="mt-1 text-gray-800">Near Central Park(Optional)</p>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="mt-16 flex justify-center space-x-4 relative z-10">
-        <button class="flex items-center px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800">
-            <i class="fas fa-sign-out-alt mr-2"></i> Logout
-        </button>
-        <button
-            class="flex items-center px-4 py-2 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100">
-            <i class="fas fa-question-circle mr-2"></i> Support
-        </button>
-    </footer>
+            <!-- Personal Information Edit Form -->
+            <form id="editForm" class="hidden">
+                <div class="grid gap-6 sm:grid-cols-2">
+                    <div>
+                        <label for="name" class="block text-gray-600">Name</label>
+                        <input type="text" id="name" value="Emily Johnson"
+                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-600">Email Address</label>
+                        <input type="email" id="email" value="emily.johnson@example.com"
+                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-600">Phone Number</label>
+                        <input type="tel" id="phone" value="+1 (555) 123-4567"
+                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                    </div>
+                    <div>
+                        <label for="locality" class="block text-gray-600">Locality</label>
+                        <input type="text" id="locality" value="Lucknow"
+                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                    </div>
+                    <div>
+                        <label for="roadName" class="block text-gray-600">Road Name</label>
+                        <input type="text" id="roadName" value="Fashion Avenue"
+                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                    </div>
+                    <div>
+                        <label for="houseNumber" class="block text-gray-600">House Number</label>
+                        <input type="text" id="houseNumber" value="1234"
+                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                    </div>
+                    <div>
+                        <label for="landmark" class="block text-gray-600">Landmark</label>
+                        <input type="text" id="landmark" value="Near Central Park"
+                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                    </div>
+                </div>
+                <div class="flex justify-end mt-6">
+                    <button type="button" id="cancelButton"
+                        class="flex items-center px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 focus:outline-none mr-4">
+                        <i class="fas fa-times mr-2"></i> Cancel
+                    </button>
+                    <button type="submit"
+                        class="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none">
+                        <i class="fas fa-save mr-2"></i> Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
 
     <!-- JavaScript -->
     <script src="/static/JS/User/Profile.js"></script>
