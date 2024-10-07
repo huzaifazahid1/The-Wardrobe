@@ -67,87 +67,97 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 ```bash
 The-Wardrobe
 |   .gitignore
+|   .env
 |   CODE_OF_CONDUCT.md
 |   CONTRIBUTING.md
 |   package-lock.json
 |   package.json
+|   tailwind.config.js
 |   README.md
-\---src
-    |   app.js
-    |
-    +---routes
-    |       auth.js
-    |       cart.js
-    |       Collection.js
-    |       info.js
-    |       main.js
-    |       shop.js
-    |
-    +---static
-    |   +---Assets
-    |   |   ---img
-    |   |
-    |   |   ---Videos
-    |   +---CSS
-    |   |   |   LandingPage.css
-    |   |   |
-    |   |   +---Auth
-    |   |   |       login.css
-    |   |   |       signup.css
-    |   |   |
-    |   |   +---cart
-    |   |   |       cart.css
-    |   |   |       checkout.css
-    |   |   |
-    |   |   +---info
-    |   |   |       About.css
-    |   |   |       Contact.css
-    |   |   |
-    |   |   \---Shop
-    |   |       |   Shop.css
-    |   |       |
-    |   |       \---Collection
-    |   |           |   Collection.css
-    |   |           |
-    |   |           \---Categories
-    |   |                   MensCollection.css
-    |   |
-    |   \---JS
-    |       |   LandingPage.js
-    |       |
-    |       +---cart
-    |       |       cart.js
-    |       |       checkout.js
-    |       |
-    |       \---Shop
-    |           |   Shop.js
-    |           |
-    |           \---Collection
-    |                   Collection.js
-    |
-    \---templates
-        |   LandingPage.html
-        |
-        +---Auth
-        |       login.html
-        |       signup.html
-        |
-        +---cart
-        |       cart.html
-        |       checkout.html
-        |
-        +---info
-        |       About.html
-        |       Contact.html
-        |
-        \---Shop
-            |   Shop.html
-            |
-            \---Collections
-                |   Collection.html
-                |
-                \---Categories
-                        MenCollection.html
+└───src
+    │   app.js
+    │
+    ├───routes
+    │       auth.js
+    │       cart.js
+    │       Collection.js
+    │       info.js
+    │       main.js
+    │       shop.js
+    │       User.js
+    │       
+    ├───static
+    │   ├───Assets
+    │   ├───CSS
+    │   │   │   main.css
+    │   │   │   output.css
+    │   │   │
+    │   │   └───Shop
+    │   │           Shop.css
+    │   │
+    │   └───JS
+    │       │   LandingPage.js
+    │       │
+    │       ├───Auth
+    │       │       Reset-Password.js
+    │       │       Submit-Email.js
+    │       │       SubmitOTP.js
+    │       │
+    │       ├───cart
+    │       │       cart.js
+    │       │       checkout.js
+    │       │
+    │       ├───Shop
+    │       │   │   Shop.js
+    │       │   │
+    │       │   └───Collection
+    │       │       │   Collection.js
+    │       │       │
+    │       │       └───Categories
+    │       │               AccessoriesCollection.js
+    │       │               MensCollection.js
+    │       │               WearablesCollection.js
+    │       │               WomenCollection.js
+    │       │
+    │       └───User
+    │               Orders.js
+    │               Profile.js
+    │               Wishlist.js
+    │
+    └───templates
+        │   LandingPage.html
+        │
+        ├───Auth
+        │       login.html
+        │       Reset-Password.html
+        │       signup.html
+        │       Submit-Email.html
+        │       SubmitOTP.html
+        │
+        ├───cart
+        │       cart.html
+        │       checkout.html
+        │
+        ├───info
+        │       About.html
+        │       Contact.html
+        │
+        ├───Shop
+        │   │   Shop.html
+        │   │
+        │   └───Collections
+        │       │   Collection.html
+        │       │
+        │       └───Categories
+        │               AccessoriesCollection.html
+        │               MenCollection.html
+        │               WearablesCollection.html
+        │               WomenCollection.html
+        │
+        └───User
+                Orders.html
+                Profile.html
+                Wishlist.html
 ```
 
 ## Contributing
