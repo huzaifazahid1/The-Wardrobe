@@ -23,43 +23,59 @@
 <body class="bg-gray-100 min-h-screen flex items-start justify-center flex-col lg:flex-row p-8">
     <!-- Left side: Form -->
     <div class="bg-white rounded-lg shadow-md w-full max-w-3xl p-8 mb-8 lg:mb-0 lg:mr-8">
-        <h2 class="text-2xl font-semibold mb-6 text-gray-800">Create your account</h2>
+        <h2 class="text-xl text-center lg:text-left sm:text-2xl font-semibold mb-6 text-gray-800 ">Create your account</h2>
         <form class="space-y-4">
             <div class="lg:flex lg:space-x-4 space-y-4 lg:space-y-0">
                 <div class="lg:w-1/2">
-                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                    <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                    <label for="name" class="hidden lg:block text-sm font-medium text-gray-700">Name *</label>
+                    <input type="text" id="name" name="name" required class="hidden mt-1 lg:block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                    <input type="text" id="name" name="name" required class="block mt-1 lg:hidden w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300" placeholder="Name *" required>
+
                 </div>
                 <div class="lg:w-1/2">
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                    <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                    <label for="email" class="hidden lg:block text-sm font-medium text-gray-700">Email Address *</label>
+                    <input type="email" id="email" name="email" required class="hidden mt-1 lg:block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                    <input type="email" id="email" name="email" required class="block mt-1 lg:hidden w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300" placeholder="Email Address *" required>
+
                 </div>
             </div>
             <div class="lg:flex lg:space-x-4 space-y-4 lg:space-y-0">
                 <div class="lg:w-1/2">
-                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                    <input type="password" id="password" name="password" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                    <label for="password" class="hidden lg:block text-sm font-medium text-gray-700">Password *</label>
+                    <input type="password" id="password" name="password" required class="hidden mt-1 lg:block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                    <input type="password" id="password" name="password" required class="block mt-1 lg:hidden w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300" placeholder="Password *" required>
+
                 </div>
                 <div class="lg:w-1/2">
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                    <label for="phone" class="hidden lg:block text-sm font-medium text-gray-700">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required class="hidden mt-1 lg:block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                    <input type="tel" id="phone" name="phone" required class="block mt-1 lg:hidden w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300" placeholder="Phone Number *" required>
+
                 </div>
             </div>
             <div>
-                <label for="locality" class="block text-sm font-medium text-gray-700">Locality</label>
-                <input type="text" id="locality" name="locality" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                <label for="locality" class="hidden lg:block text-sm font-medium text-gray-700">Locality *</label>
+                <input type="text" id="locality" name="locality" required class="hidden mt-1 lg:block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                <input type="text" id="locality" name="locality" required class="block mt-1 lg:hidden w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300" placeholder="Locality *" required>
+
             </div>
             <div>
-                <label for="road" class="block text-sm font-medium text-gray-700">Road Name</label>
-                <input type="text" id="road" name="road" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                <label for="road" class="hidden lg:block text-sm font-medium text-gray-700">Road Name *</label>
+                <input type="text" id="road" name="road" required class="hidden mt-1 lg:block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                <input type="text" id="road" name="road" required class="block mt-1 lg:hidden w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300" placeholder="Road Name *" required>
+
             </div>
             <div>
-                <label for="house" class="block text-sm font-medium text-gray-700">House Number</label>
-                <input type="text" id="house" name="house" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                <label for="house" class="hidden lg:block text-sm font-medium text-gray-700">House Number *</label>
+                <input type="text" id="house" name="house" required class="hidden mt-1 lg:block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                <input type="text" id="house" name="house" required class="block mt-1 lg:hidden w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300" placeholder="House Number *" required>
+
             </div>
             <div>
-                <label for="landmark" class="block text-sm font-medium text-gray-700">Landmark (Optional)</label>
-                <input type="text" id="landmark" name="landmark" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                <label for="landmark" class="hidden lg:block text-sm font-medium text-gray-700">Landmark</label>
+                <input type="text" id="landmark" name="landmark" class="hidden mt-1 lg:block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300">
+                <input type="text" id="landmark" name="landmark" required class="block mt-1 lg:hidden w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-gray-300" placeholder="Landmark" required>
+
             </div>
             <div class="mt-6">
                 <button type="submit" class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
@@ -76,19 +92,19 @@
     <div class="w-full lg:w-1/3 bg-gray-900 text-white p-8 rounded-lg flex flex-col justify-between relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
         <div class="relative z-10 animate-fadeIn">
-            <h1 class="text-5xl font-bold mb-6">The Wardrobe</h1>
+            <h1 class="text-2xl text-left sm:text-center sm:text-5xl lg:text-2xl xl:text-5xl font-bold  mb-6">The Wardrobe</h1>
             <p class="text-lg mb-8">Elevate your style with Lucknow's premier fashion destination.</p>
             <div class="space-y-4 mb-8">
                 <div class="flex items-center">
-                    <div class="w-8 h-8 rounded-full bg-white text-gray-900 flex items-center justify-center font-bold mr-3">1</div>
+                    <div class="min-w-8 min-h-8 rounded-full bg-white text-gray-900 flex items-center justify-center font-bold mr-3">1</div>
                     <p>Exclusive access to new collections</p>
                 </div>
                 <div class="flex items-center">
-                    <div class="w-8 h-8 rounded-full bg-white text-gray-900 flex items-center justify-center font-bold mr-3">2</div>
+                    <div class="min-w-8 min-h-8 rounded-full bg-white text-gray-900 flex items-center justify-center font-bold mr-3">2</div>
                     <p>Personalized style recommendations</p>
                 </div>
                 <div class="flex items-center">
-                    <div class="w-8 h-8 rounded-full bg-white text-gray-900 flex items-center justify-center font-bold mr-3">3</div>
+                    <div class="min-w-8 min-h-8 rounded-full bg-white text-gray-900 flex items-center justify-center font-bold mr-3">3</div>
                     <p>Special offers and discounts</p>
                 </div>
             </div>
@@ -98,7 +114,7 @@
             </div>
         </div>
         <div class="mt-7 relative z-10">
-            <p class="text-sm">Already have an account? <a href="#" class="text-white font-semibold underline">Log in</a></p>
+            <p class="text-xs sm:text-sm">Already have an account? <a href="/Auth/Login" class="text-white font-semibold underline">Log in</a></p>
         </div>
     </div>
 </body>
