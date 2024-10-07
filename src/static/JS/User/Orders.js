@@ -1,104 +1,123 @@
-// Filter Functionality
-const searchInput = document.getElementById('search');
-const statusFilter = document.getElementById('statusFilter');
-const ordersList = document.getElementById('ordersList');
+// Order data initialization
 const orders = [
   {
-    id: "WD001",
-    date: "2023-06-15",
-    status: "Delivered",
-    total: "$245.00",
-    items: [
-      { name: "Floral Dress", price: "$120.00", quantity: 1 },
-      { name: "Leather Handbag", price: "$125.00", quantity: 1 },
-    ],
+    id: 1,
+    date: '2024-10-04',
+    status: 'In Transit',
+    statusColor: 'blue',
+    productName: 'Product Name',
+    size: 'M',
+    quantity: 1,
+    estimatedDelivery: '2024-10-08',
+    shippingAddress: '123 Main St, City',
+    image: 'https://th.bing.com/th?id=OIP.IvJa_5_2DRCDHUZFngzmnAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2',
+    paymentMethod: 'Credit Card',
+    totalAmount: '99.99'
   },
   {
-    id: "WD002",
-    date: "2023-07-02",
-    status: "In Transit",
-    total: "$180.00",
-    items: [
-      { name: "Denim Jacket", price: "$85.00", quantity: 1 },
-      { name: "Sunglasses", price: "$95.00", quantity: 1 },
-    ],
+    id: 2,
+    date: '2024-10-02',
+    status: 'Delivered',
+    statusColor: 'green',
+    productName: 'Another Product',
+    size: 'L',
+    quantity: 2,
+    estimatedDelivery: '2024-10-05',
+    shippingAddress: '456 Another St, City',
+    image: 'https://th.bing.com/th?id=OIP.IvJa_5_2DRCDHUZFngzmnAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2',
+    paymentMethod: 'PayPal',
+    totalAmount: '199.98'
   },
   {
-    id: "WD003",
-    date: "2023-07-10",
-    status: "Processing",
-    total: "$75.00",
-    items: [
-      { name: "Summer Scarf", price: "$35.00", quantity: 1 },
-      { name: "Straw Hat", price: "$40.00", quantity: 1 },
-    ],
-  },
+    id: 3,
+    date: '2024-10-01',
+    status: 'Processing',
+    statusColor: 'yellow',
+    productName: 'Third Product',
+    size: 'XL',
+    quantity: 3,
+    estimatedDelivery: '2024-10-07',
+    shippingAddress: '789 New St, City',
+    image: 'https://th.bing.com/th?id=OIP.IvJa_5_2DRCDHUZFngzmnAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2',
+    paymentMethod: 'Debit Card',
+    totalAmount: '299.97'
+  }
 ];
 
-// Function to render orders
-function renderOrders(filteredOrders) {
-  ordersList.innerHTML = '';
-  if (filteredOrders.length === 0) {
-    ordersList.innerHTML = '<p class="text-gray-700">No orders found.</p>';
-    return;
-  }
+let filteredOrders = [...orders]; // Start with all orders
+
+// Function to toggle the visibility of order details
+function toggleDetails(sectionElement, toggleIcon) {
+  sectionElement.classList.toggle('hidden');
+  toggleIcon.querySelector('svg').classList.toggle('rotate-180');
+}
+
+// Function to create individual order items
+function createOrderElement(order) {
+  const template = document.getElementById('orderItemTemplate');
+  const orderElement = template.content.cloneNode(true);
+
+  // Populate the order details
+  orderElement.querySelector('.order-date').textContent = `Placed on: ${order.date}`;
+  orderElement.querySelector('.order-status').textContent = order.status;
+  orderElement.querySelector('.order-status').classList.add(`bg-${order.statusColor}-100`, `text-${order.statusColor}-600`);
+  orderElement.querySelector('.order-image').src = order.image;
+  orderElement.querySelector('.order-image').alt = order.productName;
+  orderElement.querySelector('.order-product').textContent = order.productName;
+  orderElement.querySelector('.order-size').textContent = `Size: ${order.size}`;
+  orderElement.querySelector('.order-quantity').textContent = `Qty: ${order.quantity}`;
+  orderElement.querySelector('.order-delivery').textContent = `Estimated Delivery: ${order.estimatedDelivery}`;
+  orderElement.querySelector('.order-address').textContent = `Shipping Address: ${order.shippingAddress}`;
+  orderElement.querySelector('.order-id').textContent = `Order ID: ${order.id}`;
+  orderElement.querySelector('.additional-details .order-id').textContent = `Order ID: ${order.id}`;
+  orderElement.querySelector('.additional-details .text-gray-600:nth-child(2)').textContent = `Payment Method: ${order.paymentMethod}`;
+  orderElement.querySelector('.additional-details .text-gray-600:nth-child(3)').textContent = `Total Amount: $${order.totalAmount}`;
+
+  const additionalDetails = orderElement.querySelector('.additional-details');
+  const expandButton = orderElement.querySelector('.expand-btn');
+
+  // Set up toggle for both expand button and "Order Details" button
+  const orderDetailsButton = orderElement.querySelector('.details-btn');
+  [expandButton, orderDetailsButton].forEach(button => {
+    button.addEventListener('click', () => toggleDetails(additionalDetails, expandButton));
+  });
+
+  return orderElement;
+}
+
+// Function to render the filtered orders
+function renderOrders() {
+  const ordersContainer = document.getElementById('ordersList');
+  ordersContainer.innerHTML = ''; // Clear existing orders
+
   filteredOrders.forEach(order => {
-    const statusClass = order.status === "Delivered" ? "bg-green-500" :
-      order.status === "In Transit" ? "bg-yellow-500" :
-        "bg-gray-500";
-
-    const orderDiv = document.createElement('div');
-    orderDiv.className = "bg-gray-50 p-6 rounded-lg shadow";
-
-    orderDiv.innerHTML = `
-      <div class="flex flex-wrap justify-between items-center mb-4">
-        <div>
-          <h3 class="text-lg font-semibold text-gray-900">Order #${order.id}</h3>
-          <p class="text-sm text-gray-500">${order.date}</p>
-        </div>
-        <span class="px-2 py-1 text-sm text-white ${statusClass} rounded">${order.status}</span>
-      </div>
-      <div class="border-t border-gray-200 my-4"></div>
-      <div class="space-y-2">
-        ${order.items.map(item => `
-          <div class="flex justify-between items-center">
-            <span class="text-gray-700">${item.name} (x${item.quantity})</span>
-            <span class="text-gray-900 font-medium">${item.price}</span>
-          </div>
-        `).join('')}
-      </div>
-      <div class="border-t border-gray-200 my-4"></div>
-      <div class="flex justify-between items-center">
-        <span class="text-gray-700 font-semibold">Total</span>
-        <span class="text-gray-900 font-bold">${order.total}</span>
-      </div>
-      <div class="mt-4 flex justify-end">
-        <button class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none">
-          <i class="fas fa-box mr-2"></i> Track Order
-        </button>
-      </div>
-    `;
-    ordersList.appendChild(orderDiv);
+    const orderElement = createOrderElement(order);
+    ordersContainer.appendChild(orderElement);
   });
 }
 
-// Initial render
-renderOrders(orders);
-
-// Search and Filter Event Listeners
-searchInput.addEventListener('input', applyFilters);
-statusFilter.addEventListener('change', applyFilters);
-
-function applyFilters() {
-  const searchTerm = searchInput.value.toLowerCase();
-  const status = statusFilter.value;
-
-  const filtered = orders.filter(order => {
-    const matchesSearch = order.id.toLowerCase().includes(searchTerm) ||
-      order.items.some(item => item.name.toLowerCase().includes(searchTerm));
-    const matchesStatus = status === "all" ? true : order.status.toLowerCase() === status.replace('-', ' ');
-    return matchesSearch && matchesStatus;
-  });
-
-  renderOrders(filtered);
+// Function to filter orders based on the search input
+function filterOrders() {
+  const searchInput = document.getElementById('searchInput').value.toLowerCase();
+  filteredOrders = orders.filter(order =>
+    order.productName.toLowerCase().includes(searchInput) ||
+    order.status.toLowerCase().includes(searchInput) ||
+    order.shippingAddress.toLowerCase().includes(searchInput) ||
+    order.id.toString().includes(searchInput)
+  );
+  renderOrders(); // Re-render the orders after filtering
 }
+
+// Event listeners for search functionality
+function setupEventListeners() {
+  const searchInputElement = document.getElementById('searchInput');
+  if (searchInputElement) {
+    searchInputElement.addEventListener('input', filterOrders);
+  }
+}
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', () => {
+  renderOrders();
+  setupEventListeners(); // Attach event listeners once the DOM is fully loaded
+});
