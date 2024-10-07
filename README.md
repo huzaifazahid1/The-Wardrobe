@@ -23,6 +23,7 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 - **Wearables Collection page:** An static Wearables Collection pag with some JavaScript is implemented
 - **Collection page:** An partially dynamic collection page is implemented
 - **Orders Page:** An static Orders page is implemented
+- **Wishlist Page:** An static Wishlist page is implemented
 - **Submit Email page:** An static Submit Email page is implemented with some JavaScript, for reset password process
 - **Verify OTP page:** An static Verify OTP page is implemented with some JavaScript, for reset password process
 - **Reset Password page:** An static Reset Password page is implemented with some JavaScript, for reset password process
