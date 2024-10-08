@@ -76,6 +76,7 @@ The-Wardrobe
 |   package.json
 |   tailwind.config.js
 |   README.md
+│
 └───src
     │   app.js
     │
@@ -85,11 +86,15 @@ The-Wardrobe
     │       Collection.js
     │       info.js
     │       main.js
+    │       Product.js
     │       shop.js
     │       User.js
-    │       
+    │
     ├───static
     │   ├───Assets
+    │   │   ├───img
+    │   │   │
+    │   │   └───Videos
     │   ├───CSS
     │   │   │   main.css
     │   │   │   output.css
@@ -97,34 +102,34 @@ The-Wardrobe
     │   │   └───Shop
     │   │           Shop.css
     │   │
-    │   └───JS
-    │       │   LandingPage.js
-    │       │
-    │       ├───Auth
-    │       │       Reset-Password.js
-    │       │       Submit-Email.js
-    │       │       SubmitOTP.js
-    │       │
-    │       ├───cart
-    │       │       cart.js
-    │       │       checkout.js
-    │       │
-    │       ├───Shop
-    │       │   │   Shop.js
-    │       │   │
-    │       │   └───Collection
-    │       │       │   Collection.js
-    │       │       │
-    │       │       └───Categories
-    │       │               AccessoriesCollection.js
-    │       │               MensCollection.js
-    │       │               WearablesCollection.js
-    │       │               WomenCollection.js
-    │       │
-    │       └───User
-    │               Orders.js
-    │               Profile.js
-    │               Wishlist.js
+    │   ├───JS
+    │   │   │   LandingPage.js
+    │   │   │
+    │   │   ├───Auth
+    │   │   │       Reset-Password.js
+    │   │   │       Submit-Email.js
+    │   │   │       SubmitOTP.js
+    │   │   │
+    │   │   ├───cart
+    │   │   │       cart.js
+    │   │   │       checkout.js
+    │   │   │
+    │   │   ├───Shop
+    │   │   │   │   Shop.js
+    │   │   │   │
+    │   │   │   └───Collection
+    │   │   │       │   Collection.js
+    │   │   │       │
+    │   │   │       └───Product
+    │   │   │               Product.js
+    │   │   │
+    │   │   └───User
+    │   │           Orders.js
+    │   │           Profile.js
+    │   │           Wishlist.js
+    │   │
+    │   └───Utilities
+    │           CategoriesCollection.js
     │
     └───templates
         │   LandingPage.html
@@ -150,11 +155,14 @@ The-Wardrobe
         │   └───Collections
         │       │   Collection.html
         │       │
-        │       └───Categories
-        │               AccessoriesCollection.html
-        │               MenCollection.html
-        │               WearablesCollection.html
-        │               WomenCollection.html
+        │       ├───Categories
+        │       │       AccessoriesCollection.html
+        │       │       MenCollection.html
+        │       │       WearablesCollection.html
+        │       │       WomenCollection.html
+        │       │
+        │       └───Product
+        │               Product.html
         │
         └───User
                 Orders.html
