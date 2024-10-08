@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Wardrobe</title>
+    <link rel="stylesheet" href="/static/CSS/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Removed overflow from #carousel */
+        #carousel img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-50">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur-md">
+        <div class="container mx-auto flex h-14 items-center justify-between px-4">
+            <a class="flex items-center space-x-2" href="#">
+                <span class="font-bold text-xl">The Wardrobe</span>
+            </a>
+            <nav class="flex items-center space-x-6 text-sm font-medium">
+                <a class="transition-colors hover:text-gray-800 text-gray-600" href="/Product/Product1">Products</a>
+                <a class="transition-colors hover:text-gray-800 text-gray-600" href="/shop/Collection/Categories/">Categories</a>
+                <a class="transition-colors hover:text-gray-800 text-gray-600" href="/info/About">About</a>
+                <a class="transition-colors hover:text-gray-800 text-gray-600" href="/info/Contact">Contact</a>
+            </nav>
+            <div class="w-[68px]"></div> <!-- Spacer to balance the layout -->
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="grid md:grid-cols-2 gap-8 md:items-center">
+            <!-- Product Images and Buttons -->
+            <div class="space-y-6">
+                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                    <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                        <img src="/static/Assets/img/Poduct/Gemini_Generated_Image_fg8k3dfg8k3dfg8k.jpeg" alt="Product image 1" class="w-full h-auto flex-shrink-0">
+                        <img src="/static/Assets/img/Poduct/Gemini_Generated_Image_gfjnoxgfjnoxgfjn.jpeg" alt="Product image 2" class="w-full h-auto flex-shrink-0">
+                        <img src="/static/Assets/img/Poduct/Gemini_Generated_Image_nshecgnshecgnshe.jpeg" alt="Product image 3" class="w-full h-auto flex-shrink-0">
+                        <img src="/static/Assets/img/Poduct/Gemini_Generated_Image_rm7y27rm7y27rm7y.jpeg" alt="Product image 4" class="w-full h-auto flex-shrink-0">
+                    </div>
+                    <button id="prevBtn"
+                        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md">
+                        <i class="fas fa-chevron-left text-gray-800"></i>
+                    </button>
+                    <button id="nextBtn"
+                        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md">
+                        <i class="fas fa-chevron-right text-gray-800"></i>
+                    </button>
+                </div>
+                <div class="flex space-x-4 md:mt-6">
+                    <button
+                        class="flex-1 bg-blue-500 text-white px-4 py-2 rounded-md font-medium flex items-center justify-center hover:bg-blue-600 transition">
+                        <i class="fas fa-credit-card mr-2"></i> Buy Now
+                    </button>
+                    <button
+                        class="flex-1 border border-gray-300 text-gray-700 px-4 py-2 rounded-md font-medium flex items-center justify-center hover:bg-gray-100 transition">
+                        <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="flex flex-col justify-center">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Premium Wireless Headphones</h1>
+                <div class="flex items-center mb-4">
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="far fa-star text-yellow-400"></i>
+                    </div>
+                    <span class="ml-2 text-sm text-gray-600">(128 reviews)</span>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    Experience crystal-clear audio with our premium wireless headphones. Featuring advanced
+                    noise-cancellation
+                    technology and long-lasting battery life, these headphones are perfect for music lovers and
+                    professionals
+                    alike.
+                </p>
+                <p class="text-2xl font-bold text-gray-900 mb-6">$299.99</p>
+            </div>
+        </div>
+
+        <!-- Product Details and Reviews -->
+        <div class="mt-12">
+            <div class="border-b">
+                <nav class="flex space-x-4" role="tablist">
+                    <button id="detailsTab" class="py-2 border-b-2 border-blue-500 text-blue-500 focus:outline-none"
+                        role="tab" aria-selected="true">Product Details</button>
+                    <button id="reviewsTab" class="py-2 text-gray-600 hover:text-gray-800 focus:outline-none" role="tab"
+                        aria-selected="false">Customer Reviews</button>
+                </nav>
+            </div>
+            <div id="detailsContent" class="mt-6">
+                <h2 class="text-xl font-semibold mb-4">Product Specifications</h2>
+                <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                    <li>Bluetooth 5.0 connectivity</li>
+                    <li>Active Noise Cancellation (ANC)</li>
+                    <li>40mm dynamic drivers</li>
+                    <li>Up to 30 hours of battery life</li>
+                    <li>Quick charge: 5 minutes for 1 hour of playback</li>
+                    <li>Touch controls for easy operation</li>
+                    <li>Voice assistant compatible (Siri, Google Assistant)</li>
+                    <li>Foldable design for easy storage</li>
+                </ul>
+            </div>
+            <div id="reviewsContent" class="mt-6 hidden">
+                <h2 class="text-xl font-semibold mb-4">Customer Reviews</h2>
+                <div class="space-y-6">
+                    <div class="border-b pb-4">
+                        <div class="flex items-center mb-2">
+                            <div class="flex mr-2">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="far fa-star text-yellow-400 mr-1"></i>
+                            </div>
+                            <span class="font-semibold">Alex</span>
+                        </div>
+                        <p class="text-gray-600">Excellent sound quality and comfortable for long listening sessions.
+                        </p>
+                    </div>
+                    <div class="border-b pb-4">
+                        <div class="flex items-center mb-2">
+                            <div class="flex mr-2">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="far fa-star text-yellow-400 mr-1"></i>
+                            </div>
+                            <span class="font-semibold">Sam</span>
+                        </div>
+                        <p class="text-gray-600">Great headphones, but the app could use some improvements.</p>
+                    </div>
+                    <div class="border-b pb-4">
+                        <div class="flex items-center mb-2">
+                            <div class="flex mr-2">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="far fa-star text-yellow-400 mr-1"></i>
+                            </div>
+                            <span class="font-semibold">Jordan</span>
+                        </div>
+                        <p class="text-gray-600">The noise cancellation is top-notch. Perfect for my daily commute!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended Products Section -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold mb-6">Recommended Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="/static/Assets/img/products/f1.jpg" alt="Wireless Earbuds" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Wireless Earbuds</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex mr-2">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="far fa-star text-yellow-400 mr-1"></i>
+                            </div>
+                            <span class="text-sm text-gray-600">4.5</span>
+                        </div>
+                        <p class="text-gray-700 font-bold">$129.99</p>
+                        <button
+                            class="w-full mt-4 border border-gray-300 text-gray-700 px-4 py-2 rounded-md font-medium flex items-center justify-center hover:bg-gray-100 transition">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <!-- Repeat similar cards for other recommended products -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="/static/Assets/img/products/f2.jpg" alt="Noise-Cancelling Headphones"
+                        class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Noise-Cancelling Headphones</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex mr-2">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="far fa-star text-yellow-400 mr-1"></i>
+                            </div>
+                            <span class="text-sm text-gray-600">4.8</span>
+                        </div>
+                        <p class="text-gray-700 font-bold">$249.99</p>
+                        <button
+                            class="w-full mt-4 border border-gray-300 text-gray-700 px-4 py-2 rounded-md font-medium flex items-center justify-center hover:bg-gray-100 transition">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="/static/Assets/img/products/f3.jpg" alt="Bluetooth Speaker" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Bluetooth Speaker</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex mr-2">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="far fa-star text-yellow-400 mr-1"></i>
+                            </div>
+                            <span class="text-sm text-gray-600">4.2</span>
+                        </div>
+                        <p class="text-gray-700 font-bold">$79.99</p>
+                        <button
+                            class="w-full mt-4 border border-gray-300 text-gray-700 px-4 py-2 rounded-md font-medium flex items-center justify-center hover:bg-gray-100 transition">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="/static/Assets/img/products/f4.jpg" alt="Portable DAC/Amp" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Portable DAC/Amp</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex mr-2">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="far fa-star text-yellow-400 mr-1"></i>
+                            </div>
+                            <span class="text-sm text-gray-600">4.7</span>
+                        </div>
+                        <p class="text-gray-700 font-bold">$199.99</p>
+                        <button
+                            class="w-full mt-4 border border-gray-300 text-gray-700 px-4 py-2 rounded-md font-medium flex items-center justify-center hover:bg-gray-100 transition">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About Us</h3>
+                    <p class="text-gray-400">We are dedicated to providing high-quality audio products for music
+                        enthusiasts and professionals.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shipping & Returns</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <p class="text-gray-400">1234 Audio Lane, Sound City, MU 56789</p>
+                    <p class="text-gray-400">Email: support@acmeaudio.com</p>
+                    <p class="text-gray-400">Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-800">
+            <p class="text-center text-gray-500">© 2024 The Wardrobe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="/static/JS/Shop/Collection/Product/Product.js"></script>
+</body>
+</html>

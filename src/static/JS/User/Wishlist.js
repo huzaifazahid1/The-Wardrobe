@@ -56,7 +56,7 @@ function renderWishlistItems() {
                 <h3 class="font-semibold text-lg text-gray-800 mb-2">${item.name}</h3>
                 <p class="text-sm text-gray-500 mb-2">${item.category}</p>
                 <div class="flex items-center mb-2">
-                    ${Array(5).fill().map((_, i) => `<i class="fas fa-star h-4 w-4 ${i < Math.floor(item.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}"></i>`).join('')}
+                    ${Array(5).fill().map((_, i) => `<i class="fas fa-star h-4 w-4 ${i < Math.floor(item.rating) ? 'text-yellow-400 fill-current' : 'text-gray-500'}"></i>`).join('')}
                     <span class="ml-2 text-sm text-gray-600">${item.rating.toFixed(1)}</span>
                 </div>
                 <p class="font-bold text-blue-600 text-xl mb-4">$${item.price.toFixed(2)}</p>
