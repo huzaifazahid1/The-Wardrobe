@@ -17,6 +17,7 @@ const cartRoute = require("./routes/cart")
 const CollectionRoutes = require("./routes/Collection")
 const UserRoutes = require("./routes/User")
 const productRoutes = require("./routes/Product")
+const ordersRoutes = require("./routes/Orders")
 
 app.use(express.json());
 app.use("/static", express.static(path.join(__dirname, "Static")));
@@ -30,6 +31,7 @@ app.use("/cart", cartRoute)
 app.use("/shop/Collection/Categories", CollectionRoutes)
 app.use("/User/Profile/", UserRoutes)
 app.use("/Product", productRoutes)
+app.use("/User/Orders/", ordersRoutes)
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

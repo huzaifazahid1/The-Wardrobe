@@ -25,6 +25,7 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 - **Collection page:** An partially dynamic collection page is implemented
 - **Orders Page:** An Dynamic Orders page is implemented
 - **Wishlist Page:** An Dynamic Wishlist page is implemented
+- **Track Orders page:** An Dynamic Track Orders page is implemented
 - **Submit Email page:** An static Submit Email page is implemented with some JavaScript, for reset password process
 - **Verify OTP page:** An static Verify OTP page is implemented with some JavaScript, for reset password process
 - **Reset Password page:** An static Reset Password page is implemented with some JavaScript, for reset password process
@@ -86,6 +87,7 @@ The-Wardrobe
     │       Collection.js
     │       info.js
     │       main.js
+    │       Orders.js
     │       Product.js
     │       shop.js
     │       User.js
@@ -114,6 +116,10 @@ The-Wardrobe
     │   │   │       cart.js
     │   │   │       checkout.js
     │   │   │
+    │   │   ├───Orders
+    │   │   │       Orders.js
+    │   │   │       TrackOrders.js
+    │   │   │
     │   │   ├───Shop
     │   │   │   │   Shop.js
     │   │   │   │
@@ -124,7 +130,6 @@ The-Wardrobe
     │   │   │               Product.js
     │   │   │
     │   │   └───User
-    │   │           Orders.js
     │   │           Profile.js
     │   │           Wishlist.js
     │   │
@@ -149,6 +154,10 @@ The-Wardrobe
         │       About.html
         │       Contact.html
         │
+        ├───Orders
+        │       Orders.html
+        │       TrackOrders.html
+        │
         ├───Shop
         │   │   Shop.html
         │   │
@@ -165,7 +174,6 @@ The-Wardrobe
         │               Product.html
         │
         └───User
-                Orders.html
                 Profile.html
                 Wishlist.html
 ```
@@ -178,4 +186,4 @@ We welcome contributions! If you'd like to contribute to "The Wardrobe," please 
 
 **The Wardrobe** © 2024 by **GitCoder052023** is licensed under **CC BY-NC 4.0.**
   
-To view a copy of this license, visit [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/).
+To view a copy of this license, visit [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)
