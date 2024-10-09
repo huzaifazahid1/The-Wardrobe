@@ -15,6 +15,7 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 - **Signup page:** A basic signup page with a form is implemented 
 - **Profile Page:** An static Profile page is implemented
 - **Shopping page:** A general shopping page is implemented
+- **Product page:** An static Product page is implemented
 - **Cart page:** An static cart page is implemented
 - **Checkout page:** An static Checkout page is implemented
 - **Mens collection page:** An static Mens collection page with some JavaScript is implemented 
@@ -22,8 +23,9 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 - **Accessories collection page:** An static Accessories collection page with some JavaScript is implemented
 - **Wearables Collection page:** An static Wearables Collection pag with some JavaScript is implemented
 - **Collection page:** An partially dynamic collection page is implemented
-- **Orders Page:** An static Orders page is implemented
-- **Wishlist Page:** An static Wishlist page is implemented
+- **Orders Page:** An Dynamic Orders page is implemented
+- **Wishlist Page:** An Dynamic Wishlist page is implemented
+- **Track Orders page:** An Dynamic Track Orders page is implemented
 - **Submit Email page:** An static Submit Email page is implemented with some JavaScript, for reset password process
 - **Verify OTP page:** An static Verify OTP page is implemented with some JavaScript, for reset password process
 - **Reset Password page:** An static Reset Password page is implemented with some JavaScript, for reset password process
@@ -75,6 +77,7 @@ The-Wardrobe
 |   package.json
 |   tailwind.config.js
 |   README.md
+│
 └───src
     │   app.js
     │
@@ -84,11 +87,16 @@ The-Wardrobe
     │       Collection.js
     │       info.js
     │       main.js
+    │       Orders.js
+    │       Product.js
     │       shop.js
     │       User.js
-    │       
+    │
     ├───static
     │   ├───Assets
+    │   │   ├───img
+    │   │   │
+    │   │   └───Videos
     │   ├───CSS
     │   │   │   main.css
     │   │   │   output.css
@@ -96,34 +104,37 @@ The-Wardrobe
     │   │   └───Shop
     │   │           Shop.css
     │   │
-    │   └───JS
-    │       │   LandingPage.js
-    │       │
-    │       ├───Auth
-    │       │       Reset-Password.js
-    │       │       Submit-Email.js
-    │       │       SubmitOTP.js
-    │       │
-    │       ├───cart
-    │       │       cart.js
-    │       │       checkout.js
-    │       │
-    │       ├───Shop
-    │       │   │   Shop.js
-    │       │   │
-    │       │   └───Collection
-    │       │       │   Collection.js
-    │       │       │
-    │       │       └───Categories
-    │       │               AccessoriesCollection.js
-    │       │               MensCollection.js
-    │       │               WearablesCollection.js
-    │       │               WomenCollection.js
-    │       │
-    │       └───User
-    │               Orders.js
-    │               Profile.js
-    │               Wishlist.js
+    │   ├───JS
+    │   │   │   LandingPage.js
+    │   │   │
+    │   │   ├───Auth
+    │   │   │       Reset-Password.js
+    │   │   │       Submit-Email.js
+    │   │   │       SubmitOTP.js
+    │   │   │
+    │   │   ├───cart
+    │   │   │       cart.js
+    │   │   │       checkout.js
+    │   │   │
+    │   │   ├───Orders
+    │   │   │       Orders.js
+    │   │   │       TrackOrders.js
+    │   │   │
+    │   │   ├───Shop
+    │   │   │   │   Shop.js
+    │   │   │   │
+    │   │   │   └───Collection
+    │   │   │       │   Collection.js
+    │   │   │       │
+    │   │   │       └───Product
+    │   │   │               Product.js
+    │   │   │
+    │   │   └───User
+    │   │           Profile.js
+    │   │           Wishlist.js
+    │   │
+    │   └───Utilities
+    │           CategoriesCollection.js
     │
     └───templates
         │   LandingPage.html
@@ -143,20 +154,26 @@ The-Wardrobe
         │       About.html
         │       Contact.html
         │
+        ├───Orders
+        │       Orders.html
+        │       TrackOrders.html
+        │
         ├───Shop
         │   │   Shop.html
         │   │
         │   └───Collections
         │       │   Collection.html
         │       │
-        │       └───Categories
-        │               AccessoriesCollection.html
-        │               MenCollection.html
-        │               WearablesCollection.html
-        │               WomenCollection.html
+        │       ├───Categories
+        │       │       AccessoriesCollection.html
+        │       │       MenCollection.html
+        │       │       WearablesCollection.html
+        │       │       WomenCollection.html
+        │       │
+        │       └───Product
+        │               Product.html
         │
         └───User
-                Orders.html
                 Profile.html
                 Wishlist.html
 ```
@@ -169,4 +186,4 @@ We welcome contributions! If you'd like to contribute to "The Wardrobe," please 
 
 **The Wardrobe** © 2024 by **GitCoder052023** is licensed under **CC BY-NC 4.0.**
   
-To view a copy of this license, visit [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/).
+To view a copy of this license, visit [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)
