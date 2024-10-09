@@ -17,16 +17,16 @@
     <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div class="container mx-auto px-4">
         <nav class="flex items-center justify-between py-4">
-          <h1 class="text-2xl font-bold text-blue-600">The Wardrobe</h1>
+          <a href="/"> <h1 class="text-2xl font-bold text-blue-600">The Wardrobe</h1></a>
           <ul class="hidden md:flex space-x-6 flex-1 justify-center">
             <li>
-              <a href="#" class="text-gray-600 hover:text-blue-600">Women</a>
+              <a href="/shop/Collection/Categories/Womens" class="text-gray-600 hover:text-blue-600">Women</a>
             </li>
             <li>
-              <a href="#" class="text-gray-600 hover:text-blue-600">Men</a>
+              <a href="/shop/Collection/Categories/Mens" class="text-gray-600 hover:text-blue-600">Men</a>
             </li>
             <li>
-              <a href="#" class="text-gray-600 hover:text-blue-600"
+              <a href="/shop/Collection/Categories/Accessories" class="text-gray-600 hover:text-blue-600"
                 >Accessories</a
               >
             </li>
@@ -39,7 +39,7 @@
               <i class="fas fa-search h-5 w-5"></i>
             </button>
             <button class="bg-transparent border-none">
-              <i class="fas fa-shopping-cart h-5 w-5"></i>
+              <a href="/cart"> <i class="fas fa-shopping-cart h-5 w-5"></i> </a>
             </button>
             <button class="bg-transparent border-none">
               <i class="fas fa-user h-5 w-5"></i>
@@ -53,22 +53,22 @@
     <main class="flex-grow">
       <section class="container mx-auto px-4 py-12">
         <div
-          class="flex flex-col md:flex-row justify-between items-start gap-4 mb-8"
+          class="md:flex flex-col md:flex-row justify-between items-start gap-4 mb-8"
         >
           <h2
-            class="text-3xl font-bold mb-4 md:mb-0 letter-spacing-wide"
+            class="text-center text-3xl font-bold mb-4 md:mb-0 letter-spacing-wide"
             style="color: rgb(42 70 131)"
           >
             Featured Collection
           </h2>
-          <div class="flex flex-wrap items-center gap-4">
+          <div class="flex flex-col sm:flex-row flex-wrap sm:items-center gap-4">
             <button
-              class="border border-gray-300 text-gray-700 px-4 py-2 flex items-center hover:border-blue-600 focus:border-blue-600 transition-colors"
+              class="border cursor-default	 border-gray-300 text-gray-700 px-4 py-2 flex items-center "
             >
               <i class="fas fa-filter mr-2"></i> Filter
             </button>
             <select
-              class="appearance-none border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-600 hover:border-blue-600 focus:border-blue-600 transition-colors shadow-sm focus:outline-none select-icon"
+              class="appearance-none cursor-pointer	 border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-600 hover:border-blue-600 focus:border-blue-600 transition-colors shadow-sm focus:outline-none select-icon"
             >
               <option value="">Category</option>
               <option value="all">All Categories</option>
@@ -78,7 +78,7 @@
             </select>
 
             <select
-              class="appearance-none border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-600 hover:border-blue-600 focus:border-blue-600 transition-colors shadow-sm focus:outline-none select-icon"
+              class="appearance-none cursor-pointer	border border-gray-300 rounded-lg px-4 py-2 bg-white text-gray-600 hover:border-blue-600 focus:border-blue-600 transition-colors shadow-sm focus:outline-none select-icon"
             >
               <option value="">Sort by</option>
               <option value="popular">Most Popular</option>
@@ -91,7 +91,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <h3
-              class="text-2xl font-bold mb-2 letter-spacing-wide"
+              class="text-center md:text-left text-2xl font-bold mb-2 letter-spacing-wide"
               style="color: rgb(63 105 195); font-size: xx-large"
             >
               Elegant Summer Dress
@@ -121,10 +121,10 @@
       <!-- Tabs Section -->
       <section class="container mx-auto px-4 py-12">
         <div class="mb-8 grid grid-cols-4">
-          <button class="text-lg border-b-2 border-blue-600 pb-2">All</button>
-          <button class="text-lg pb-2">Women</button>
-          <button class="text-lg pb-2">Men</button>
-          <button class="text-lg pb-2">Accessories</button>
+          <button class="text-base sm:text-lg border-b-2 border-blue-600 pb-2">All</button>
+          <button class="text-base sm:text-lg pb-2">Women</button>
+          <button class="text-base sm:text-lg pb-2">Men</button>
+          <button class="text-base sm:text-lg pb-2">Accessories</button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Product items will be dynamically inserted here -->
@@ -287,16 +287,16 @@
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 class="text-lg font-semibold mb-4">About The Wardrobe</h3>
-            <p class="text-sm text-gray-400">
+            <h3 class="text-center text-lg font-semibold mb-4">About The Wardrobe</h3>
+            <p class="text-center text-sm text-gray-400">
               We're passionate about bringing you the latest fashion trends with
               a focus on quality and sustainability.
             </p>
           </div>
 
           <div>
-            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul class="space-y-2 text-sm text-gray-400">
+            <h3 class="text-center text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="text-center space-y-2 text-sm text-gray-400">
               <li>
                 <a href="#" class="hover:text-white transition-colors"
                   >Our Story</a
@@ -321,8 +321,8 @@
           </div>
 
           <div>
-            <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
-            <ul class="space-y-2 text-sm text-gray-400">
+            <h3 class="text-center text-lg font-semibold mb-4">Customer Service</h3>
+            <ul class="text-center space-y-2 text-sm text-gray-400">
               <li>
                 <a href="#" class="hover:text-white transition-colors"
                   >Shipping & Returns</a
@@ -345,7 +345,7 @@
           </div>
 
           <div>
-            <h3 class="text-lg font-semibold mb-4">Stay Connected</h3>
+            <h3 class="text-center text-lg font-semibold mb-4">Stay Connected</h3>
             <form>
               <div
                 class="flex items-center border border-gray-500 rounded-lg overflow-hidden"
