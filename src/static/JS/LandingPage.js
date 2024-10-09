@@ -1,25 +1,19 @@
-const loginButton = document.getElementById("loginBtn")
-const SignupBtn = document.getElementById("SignupBtn")
-const shopButton = document.getElementById("shopBtn")
-const shopButton_Secondery = document.getElementById("ShopBtn-Secendory")
-const ExploreButton = document.getElementById("ExpBtn")
+const buttonActions = {
+    loginBtn: "/Auth/Login",
+    SignupBtn: "/Auth/Register",
+    shopBtn: "/Shop",
+    "ShopBtn-Secendory": "/Shop",
+    ExpBtn: "/shop/Collection/Categories/",
+    Women: "/shop/Collection/Categories/Womens",
+    Men: "/Shop/Collection/Categories/Mens",
+    Accessories: "/Shop/Collection/Categories/Accessories",
+};
 
-loginButton.addEventListener("click", ()=>{
-    window.location.href = "/Auth/Login"
-})
-
-SignupBtn.addEventListener("click", ()=>{
-    window.location.href = "/Auth/Register"
-})
-
-shopButton.addEventListener("click", ()=>{
-    window.location.href = "/Shop"
-})
-
-shopButton_Secondery.addEventListener("click", ()=>{
-    window.location.href = "/Shop"
-})
-
-ExploreButton.addEventListener("click", ()=>{
-    window.location.href = "/shop/Collection/Categories/"
-})
+Object.keys(buttonActions).forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.addEventListener("click", () => {
+            window.location.href = buttonActions[id];
+        });
+    }
+});
