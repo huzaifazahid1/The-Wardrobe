@@ -8,6 +8,11 @@ const cartItemsContainer = document.getElementById('cart-items');
 const orderSummaryContainer = document.getElementById('order-summary');
 const checkoutButton = document.getElementById('checkout-btn');
 
+function saveCartToLocalStorage() {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+
 function updateCart() {
     cartItemsContainer.innerHTML = '';
     cartItems.forEach(item => {
@@ -91,6 +96,8 @@ function updateOrderSummary() {
             </div>
         </div>
     `;
+
+    saveCartToLocalStorage();
 }
 
 checkoutButton.addEventListener('click', () => {
