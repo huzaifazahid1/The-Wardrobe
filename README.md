@@ -18,6 +18,7 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 - **Product page:** An static Product page is implemented
 - **Cart page:** An static cart page is implemented
 - **Checkout page:** An static Checkout page is implemented
+- **Payment Page:** An static Payment page is implemented
 - **Mens collection page:** An static Mens collection page with some JavaScript is implemented 
 - **Womens collection page:** An static Womens collection page  with some JavaScript is implemented
 - **Accessories collection page:** An static Accessories collection page with some JavaScript is implemented
@@ -88,6 +89,7 @@ The-Wardrobe
     │       info.js
     │       main.js
     │       Orders.js
+    │       Payments.js
     │       Product.js
     │       shop.js
     │       User.js
@@ -120,6 +122,9 @@ The-Wardrobe
     │   │   │       Orders.js
     │   │   │       TrackOrders.js
     │   │   │
+    │   │   ├───Payment
+    │   │   │       Payment.js
+    │   │   │
     │   │   ├───Shop
     │   │   │   │   Shop.js
     │   │   │   │
@@ -132,6 +137,9 @@ The-Wardrobe
     │   │   └───User
     │   │           Profile.js
     │   │           Wishlist.js
+    │   │
+    │   ├───JSON
+    │   │       products.json
     │   │
     │   └───Utilities
     │           CategoriesCollection.js
@@ -157,6 +165,9 @@ The-Wardrobe
         ├───Orders
         │       Orders.html
         │       TrackOrders.html
+        │
+        ├───Payments
+        │       Payment.html
         │
         ├───Shop
         │   │   Shop.html
