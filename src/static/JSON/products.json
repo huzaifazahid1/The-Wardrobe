@@ -1,0 +1,77 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Elegant Summer Dress",
+        "image": "/static/Assets/img/products/n1.jpg",
+        "description": "Perfect for warm summer evenings.",
+        "categories": ["all", "women"],
+        "price": "$59.99",
+        "rating": 4.5
+      },
+      {
+        "id": 2,
+        "name": "Classic White Tee",
+        "image": "/static/Assets/img/products/n2.jpg",
+        "description": "Timeless fashion essential.",
+        "categories": ["all", "women"],
+        "price": "$29.99",
+        "rating": 4.7
+      },
+      {
+        "id": 3,
+        "name": "Leather Boots",
+        "image": "/static/Assets/img/products/n3.jpg",
+        "description": "Durable and stylish boots.",
+        "categories": ["all", "men", "women"],
+        "price": "$89.99",
+        "rating": 4.8
+      },
+      {
+        "id": 4,
+        "name": "Floral Skirt",
+        "image": "/static/Assets/img/products/n4.jpg",
+        "description": "Flirty and fun for summer.",
+        "categories": ["all", "women"],
+        "price": "$39.99",
+        "rating": 4.3
+      },
+      {
+        "id": 5,
+        "name": "Slim Fit Jeans",
+        "image": "/static/Assets/img/products/n5.jpg",
+        "description": "Comfortable yet stylish.",
+        "categories": ["all", "men"],
+        "price": "$49.99",
+        "rating": 4.6
+      },
+      {
+        "id": 6,
+        "name": "Leather Wallet",
+        "image": "/static/Assets/img/products/n6.jpg",
+        "description": "Compact and durable wallet.",
+        "categories": ["all", "men", "accessories"],
+        "price": "$19.99",
+        "rating": 4.4
+      },
+      {
+        "id": 7,
+        "name": "Sunglasses",
+        "image": "/static/Assets/img/products/n7.jpg",
+        "description": "Stylish sunglasses for sunny days.",
+        "categories": ["all", "accessories"],
+        "price": "$34.99",
+        "rating": 4.2
+      },
+      {
+        "id": 8,
+        "name": "Woolen Scarf",
+        "image": "/static/Assets/img/products/n8.jpg",
+        "description": "Warm and comfortable for winter.",
+        "categories": ["all", "accessories"],
+        "price": "$24.99",
+        "rating": 4.5
+      }
+    ]
+  }
+  
