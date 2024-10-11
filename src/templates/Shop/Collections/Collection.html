@@ -10,6 +10,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" href="\static\CSS\Shop\Collection\Collection.css" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
   </head>
 
   <body class="bg-white text-gray-900 flex flex-col min-h-screen">
@@ -56,14 +58,14 @@
           class="md:flex flex-col md:flex-row justify-between items-start gap-4 mb-8"
         >
           <h2
-            class="text-center text-3xl font-bold mb-4 md:mb-0 letter-spacing-wide"
+            class="text-center text-xl sm:text-3xl font-bold mb-4 md:mb-0 letter-spacing-wide"
             style="color: rgb(42 70 131)"
           >
             Featured Collection
           </h2>
           <div class="flex flex-col sm:flex-row flex-wrap sm:items-center gap-4">
             <button
-              class="border cursor-default	 border-gray-300 text-gray-700 px-4 py-2 flex items-center "
+              class="border hover:border-blue-600 focus:border-blue-600 transition-colors	 border-gray-300 text-gray-700 px-4 py-2 flex items-center "
             >
               <i class="fas fa-filter mr-2"></i> Filter
             </button>
@@ -96,19 +98,22 @@
             >
               Elegant Summer Dress
             </h3>
-            <p class="mb-4">
+            <p class="mb-4 text-center md:text-left">
               Perfect for those warm summer evenings. Made from 100% organic
               cotton.
             </p>
-            <button class="bg-blue-600 text-white px-4 py-2 hover:bg-blue-700">
+            <div class="flex justify-center items-center md:block">
+            <button class="bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 ">
               View Details
             </button>
+            </div>
+
           </div>
           <div class="relative">
             <img
               src="/static/Assets/img/products/f6.jpg"
               alt="Elegant Summer Dress"
-              class="rounded-lg shadow-lg"
+              class="rounded-lg shadow-lg "
             />
             <span
               class="absolute top-4 right-4 bg-blue-600 text-white px-2 py-1 rounded"
@@ -126,7 +131,8 @@
           <button class="text-base sm:text-lg pb-2">Men</button>
           <button class="text-base sm:text-lg pb-2">Accessories</button>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- use a carousel/slider -->
           <!-- Product items will be dynamically inserted here -->
         </div>
       </section>
@@ -135,152 +141,128 @@
       <section class="bg-gray-100 py-12">
         <div class="container mx-auto px-4">
           <h2 class="text-3xl font-bold mb-8 text-center">Top Products</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="border border-gray-300 rounded-lg overflow-hidden">
-              <div class="relative">
-                <img
-                  src="/static/Assets/img/products/f5.jpg"
-                  alt="Classic White Tee"
-                  class="w-full h-64 object-cover"
-                />
-                <span
-                  class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
-                  >New</span
-                >
-                <button
-                  class="absolute bottom-2 right-2 bg-gray-300 text-white p-2"
-                >
-                  <i class="fas fa-eye"></i>
-                </button>
-              </div>
-              <div class="p-4">
-                <h4 class="text-lg mb-2">Classic White Tee</h4>
-                <div class="flex justify-between items-center">
-                  <span>$29.99</span>
-                  <span class="flex items-center">
-                    <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
-                  </span>
-                </div>
-              </div>
-              <div class="p-4 pt-0">
-                <button
-                  class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-            <div class="border border-gray-300 rounded-lg overflow-hidden">
-              <div class="relative">
-                <img
-                  src="/static/Assets/img/products/f5.jpg"
-                  alt="Classic White Tee"
-                  class="w-full h-64 object-cover"
-                />
-                <span
-                  class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
-                  >New</span
-                >
-                <button
-                  class="absolute bottom-2 right-2 bg-gray-300 text-white p-2"
-                >
-                  <i class="fas fa-eye"></i>
-                </button>
-              </div>
-              <div class="p-4">
-                <h4 class="text-lg mb-2">Classic White Tee</h4>
-                <div class="flex justify-between items-center">
-                  <span>$29.99</span>
-                  <span class="flex items-center">
-                    <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
-                  </span>
-                </div>
-              </div>
-              <div class="p-4 pt-0">
-                <button
-                  class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-            <div class="border border-gray-300 rounded-lg overflow-hidden">
-              <div class="relative">
-                <img
-                  src="/static/Assets/img/products/f5.jpg"
-                  alt="Classic White Tee"
-                  class="w-full h-64 object-cover"
-                />
-                <span
-                  class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
-                  >New</span
-                >
-                <button
-                  class="absolute bottom-2 right-2 bg-gray-300 text-white p-2"
-                >
-                  <i class="fas fa-eye"></i>
-                </button>
-              </div>
-              <div class="p-4">
-                <h4 class="text-lg mb-2">Classic White Tee</h4>
-                <div class="flex justify-between items-center">
-                  <span>$29.99</span>
-                  <span class="flex items-center">
-                    <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
-                  </span>
-                </div>
-              </div>
-              <div class="p-4 pt-0">
-                <button
-                  class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-            <div class="border border-gray-300 rounded-lg overflow-hidden">
-              <div class="relative">
-                <img
-                  src="/static/Assets/img/products/f5.jpg"
-                  alt="Classic White Tee"
-                  class="w-full h-64 object-cover"
-                />
-                <span
-                  class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
-                  >New</span
-                >
-                <button
-                  class="absolute bottom-2 right-2 bg-gray-300 text-white p-2"
-                >
-                  <i class="fas fa-eye"></i>
-                </button>
-              </div>
-              <div class="p-4">
-                <h4 class="text-lg mb-2">Classic White Tee</h4>
-                <div class="flex justify-between items-center">
-                  <span>$29.99</span>
-                  <span class="flex items-center">
-                    <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
-                  </span>
-                </div>
-              </div>
-              <div class="p-4 pt-0">
-                <button
-                  class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-            <!-- Repeat for other products -->
+          <!-- use a carousel/slider -->
+  <!-- Product Rows -->
+  <div class="flex flex-col gap-0 sm:grid grid-cols-1 md:grid-cols-2 lg:grid-rows-1 sm:gap-8 lg:gap-0 ">
+    <div class="flex justify-between mb-8 border border-gray-300 rounded-lg  overflow-hidden ">
+      <div class="border border-gray-300 rounded-lg overflow-hidden w-1/2 mr-2">
+        <div class="relative">
+          <img
+            src="/static/Assets/img/products/f5.jpg"
+            alt="Classic White Tee"
+            class="w-full h-64 object-cover"
+          />
+          <span class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded">New</span>
+          <button class="absolute bottom-2 right-2 bg-gray-300 text-white p-2">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <div class="p-4">
+          <h4 class="text-lg mb-2">Classic White Tee</h4>
+          <div class="flex justify-between items-center">
+            <span>$29.99</span>
+            <span class="flex items-center">
+              <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
+            </span>
           </div>
         </div>
-      </section>
-    </main>
+        <div class="p-4 pt-0">
+          <button class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="border border-gray-300 rounded-lg overflow-hidden w-1/2 ml-2">
+        <div class="relative">
+          <img
+            src="/static/Assets/img/products/f5.jpg"
+            alt="Classic White Tee"
+            class="w-full h-64 object-cover"
+          />
+          <span class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded">New</span>
+          <button class="absolute bottom-2 right-2 bg-gray-300 text-white p-2">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <div class="p-4">
+          <h4 class="text-lg mb-2">Classic White Tee</h4>
+          <div class="flex justify-between items-center">
+            <span>$29.99</span>
+            <span class="flex items-center">
+              <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
+            </span>
+          </div>
+        </div>
+        <div class="p-4 pt-0">
+          <button class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-between mb-8">
+      <div class="border border-gray-300 rounded-lg overflow-hidden w-1/2 mr-2">
+        <div class="relative">
+          <img
+            src="/static/Assets/img/products/f5.jpg"
+            alt="Classic White Tee"
+            class="w-full h-64 object-cover"
+          />
+          <span class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded">New</span>
+          <button class="absolute bottom-2 right-2 bg-gray-300 text-white p-2">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <div class="p-4">
+          <h4 class="text-lg mb-2">Classic White Tee</h4>
+          <div class="flex justify-between items-center">
+            <span>$29.99</span>
+            <span class="flex items-center">
+              <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
+            </span>
+          </div>
+        </div>
+        <div class="p-4 pt-0">
+          <button class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="border border-gray-300 rounded-lg overflow-hidden w-1/2 ml-2">
+        <div class="relative">
+          <img
+            src="/static/Assets/img/products/f5.jpg"
+            alt="Classic White Tee"
+            class="w-full h-64 object-cover"
+          />
+          <span class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded">New</span>
+          <button class="absolute bottom-2 right-2 bg-gray-300 text-white p-2">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <div class="p-4">
+          <h4 class="text-lg mb-2">Classic White Tee</h4>
+          <div class="flex justify-between items-center">
+            <span>$29.99</span>
+            <span class="flex items-center">
+              <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
+            </span>
+          </div>
+        </div>
+        <div class="p-4 pt-0">
+          <button class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>    </main>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
@@ -372,4 +354,6 @@
     </footer>
   </body>
   <script src="/static/JS/Shop/Collection/Collection.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
 </html>
