@@ -1,4 +1,4 @@
-fetch('/static/JSON/products.json')
+fetch('/static/JSON/Collection_Products.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`Failed to load products.json: ${response.statusText}`);

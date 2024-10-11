@@ -1,36 +1,14 @@
-// Initial wishlist data
-const initialWishlist = [
-    {
-        id: 1,
-        name: "Vintage Leather Backpack",
-        price: 129.99,
-        image: "https://placehold.co/600x400",
-        category: "Accessories",
-        rating: 4.5,
-        inStock: true
-    },
-    {
-        id: 2,
-        name: "Cozy Knit Sweater",
-        price: 79.99,
-        image: "https://placehold.co/600x400",
-        category: "Clothing",
-        rating: 4.2,
-        inStock: false
-    },
-    {
-        id: 3,
-        name: "Smart Fitness Watch",
-        price: 199.99,
-        image: "https://placehold.co/600x400",
-        category: "Electronics",
-        rating: 4.8,
-        inStock: true
-    }
-];
-
-let wishlist = [...initialWishlist];
+let wishlist = [];
 let searchTerm = "";
+
+// Fetch wishlist data from JSON file
+fetch('/static/JSON/Wishlist_Products.json')
+  .then(response => response.json())
+  .then(data => {
+    wishlist = data.wishlistItems;
+    renderWishlistItems();
+  })
+  .catch(error => console.error('Error loading wishlist data:', error));
 
 function renderWishlistItems() {
     const wishlistItemsDiv = document.getElementById('wishlist-items');
@@ -91,6 +69,4 @@ document.addEventListener('DOMContentLoaded', function () {
         searchTerm = e.target.value.trim().toLowerCase();
         renderWishlistItems();
     });
-
-    renderWishlistItems();
 });
