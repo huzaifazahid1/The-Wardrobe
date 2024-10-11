@@ -1,103 +1,51 @@
-// Product Data
-const products = [
-  {
-    id: 1,
-    name: "Elegant Summer Dress",
-    image: "/static/Assets/img/products/n1.jpg",
-    description: "Perfect for warm summer evenings.",
-    categories: ["all", "women"],
-    price: "$59.99",
-    rating: 4.5,
-  },
-  {
-    id: 2,
-    name: "Classic White Tee",
-    image: "/static/Assets/img/products/n2.jpg",
-    description: "Timeless fashion essential.",
-    categories: ["all", "women"],
-    price: "$29.99",
-    rating: 4.7,
-  },
-  {
-    id: 3,
-    name: "Leather Boots",
-    image: "/static/Assets/img/products/n3.jpg",
-    description: "Durable and stylish boots.",
-    categories: ["all", "men", "women"],
-    price: "$89.99",
-    rating: 4.8,
-  },
-  {
-    id: 4,
-    name: "Floral Skirt",
-    image: "/static/Assets/img/products/n4.jpg",
-    description: "Flirty and fun for summer.",
-    categories: ["all", "women"],
-    price: "$39.99",
-    rating: 4.3,
-  },
-  {
-    id: 5,
-    name: "Slim Fit Jeans",
-    image: "/static/Assets/img/products/n5.jpg",
-    description: "Comfortable yet stylish.",
-    categories: ["all", "men"],
-    price: "$49.99",
-    rating: 4.6,
-  },
-  {
-    id: 6,
-    name: "Leather Wallet",
-    image: "/static/Assets/img/products/n6.jpg",
-    description: "Compact and durable wallet.",
-    categories: ["all", "men", "accessories"],
-    price: "$19.99",
-    rating: 4.4,
-  },
-  {
-    id: 7,
-    name: "Sunglasses",
-    image: "/static/Assets/img/products/n7.jpg",
-    description: "Stylish sunglasses for sunny days.",
-    categories: ["all", "accessories"],
-    price: "$34.99",
-    rating: 4.2,
-  },
-  {
-    id: 8,
-    name: "Woolen Scarf",
-    image: "/static/Assets/img/products/n8.jpg",
-    description: "Warm and comfortable for winter.",
-    categories: ["all", "accessories"],
-    price: "$24.99",
-    rating: 4.5,
-  },
-];
+fetch('/static/JSON/products.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Failed to load products.json: ${response.statusText}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    const products = data.products;
+    initializeCategoryButtons(products);
+    updateProducts('all', products);
+  })
+  .catch(error => {
+    console.error('Error fetching product data:', error);
+  });
 
 const categoryButtons = document.querySelectorAll(".grid.grid-cols-4 button");
-const productContainer = document.querySelector(
-  ".grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4"
-);
+const productContainer = document.querySelector(".grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4");
+const buttons = [
+  { id: "wishlist", url: "/User/Profile/Wishlist" },
+  { id: "cart", url: "/cart" },
+  { id: "profile", url: "User/Profile/" }
+];
 
-const CATEGORIES = ["all", "women", "men", "accessories"];
-
-document.addEventListener("DOMContentLoaded", () => {
-  initializeCategoryButtons();
-  updateProducts("all");
+buttons.forEach(button => {
+  const element = document.getElementById(button.id);
+  element.addEventListener("click", () => {
+    window.location.href = button.url;
+  });
 });
 
-// Functions
-function initializeCategoryButtons() {
-  const categoryContainer = document.querySelector(".grid.grid-cols-4");
-  categoryContainer.addEventListener("click", handleCategoryClick);
+
+function debounce(func, delay = 250) {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func.apply(this, args), delay);
+  };
 }
 
-function handleCategoryClick(event) {
-  if (event.target.tagName === "BUTTON") {
-    updateActiveButton(event.target);
-    const selectedCategory = getCategoryFromButton(event.target);
-    updateProducts(selectedCategory);
-  }
+function initializeCategoryButtons(products) {
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const selectedCategory = e.target.dataset.category;
+      updateActiveButton(e.target);
+      updateProducts(selectedCategory, products);
+    });
+  });
 }
 
 function updateActiveButton(clickedButton) {
@@ -107,21 +55,22 @@ function updateActiveButton(clickedButton) {
   clickedButton.classList.add("border-blue-600", "border-b-2");
 }
 
-function getCategoryFromButton(button) {
-  return CATEGORIES[Array.from(categoryButtons).indexOf(button)];
-}
-
-function updateProducts(category) {
-  const filteredProducts = filterProductsByCategory(category);
+function updateProducts(category, products) {
+  const filteredProducts = filterProductsByCategory(category, products);
   renderProducts(filteredProducts);
 }
 
-function filterProductsByCategory(category) {
+function filterProductsByCategory(category, products) {
   return products.filter((product) => product.categories.includes(category));
 }
 
 function renderProducts(productsToRender) {
   productContainer.innerHTML = "";
+  if (productsToRender.length === 0) {
+    productContainer.innerHTML = '<p>No products available in this category.</p>';
+    return;
+  }
+
   productsToRender.forEach((product) => {
     const productCard = createProductCard(product);
     productContainer.appendChild(productCard);
@@ -150,22 +99,18 @@ function createProductCard(product) {
       </div>
     </div>
     <div class="p-6 pt-0">
-      <button class="w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white">
+      <button class="shop-now-btn w-full border border-gray-300 px-4 py-2 hover:bg-blue-600 hover:text-white">
         Shop Now <i class="fas fa-arrow-right ml-2"></i>
       </button>
     </div>
   `;
 
-  return card;
-}
+  const shopNowBtn = card.querySelector('.shop-now-btn');
+  shopNowBtn.addEventListener('click', () => {
+    window.location.href = "/Product/Product1";
+  });
 
-// Utility Functions
-function debounce(func, delay = 250) {
-  let timeoutId;
-  return (...args) => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => func.apply(this, args), delay);
-  };
+  return card;
 }
 
 const debouncedUpdateProducts = debounce(updateProducts);

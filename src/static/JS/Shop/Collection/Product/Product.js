@@ -3,9 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const carousel = document.getElementById('carousel');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const buyBtn = document.getElementById('BuyBtn');
     const totalImages = carousel.children.length;
     let currentIndex = 0;
     let isAnimating = false;
+
+    buyBtn.addEventListener('click', () => {
+        window.location.href = "/Payments/Checkout/";
+    });
 
     const updateCarousel = () => {
         if (isAnimating) return;

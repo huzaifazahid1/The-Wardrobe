@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Checkout Page</title>
+    <link rel="stylesheet" href="/static/CSS/output.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-extrabold text-[#3b82f6] mb-2">
+          Complete Your Style Journey
+        </h1>
+        <h2 class="text-2xl font-semibold text-gray-600">
+          Secure Checkout Process
+        </h2>
+        <p class="text-gray-500 mt-2">
+          You're just a few steps away from elevating your wardrobe!
+        </p>
+      </div>
+      <form
+        id="checkoutForm"
+        class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      >
+        <div id="addressStep" class="mb-8">
+          <h2 class="text-2xl font-bold mb-4">Address Information</h2>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="phone"
+            >
+              Phone Number *
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="phone"
+              type="tel"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="secondaryPhone"
+            >
+              Secondary Phone Number
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="secondaryPhone"
+              type="tel"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="locality"
+            >
+              Locality *
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="locality"
+              type="text"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="area"
+            >
+              Area *
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="area"
+              type="text"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="street"
+            >
+              Street *
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="street"
+              type="text"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="landmark"
+            >
+              Landmark
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="landmark"
+              type="text"
+            />
+          </div>
+          <button
+            id="continueToPayment"
+            type="button"
+            class="bg-gray-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-not-allowed"
+            disabled
+          >
+            Continue to Payment
+          </button>
+        </div>
+
+        <div id="paymentStep" class="hidden mb-8">
+          <h2 class="text-2xl font-bold mb-6">Payment Information</h2>
+
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4">Quick Payment Options</h3>
+            <div class="flex justify-center space-x-8">
+              <button
+                type="button"
+                class="flex flex-col items-center"
+                onclick="selectPaymentMethod('gpay')"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-2 hover:bg-blue-200 transition duration-300"
+                >
+                  <img
+                    src="/static/Assets/img/Payment/google-pay_6124998.png"
+                    alt="GPay"
+                    class="h-8"
+                  />
+                </div>
+                <span class="text-sm">Google Pay</span>
+              </button>
+              <button
+                type="button"
+                class="flex flex-col items-center"
+                onclick="selectPaymentMethod('phonepe')"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-2 hover:bg-purple-200 transition duration-300"
+                >
+                  <img
+                    src="/static/Assets/img/Payment/icons8-paytm-512.png"
+                    alt="PhonePe"
+                    class="h-8"
+                  />
+                </div>
+                <span class="text-sm">PhonePe</span>
+              </button>
+              <button
+                type="button"
+                class="flex flex-col items-center"
+                onclick="selectPaymentMethod('paytm')"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-2 hover:bg-blue-200 transition duration-300"
+                >
+                  <img
+                    src="/static/Assets/img/Payment/icons8-phone-pe-512.png"
+                    alt="Paytm"
+                    class="h-8"
+                  />
+                </div>
+                <span class="text-sm">Paytm</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4">Other Payment Options</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <label
+                class="flex items-center p-3 border rounded-lg hover:bg-gray-50 transition duration-300"
+              >
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="creditCard"
+                  class="mr-2"
+                  onchange="selectPaymentMethod('creditCard')"
+                />
+                <i class="fas fa-credit-card mr-2 text-[#3b82f6]"></i> Credit
+                Card
+              </label>
+              <label
+                class="flex items-center p-3 border rounded-lg hover:bg-gray-50 transition duration-300"
+              >
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="debitCard"
+                  class="mr-2"
+                  onchange="selectPaymentMethod('debitCard')"
+                />
+                <i class="fas fa-money-bill mr-2 text-[#3b82f6]"></i> Cash on
+                Delivery
+              </label>
+              <label
+                class="flex items-center p-3 border rounded-lg hover:bg-gray-50 transition duration-300"
+              >
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="netBanking"
+                  class="mr-2"
+                  onchange="selectPaymentMethod('netBanking')"
+                />
+                <i class="fas fa-university mr-2 text-[#3b82f6]"></i> Net
+                Banking
+              </label>
+              <label
+                class="flex items-center p-3 border rounded-lg hover:bg-gray-50 transition duration-300"
+              >
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="upi"
+                  class="mr-2"
+                  onchange="selectPaymentMethod('upi')"
+                />
+                <i class="fas fa-mobile-alt mr-2 text-[#3b82f6]"></i> UPI
+              </label>
+            </div>
+          </div>
+
+          <div id="paymentDetails" class="hidden mb-8">
+            <!-- Payment details will be dynamically inserted here based on selection -->
+          </div>
+
+          <button
+            id="completePayment"
+            type="button"
+            class="w-full bg-gray-300 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline cursor-not-allowed"
+            disabled
+          >
+            Complete Payment
+          </button>
+        </div>
+
+        <div id="successStep" class="hidden">
+          <div class="text-center mb-8">
+            <i class="fas fa-check-circle text-6xl text-green-500 mb-4"></i>
+            <h2 class="text-3xl font-bold mb-2">Payment Successful!</h2>
+            <p class="text-gray-600 mb-4">
+              Thank you for your purchase. Your order has been placed
+              successfully.
+            </p>
+          </div>
+          <div id="orderSummary" class="mb-8">
+            <!-- Order summary will be dynamically inserted here -->
+          </div>
+          <div class="text-center">
+            <button
+              type="button"
+              onclick="resetForm()"
+              class="bg-[#3b82f6] hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300"
+            >
+              Back to Home
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="/static/JS/Payment/Payment.js"></script>
+  </body>
+</html>
