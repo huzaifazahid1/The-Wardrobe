@@ -29,7 +29,6 @@ buttons.forEach(button => {
   });
 });
 
-
 function debounce(func, delay = 250) {
   let timeoutId;
   return (...args) => {
@@ -61,6 +60,9 @@ function updateProducts(category, products) {
 }
 
 function filterProductsByCategory(category, products) {
+  if (category === 'all') {
+    return products;
+  }
   return products.filter((product) => product.categories.includes(category));
 }
 
