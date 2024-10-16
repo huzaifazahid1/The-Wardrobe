@@ -116,3 +116,12 @@ function createProductCard(product) {
 }
 
 const debouncedUpdateProducts = debounce(updateProducts);
+    function toggleDropdownVisibility() {
+      const dropdownElement = document.getElementById("custom-dropdown")
+
+      if (dropdownElement.classList.contains("hidden")) {
+        dropdownElement.classList.remove("hidden")
+      } else {
+        dropdownElement.classList.add("hidden")
+      }
+    }

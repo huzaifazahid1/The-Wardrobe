@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+
   </head>
 
   <body class="bg-white text-gray-900 flex flex-col min-h-screen">
@@ -17,7 +18,7 @@
       <div class="container mx-auto px-4">
         <nav class="flex items-center justify-between py-4">
           <a href="/"> <h1 class="text-2xl font-bold text-blue-600">The Wardrobe</h1></a>
-          <ul class="hidden md:flex space-x-6 flex-1 justify-center">
+          <ul class="hidden sm:!flex space-x-6 flex-1 justify-center">
             <li>
               <a href="/shop/Collection/Categories/Womens" class="text-gray-600 hover:text-blue-600">Women</a>
             </li>
@@ -34,6 +35,30 @@
             </li>
           </ul>
           <div class="flex items-center space-x-4">
+            <div class="relative inline-block text-left">
+              <div>
+                <button 
+                  type="button"
+                  onclick="toggleDropdownVisibility()"
+                  class="inline-flex sm:hidden w-full justify-center gap-x-1.5 rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset " id="menu-button" aria-expanded="true" aria-haspopup="true">
+                  
+                  <svg class="-mr-1 h-5 w-5 " viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                    <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            
+              <div id="custom-dropdown" class="text-center absolute hidden right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                <div class="py-1" role="none">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Women</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Men</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">Accessories</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-3">Wearables</a>
+
+                </div>
+              </div>
+            </div>
+            
             <button class="bg-transparent border-none" id="wishlist">
               <i class="fas fa-heart h-5 w-5"></i>
             </button>
@@ -138,10 +163,44 @@
       <section class="bg-gray-100 py-12">
         <div class="container mx-auto px-4">
           <h2 class="text-3xl font-bold mb-8 text-center">Top Products</h2>
-          <!-- use a carousel/slider -->
   <!-- Product Rows -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-    <div class="border border-gray-300 rounded-lg overflow-hidden">
+  <div class="flex overflow-x-auto space-x-4 md:space-x-0 md:overflow-x-visible md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="min-w-[240px] md:min-w-[0px] border border-gray-300 rounded-lg overflow-hidden">
+      <div class="relative ">
+        <img
+          src="/static/Assets/img/products/f5.jpg"
+          alt="Classic White Tee"
+          class="w-full h-64 object-cover"
+        />
+        <span
+          class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
+          >New</span
+        >
+        <button
+          class="absolute bottom-2 right-2 bg-gray-300 text-white p-2"
+        >
+          <i class="fas fa-eye"></i>
+        </button>
+      </div>
+      <div class="p-4">
+        <h4 class="text-lg mb-2">Classic White Tee</h4>
+        <div class="flex justify-between items-center">
+          <span>$29.99</span>
+          <span class="flex items-center">
+            <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
+          </span>
+        </div>
+      </div>
+      <div class="p-4 pt-0">
+        <button
+          class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="min-w-[240px] md:min-w-[0px] border border-gray-300 rounded-lg overflow-hidden">
       <div class="relative">
         <img
           src="/static/Assets/img/products/f5.jpg"
@@ -176,7 +235,7 @@
       </div>
     </div>
 
-    <div class="border border-gray-300 rounded-lg overflow-hidden">
+    <div class="min-w-[240px] md:min-w-[0px] border border-gray-300 rounded-lg overflow-hidden">
       <div class="relative">
         <img
           src="/static/Assets/img/products/f5.jpg"
@@ -211,42 +270,7 @@
       </div>
     </div>
 
-    <div class="border border-gray-300 rounded-lg overflow-hidden">
-      <div class="relative">
-        <img
-          src="/static/Assets/img/products/f5.jpg"
-          alt="Classic White Tee"
-          class="w-full h-64 object-cover"
-        />
-        <span
-          class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
-          >New</span
-        >
-        <button
-          class="absolute bottom-2 right-2 bg-gray-300 text-white p-2"
-        >
-          <i class="fas fa-eye"></i>
-        </button>
-      </div>
-      <div class="p-4">
-        <h4 class="text-lg mb-2">Classic White Tee</h4>
-        <div class="flex justify-between items-center">
-          <span>$29.99</span>
-          <span class="flex items-center">
-            <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
-          </span>
-        </div>
-      </div>
-      <div class="p-4 pt-0">
-        <button
-          class="w-full bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
-        >
-          Add to Cart
-        </button>
-      </div>
-    </div>
-
-    <div class="border border-gray-300 rounded-lg overflow-hidden">
+    <div class="min-w-[240px] md:min-w-[0px] border border-gray-300 rounded-lg overflow-hidden">
       <div class="relative">
         <img
           src="/static/Assets/img/products/f5.jpg"
@@ -371,7 +395,9 @@
         </p>
       </div>
     </footer>
+
   </body>
+
   <script src="/static/JS/Shop/Collection/Collection.js"></script>
 
 </html>
