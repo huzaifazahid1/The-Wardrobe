@@ -139,7 +139,10 @@ The-Wardrobe
     │   │           Wishlist.js
     │   │
     │   ├───JSON
-    │   │       products.json
+    │   │       Collection_Products.json
+    │   │       Orders_Data.json
+    │   │       Tracking_Data.json
+    │   │       Wishlist_Products.json
     │   │
     │   └───Utilities
     │           CategoriesCollection.js

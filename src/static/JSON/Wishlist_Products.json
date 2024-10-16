@@ -1,0 +1,31 @@
+{
+    "wishlistItems": [
+      {
+        "id": 1,
+        "name": "Vintage Leather Backpack",
+        "price": 129.99,
+        "image": "https://placehold.co/600x400",
+        "category": "Accessories",
+        "rating": 4.5,
+        "inStock": true
+      },
+      {
+        "id": 2,
+        "name": "Cozy Knit Sweater",
+        "price": 79.99,
+        "image": "https://placehold.co/600x400",
+        "category": "Clothing",
+        "rating": 4.2,
+        "inStock": false
+      },
+      {
+        "id": 3,
+        "name": "Smart Fitness Watch",
+        "price": 199.99,
+        "image": "https://placehold.co/600x400",
+        "category": "Electronics",
+        "rating": 4.8,
+        "inStock": true
+      }
+    ]
+  }

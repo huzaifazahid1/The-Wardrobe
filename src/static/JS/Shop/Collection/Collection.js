@@ -1,4 +1,4 @@
-fetch('/static/JSON/products.json')
+fetch('/static/JSON/Collection_Products.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`Failed to load products.json: ${response.statusText}`);
@@ -28,7 +28,6 @@ buttons.forEach(button => {
     window.location.href = button.url;
   });
 });
-
 
 function debounce(func, delay = 250) {
   let timeoutId;
@@ -61,6 +60,9 @@ function updateProducts(category, products) {
 }
 
 function filterProductsByCategory(category, products) {
+  if (category === 'all') {
+    return products;
+  }
   return products.filter((product) => product.categories.includes(category));
 }
 
