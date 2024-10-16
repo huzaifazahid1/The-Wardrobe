@@ -18,14 +18,16 @@
                     <span class="text-gray-800 text-2xl font-bold">The Wardrobe</span> <!-- Softer text color -->
                 </div>
                  
-                <div class="hidden sm:flex   items-center space-x-4">
+                <div class="hidden sm:!flex items-center space-x-4 sm:ml-1 md:ml-0">
                     <a href="/Shop" class=" text-gray-600 hover:text-gray-800">Home</a>  <!-- Softer hover color -->
                     <a href="/shop/Collection/Categories/Mens" class="text-gray-600 hover:text-gray-800">Men</a>
                     <a href="/shop/Collection/Categories/Womens" class="text-gray-600 hover:text-gray-800">Women</a>
                     <a href="/shop/Collection/Categories/Accessories" class="text-gray-600 hover:text-gray-800">Accessories</a>
                     <a href="/shop/Collection/Categories/Wearables" class="text-gray-600 hover:text-gray-800">Wearables</a>
                 </div>
-                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="mr-4 sm:hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <div class="flex items-center space-x-2 sm:space-x-4">
+
+                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="mr-4 sm:hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><svg class="w-2 h-2 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                     </svg>
                     </button>
@@ -52,7 +54,6 @@
                         </ul>
                     </div>
                     
-                <div class="flex items-center space-x-4">
                     <button class="text-gray-600 hover:text-gray-800 focus:outline-none" id="cart-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </button>
@@ -75,7 +76,7 @@
         </div>
 
         <div class="flex flex-col md:flex-row ">
-            <div class="md:w-1/4 pr-8">
+            <div class="md:w-1/4 md:pr-8">
                 <div class="bg-white rounded-lg shadow-sm p-6 mb-6 text-center sm:text-left">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Categories</h3> <!-- Softer text color -->
                     <ul class="space-y-2">
@@ -87,7 +88,7 @@
                     </ul>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-sm p-6 mb-6 text-center sm:text-left">
+                <div class="items-center justify-content flex flex-col bg-white rounded-lg shadow-sm p-6 mb-6 text-center sm:text-left">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Size</h3> <!-- Softer text color -->
                     <div class="flex sm:flex-wrap gap-2">
                         <button class="px-3 py-1 border border-gray-300 rounded-full hover:bg-gray-200 hover:text-gray-800 transition duration-300">XS</button> <!-- Softer button color -->
@@ -99,7 +100,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-sm p-6 mb-6 text-center sm:text-left">
+                <div class="items-center justify-content flex flex-col  bg-white rounded-lg shadow-sm p-6 mb-6 text-center sm:text-left">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Color</h3> <!-- Softer text color -->
                     <div class="flex flex-wrap gap-2">
                         <button class="w-8 h-8 rounded-full bg-black hover:ring-2 hover:ring-gray-400 transition duration-300"></button> <!-- Softer ring color -->
