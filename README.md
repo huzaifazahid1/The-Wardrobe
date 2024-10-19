@@ -70,13 +70,13 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 
 5. **Run the Server:**
    ```bash
-   npm run start:server
+   npm run dev:server
    ```
 
 
 4. **Run the application:**
    ```bash
-   npm run start
+   npm run dev
    ```
 
 5. **Access the Application:**  Open your web browser and go to `http://localhost:3000`.
