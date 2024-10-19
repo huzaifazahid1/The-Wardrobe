@@ -40,7 +40,8 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 - **Tailwind CSS**
 - **JavaScript**
 - **Node.js** 
-- **Express.js** 
+- **Express.js**
+- **Mongo DB** 
 
 ## Project Setup (For Developers)
 
@@ -59,7 +60,21 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
    npm i
    ```
 
-4. **Run the Server:**
+4. **Set Up Environment Variables:**
+   - Create a `.env` file in the root directory.
+   - Add the following variables:
+   ```
+   PORT=3000
+   MONGODB_URI=your_mongodb_uri
+   ```
+
+5. **Run the Server:**
+   ```bash
+   npm run start:server
+   ```
+
+
+4. **Run the application:**
    ```bash
    npm run start
    ```
@@ -71,7 +86,7 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
 ```bash
 The-Wardrobe
 |   .gitignore
-|   .env
+|   .env.example
 |   CODE_OF_CONDUCT.md
 |   CONTRIBUTING.md
 |   package-lock.json
@@ -94,6 +109,24 @@ The-Wardrobe
     │       shop.js
     │       User.js
     │
+    ├───Server
+    │   │   server.js
+    │   │
+    │   ├───config
+    │   │       db.js
+    │   │
+    │   ├───controllers
+    │   │       authController.js
+    │   │
+    │   ├───models
+    │   │       User.js
+    │   │
+    │   ├───routes
+    │   │       authRoutes.js
+    │   │
+    │   └───utils
+    │           passwordUtils.js
+    │
     ├───static
     │   ├───Assets
     │   │   ├───img
@@ -111,6 +144,7 @@ The-Wardrobe
     │   │   │
     │   │   ├───Auth
     │   │   │       Reset-Password.js
+    │   │   │       signup.js
     │   │   │       Submit-Email.js
     │   │   │       SubmitOTP.js
     │   │   │
