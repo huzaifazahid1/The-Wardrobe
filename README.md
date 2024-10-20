@@ -68,13 +68,8 @@ This repository contains the source code for "The Wardrobe," an e-commerce web a
    MONGODB_URI=your_mongodb_uri
    ```
 
-5. **Run the Server:**
-   ```bash
-   npm run dev:server
-   ```
 
-
-4. **Run the application:**
+5. **Run the application:**
    ```bash
    npm run dev
    ```
@@ -143,6 +138,7 @@ The-Wardrobe
     │   │   │   LandingPage.js
     │   │   │
     │   │   ├───Auth
+    │   │   │       login.js
     │   │   │       Reset-Password.js
     │   │   │       signup.js
     │   │   │       Submit-Email.js
@@ -205,7 +201,7 @@ The-Wardrobe
         │
         ├───Payments
         │       Payment.html
-        │
+        │       
         ├───Shop
         │   │   Shop.html
         │   │

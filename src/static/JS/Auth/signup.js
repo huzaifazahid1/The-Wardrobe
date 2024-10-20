@@ -4,29 +4,43 @@ document.addEventListener('DOMContentLoaded', function() {
     signupBtn.addEventListener('click', function(e) {
         e.preventDefault();
         
+        const getInputValue = (id1, id2) => {
+            return document.getElementById(id1).offsetParent !== null 
+                ? document.getElementById(id1).value.trim() 
+                : document.getElementById(id2).value.trim();
+        };
+        
         const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            password: document.getElementById('password').value,
-            phone: document.getElementById('phone').value,
-            locality: document.getElementById('locality').value,
-            road: document.getElementById('road').value,
-            house: document.getElementById('house').value,
-            landmark: document.getElementById('landmark').value
+            name: getInputValue('name', 'name2'),
+            email: getInputValue('email', 'email2'),
+            password: getInputValue('password', 'password2'),
+            phone: getInputValue('phone', 'phone2'),
+            locality: getInputValue('locality', 'locality2'),
+            road: getInputValue('road', 'road2'),
+            house: getInputValue('house', 'house2'),
+            landmark: getInputValue('landmark', 'landmark2')
         };
 
-        fetch('http://localhost:8000/auth/signup', {
+        const requiredFields = ['name', 'email', 'password', 'phone', 'locality', 'road', 'house'];
+        const emptyFields = requiredFields.filter(field => !formData[field]);
+
+        if (emptyFields.length > 0) {
+            alert('Please fill in all required fields: ' + emptyFields.join(', '));
+            return;
+        }
+
+        // Proceed with signup logic
+        fetch('http://192.168.1.3:8000/auth/signup' , {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(formData),
-        })
+        })  // Replace with your actual IPv4 Address endpoint, you can find it by running ipconfig in cmd
         .then(response => response.json())
         .then(data => {
             if (data.userId) {
-                alert('Signup successful! User ID: ' + data.userId);
-                // Redirect to login page or dashboard
+                window.location.href = '/Auth/Login';
             } else {
                 alert('Signup failed: ' + data.message);
             }

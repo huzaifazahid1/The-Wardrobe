@@ -32,18 +32,24 @@ async function login(req, res) {
   const { email, password } = req.body;
 
   try {
+    console.log(`Attempting login for email: ${email}`);
+    
     const user = await getUserByEmail(email);
     if (!user) {
+      console.log(`User not found for email: ${email}`);
       return res.status(400).json({ message: 'Invalid credentials' });
     }
 
     const isPasswordValid = await comparePassword(password, user.password);
+    console.log(`Password validation result: ${isPasswordValid}`);
+
     if (!isPasswordValid) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
 
     res.status(200).json({ message: 'Login successful', userId: user._id });
   } catch (error) {
+    console.error('Error in login:', error);
     res.status(500).json({ message: 'Error logging in', error: error.message });
   }
 }
