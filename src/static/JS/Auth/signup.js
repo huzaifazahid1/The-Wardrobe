@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const getInputValue = (id1, id2) => {
             return document.getElementById(id1).offsetParent !== null 
-                ? document.getElementById(id1).value.trim() 
-                : document.getElementById(id2).value.trim();
+                ? document.getElementById(id1)
+                : document.getElementById(id2);
         };
         
         const formData = {
@@ -22,32 +22,62 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         const requiredFields = ['name', 'email', 'password', 'phone', 'locality', 'road', 'house'];
-        const emptyFields = requiredFields.filter(field => !formData[field]);
+        let allFieldsFilled = true;
 
-        if (emptyFields.length > 0) {
-            alert('Please fill in all required fields: ' + emptyFields.join(', '));
+        requiredFields.forEach(field => {
+            if (!formData[field].value.trim()) {
+                formData[field].placeholder = "Please fill in all required fields";
+                formData[field].classList.add('error-placeholder');
+                allFieldsFilled = false;
+            } else {
+                formData[field].classList.remove('error-placeholder');
+            }
+        });
+
+        if (!allFieldsFilled) {
             return;
         }
 
         // Proceed with signup logic
-        fetch('http://192.168.1.3:8000/auth/signup' , {
+        const signupData = Object.fromEntries(
+            Object.entries(formData).map(([key, value]) => [key, value.value.trim()])
+        );
+
+        fetch('http://192.168.1.3:8000/auth/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData),
-        })  // Replace with your actual IPv4 Address endpoint, you can find it by running ipconfig in cmd
+            body: JSON.stringify(signupData),
+        })
         .then(response => response.json())
         .then(data => {
             if (data.userId) {
                 window.location.href = '/Auth/Login';
             } else {
-                alert('Signup failed: ' + data.message);
+                if (data.message.includes('User already exists')) {
+                    formData.email.value = '';
+                    formData.email.placeholder = 'User already exists, try to login';
+                    formData.email.classList.add('error-placeholder');
+                } else {
+                    const errorField = formData[Object.keys(formData).find(key => data.message.toLowerCase().includes(key))];
+                    if (errorField) {
+                        errorField.value = '';
+                        errorField.placeholder = data.message;
+                        errorField.classList.add('error-placeholder');
+                    } else {
+                        formData.name.value = '';
+                        formData.name.placeholder = data.message;
+                        formData.name.classList.add('error-placeholder');
+                    }
+                }
             }
         })
         .catch((error) => {
             console.error('Error:', error);
-            alert('An error occurred during signup');
+            formData.name.value = '';
+            formData.name.placeholder = 'An error occurred during signup';
+            formData.name.classList.add('error-placeholder');
         });
     });
 });
