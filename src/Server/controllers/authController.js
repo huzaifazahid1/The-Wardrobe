@@ -1,5 +1,8 @@
 const { getUserByEmail, createUser } = require('../models/User');
 const { hashPassword, comparePassword } = require('../utils/passwordUtils');
+const jwt = require('jsonwebtoken');
+
+const JWT_SECRET = 'your_secret_key'
 
 async function signup(req, res) {
   const { name, email, password, phone, locality, road, house, landmark } = req.body;
@@ -32,25 +35,22 @@ async function login(req, res) {
   const { email, password } = req.body;
 
   try {
-    console.log(`Attempting login for email: ${email}`);
-    
-    const user = await getUserByEmail(email);
-    if (!user) {
-      console.log(`User not found for email: ${email}`);
-      return res.status(400).json({ message: 'Invalid credentials' });
-    }
+      const user = await getUserByEmail(email);
+      if (!user || !(await comparePassword(password, user.password))) {
+          return res.status(400).json({ message: 'Invalid credentials' });
+      }
 
-    const isPasswordValid = await comparePassword(password, user.password);
-    console.log(`Password validation result: ${isPasswordValid}`);
+      // Create a JWT token with 30 days expiration
+      const token = jwt.sign(
+          { userId: user._id },
+          JWT_SECRET,
+          { expiresIn: '30d' } // 30 days expiry
+      );
 
-    if (!isPasswordValid) {
-      return res.status(400).json({ message: 'Invalid credentials' });
-    }
-
-    res.status(200).json({ message: 'Login successful', userId: user._id });
+      // Send the token and user info back
+      res.status(200).json({ message: 'Login successful', token, userId: user._id });
   } catch (error) {
-    console.error('Error in login:', error);
-    res.status(500).json({ message: 'Error logging in', error: error.message });
+      res.status(500).json({ message: 'Error logging in', error: error.message });
   }
 }
 

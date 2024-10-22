@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const loginButton = document.getElementById('login-button');
+    const token = window.localStorage.getItem('jwtToken');
+
+    if (token) {
+        // Token found, automatically redirect to /Shop
+        window.location.href = '/Shop';
+    }
+
     loginButton.addEventListener('click', function(e) {
         e.preventDefault();
         
@@ -27,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (hasEmptyFields) return;
 
-        fetch("http://192.168.1.3:8000/auth/login", {
+        fetch("http://192.168.1.4:8000/auth/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,14 +43,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 email: emailInput.value.trim(), 
                 password: passwordInput.value.trim() 
             }),
-        }) // Replace with your actual IPv4 Address, you can find it by running ipconfig in cmd
-        .then(response => {
-            if (response.ok) {
-                window.location.href = '/Shop';
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.token) {
+                console.log(data.token)
+                // Store JWT in localStorage
+                window.localStorage.setItem('jwtToken', data.token);
+                window.location.href = '/Shop'; // Redirect to /Shop after login
             } else {
-                return response.json().then(data => {
-                    throw new Error(data.message || 'Login failed');
-                });
+                throw new Error(data.message || 'Login failed');
             }
         })
         .catch((error) => {

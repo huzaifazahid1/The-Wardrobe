@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             Object.entries(formData).map(([key, value]) => [key, value.value.trim()])
         );
 
-        fetch('http://192.168.1.3:8000/auth/signup', {
+        fetch('http://192.168.1.4:8000/auth/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
