@@ -6,6 +6,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-16.x-green?style=flat-square)
 ![Express.js](https://img.shields.io/badge/Express.js-4.x-brightgreen?style=flat-square)
 ![MongoDB](https://img.shields.io/badge/MongoDB-5.x-darkgreen?style=flat-square)
+![JWT](https://img.shields.io/badge/JWT-JSON_Web_Tokens-red?style=flat-square)
 
 ## 📖 About
 
@@ -28,6 +29,7 @@
 - **Back-End:**
   - 🌐 **Node.js & Express:** Serving static files and handling routing efficiently.
   - 🗃️ **MongoDB:** Storing user data and product information.
+  - 🔑 **JWT Authentication:** JSON Web Tokens for secure, stateless user authentication and session management.
 
 ## 💻 Tech Stack
 
@@ -36,8 +38,9 @@
 - ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white&style=flat-square)
 - ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat-square)
 - ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white&style=flat-square)
-- ![Express.js](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white&style=flat-square) 
-- ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white&style=flat-square) 
+- ![Express.js](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white&style=flat-square)
+- ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white&style=flat-square)
+- ![JWT](https://img.shields.io/badge/JWT-JSON_Web_Tokens-red?style=flat-square)
 
 ## 🛠️ Project Setup (For Developers)
 
@@ -82,8 +85,7 @@ The-Wardrobe
 |   package-lock.json
 |   package.json
 |   tailwind.config.js
-|   README.md
-│
+|   README.md│
 └───src
     │   app.js
     │
@@ -115,6 +117,7 @@ The-Wardrobe
     │   │       authRoutes.js
     │   │
     │   └───utils
+    │           authUtils.js
     │           passwordUtils.js
     │
     ├───static
@@ -155,7 +158,7 @@ The-Wardrobe
     │   │   │   │
     │   │   │   └───Collection
     │   │   │       │   Collection.js
-    │   │   │       │
+    │   │   │       │   
     │   │   │       └───Product
     │   │   │               Product.js
     │   │   │
@@ -193,10 +196,10 @@ The-Wardrobe
         ├───Orders
         │       Orders.html
         │       TrackOrders.html
-        │
+        │       
         ├───Payments
         │       Payment.html
-        │       
+        │
         ├───Shop
         │   │   Shop.html
         │   │
