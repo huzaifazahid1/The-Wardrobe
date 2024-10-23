@@ -1,8 +1,11 @@
 const { getUserByEmail, createUser } = require('../models/User');
 const { hashPassword, comparePassword } = require('../utils/passwordUtils');
+const { verifyToken } = require('../utils/authUtils');
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = 'your_secret_key'
+require('dotenv').config({ path: './.env' });
+
+const JWT_SECRET = process.env.JWT_SECRET;
 
 async function signup(req, res) {
   const { name, email, password, phone, locality, road, house, landmark } = req.body;
@@ -54,4 +57,41 @@ async function login(req, res) {
   }
 }
 
-module.exports = { signup, login };
+async function verifyUserToken(req, res) {
+  try {
+      console.log('Headers received:', req.headers);
+      const authHeader = req.headers.authorization;
+      
+      if (!authHeader) {
+          console.log('No authorization header found');
+          return res.status(401).json({ message: 'No token provided' });
+      }
+
+      console.log('Auth header:', authHeader);
+      const token = authHeader.split(' ')[1];
+      
+      if (!token) {
+          console.log('No token found in auth header');
+          return res.status(401).json({ message: 'No token provided in correct format' });
+      }
+
+      const verification = verifyToken(token);
+      console.log('Verification result:', verification);
+
+      if (!verification.valid) {
+          return res.status(401).json({ message: verification.error || 'Invalid token' });
+      }
+
+      return res.status(200).json({ valid: true, userId: verification.userId });
+
+  } catch (error) {
+      console.error('Server error in verifyUserToken:', error);
+      return res.status(500).json({ 
+          message: 'Error verifying token', 
+          error: error.message,
+          stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      });
+  }
+}
+
+module.exports = { signup, login, verifyUserToken };

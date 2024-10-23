@@ -3,8 +3,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const token = window.localStorage.getItem('jwtToken');
 
     if (token) {
-        // Token found, automatically redirect to /Shop
-        window.location.href = '/Shop';
+        fetch("http://192.168.1.5:8000/auth/verify-token", {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Token invalid');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.valid) {
+                window.location.href = '/Shop';
+            } else {
+                window.localStorage.removeItem('jwtToken');
+            }
+        })
+        .catch(error => {
+            console.error('Error verifying token:', error);
+            window.localStorage.removeItem('jwtToken');
+        });
     }
 
     loginButton.addEventListener('click', function(e) {
@@ -34,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (hasEmptyFields) return;
 
-        fetch("http://192.168.1.4:8000/auth/login", {
+        fetch("http://192.168.1.5:8000/auth/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
