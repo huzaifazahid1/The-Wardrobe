@@ -2384,16 +2384,17 @@ video {
     padding-bottom: 4rem;
   }
 
-  .sm\:pr-8 {
-    padding-right: 2rem;
-  }
-
   .sm\:text-left {
     text-align: left;
   }
 
   .sm\:text-center {
     text-align: center;
+  }
+
+  .sm\:\!text-3xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
   }
 
   .sm\:text-2xl {
@@ -2424,11 +2425,6 @@ video {
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
-  }
-
-  .sm\:\!text-3xl {
-    font-size: 1.875rem !important;
-    line-height: 2.25rem !important;
   }
 }
 
@@ -2600,10 +2596,6 @@ video {
 
   .lg\:px-8 {
     padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .lg\:pr-8 {
     padding-right: 2rem;
   }
 
