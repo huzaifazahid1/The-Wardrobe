@@ -1,42 +1,90 @@
 document.addEventListener('DOMContentLoaded', function() {
     const loginButton = document.getElementById('login-button');
+    const token = window.localStorage.getItem('jwtToken');
+
+    if (token) {
+        fetch("http://192.168.1.5:8000/auth/verify-token", {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Token invalid');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.valid) {
+                window.location.href = '/Shop';
+            } else {
+                window.localStorage.removeItem('jwtToken');
+            }
+        })
+        .catch(error => {
+            console.error('Error verifying token:', error);
+            window.localStorage.removeItem('jwtToken');
+        });
+    }
+
     loginButton.addEventListener('click', function(e) {
         e.preventDefault();
         
-        // Check for inputs based on screen size
         const isLargeScreen = window.innerWidth >= 1024; // lg breakpoint
-        const email = isLargeScreen 
-            ? document.getElementById('email2').value.trim() 
-            : document.getElementById('email').value.trim();
-        const password = isLargeScreen 
-            ? document.getElementById('password2').value.trim() 
-            : document.getElementById('password').value.trim();
+        const emailInput = isLargeScreen ? document.getElementById('email2') : document.getElementById('email');
+        const passwordInput = isLargeScreen ? document.getElementById('password2') : document.getElementById('password');
 
-        if (!email || !password) {
-            alert('Please fill in all required fields.');
-            return;
+        let hasEmptyFields = false;
+
+        if (!emailInput.value.trim()) {
+            emailInput.classList.add('error-placeholder');
+            emailInput.placeholder = 'Kindly provide the required information';
+            hasEmptyFields = true;
+        } else {
+            emailInput.classList.remove('error-placeholder');
         }
 
-        // Rest of the login logic remains the same
-        fetch('http://192.168.1.3:8000/auth/login', {
+        if (!passwordInput.value.trim()) {
+            passwordInput.classList.add('error-placeholder');
+            passwordInput.placeholder = 'Kindly provide the required information';
+            hasEmptyFields = true;
+        } else {
+            passwordInput.classList.remove('error-placeholder');
+        }
+
+        if (hasEmptyFields) return;
+
+        fetch("http://192.168.1.5:8000/auth/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, password }),
-        }) // Replace with your actual IPv4 Address endpoint, you can find it by running ipconfig in cmd
-        .then(response => {
-            if (response.ok) {
-                window.location.href = '/Shop';
+            body: JSON.stringify({ 
+                email: emailInput.value.trim(), 
+                password: passwordInput.value.trim() 
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.token) {
+                console.log(data.token)
+                // Store JWT in localStorage
+                window.localStorage.setItem('jwtToken', data.token);
+                window.location.href = '/Shop'; // Redirect to /Shop after login
             } else {
-                return response.json().then(data => {
-                    throw new Error(data.message || 'Login failed');
-                });
+                throw new Error(data.message || 'Login failed');
             }
         })
         .catch((error) => {
             console.error('Error:', error);
-            alert('Login failed: ' + error.message);
+            emailInput.value = '';
+            passwordInput.value = '';
+            emailInput.classList.add('error-placeholder');
+            passwordInput.classList.add('error-placeholder');
+            emailInput.placeholder = 'Invalid credentials';
+            passwordInput.placeholder = 'Invalid credentials';
         });
     });
 });
