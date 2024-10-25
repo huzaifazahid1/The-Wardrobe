@@ -85,7 +85,7 @@ The-Wardrobe
 |   package-lock.json
 |   package.json
 |   tailwind.config.js
-|   README.md│
+|   README.md
 └───src
     │   app.js
     │
@@ -158,7 +158,7 @@ The-Wardrobe
     │   │   │   │
     │   │   │   └───Collection
     │   │   │       │   Collection.js
-    │   │   │       │   
+    │   │   │       │
     │   │   │       └───Product
     │   │   │               Product.js
     │   │   │
@@ -176,6 +176,7 @@ The-Wardrobe
     │           CategoriesCollection.js
     │
     └───templates
+        │   404.html
         │   LandingPage.html
         │
         ├───Auth
@@ -196,7 +197,7 @@ The-Wardrobe
         ├───Orders
         │       Orders.html
         │       TrackOrders.html
-        │       
+        │
         ├───Payments
         │       Payment.html
         │
@@ -211,7 +212,7 @@ The-Wardrobe
         │       │       MenCollection.html
         │       │       WearablesCollection.html
         │       │       WomenCollection.html
-        │       │
+        │       │       
         │       └───Product
         │               Product.html
         │
