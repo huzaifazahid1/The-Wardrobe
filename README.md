@@ -42,6 +42,14 @@
 - ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white&style=flat-square)
 - ![JWT](https://img.shields.io/badge/JWT-JSON_Web_Tokens-red?style=flat-square)
 
+## 📋 Pre-requisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** (v16.x or above) - [Download Node.js](https://nodejs.org/)
+- **MongoDB** (v5.x or above) - [Download MongoDB](https://www.mongodb.com/)
+- **Git** - [Download Git](https://git-scm.com/)
+
 ## 🛠️ Project Setup (For Developers)
 
 ### Step 1: Clone the Repository
@@ -51,12 +59,12 @@ git clone https://github.com/GitCoder052023/The-Wardrobe.git
 
 ### Step 2: Navigate to the Project Directory
 ```bash
-cd the-wardrobe
+cd The-Wardrobe
 ```
 
 ### Step 3: Install Dependencies
 ```bash
-npm install
+npm i
 ```
 
 ### Step 4: Set Up Environment Variables
@@ -64,6 +72,7 @@ Create a `.env` file in the root directory and add the following:
 ```env
 PORT=3000
 MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
 ```
 
 ### Step 5: Run the Application
@@ -82,10 +91,11 @@ The-Wardrobe
 |   .env.example
 |   CODE_OF_CONDUCT.md
 |   CONTRIBUTING.md
+|   SECURITY.md
 |   package-lock.json
 |   package.json
 |   tailwind.config.js
-|   README.md
+|   README.md│
 └───src
     │   app.js
     │
@@ -212,7 +222,7 @@ The-Wardrobe
         │       │       MenCollection.html
         │       │       WearablesCollection.html
         │       │       WomenCollection.html
-        │       │       
+        │       │
         │       └───Product
         │               Product.html
         │
