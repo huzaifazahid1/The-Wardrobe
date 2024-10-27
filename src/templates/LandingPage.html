@@ -97,17 +97,6 @@
             transform: translateX(0);
         }
 
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.6s ease-out;
-        }
-
-        .scale-in.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
@@ -146,15 +135,13 @@
 </head>
 
 <body class="font-['Arial',sans-serif] bg-white m-0 p-0 box-border">
-    <!-- Progress Bar -->
-    <div class="scroll-progress"></div>
 
     <!-- Scroll to Top -->
     <div class="scroll-top">↑</div>
 
     <nav class="flex justify-between items-center px-12 py-4 bg-white z-50 fade-in">
         <div class="flex items-center">
-            <a href="#" class="text-xl text-[#0d0d2b] no-underline">The Wardrobe</a>
+            <a href="/" class="text-xl text-[#0d0d2b] no-underline">The Wardrobe</a>
         </div>
     
         <ul class="flex gap-8 list-none">
@@ -189,7 +176,7 @@
                         Collections</button>
                 </div>
             </div>
-            <div class="w-2/5 h-[300px] slide-in-right bg-[#f9f1f1] rounded-lg bg-[url('/static/Assets/img/hero4.png')] bg-no-repeat bg-cover bg-right hover:filter hover:blur-sm cursor-pointer transition-all duration-300">
+            <div class="w-2/5 h-[300px] slide-in-right bg-[#f9f1f1] rounded-lg bg-[url('/static/Assets/img/hero4.png')] bg-no-repeat bg-cover bg-right">
             </div>
         </section>
 
@@ -202,7 +189,7 @@
             </div>
 
             <div class="flex justify-center gap-10">
-                <div class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer scale-in">
+                <div class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
                     <div id="Women" class="h-[220px] bg-[url('/static/Assets/img/blog/b2.jpg')] bg-cover bg-center">
                     </div>
                     <div class="p-6 text-left">
@@ -210,7 +197,7 @@
                         <p class="text-base text-[#6f7178]">Elegant and stylish options</p>
                     </div>
                 </div>
-                <div class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer scale-in">
+                <div class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
                     <div id="Men" class="h-[220px] bg-[url('/static/Assets/img/blog/b8.jpeg')] bg-cover bg-center">
                     </div>
                     <div class="p-6 text-left">
@@ -218,7 +205,7 @@
                         <p class="text-base text-[#6f7178]">Classic and modern designs</p>
                     </div>
                 </div>
-                <div class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer scale-in">
+                <div class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
                     <div id="Accessories" class="h-[220px] bg-[url('/static/Assets/img/blog/b9.jpg')] bg-cover bg-center">
                     </div>
                     <div class="p-6 text-left">

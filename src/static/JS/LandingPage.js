@@ -35,7 +35,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all animated elements
-document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach((element) => {
+document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach((element) => {
     observer.observe(element);
 });
 
