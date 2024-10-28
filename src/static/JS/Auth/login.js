@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const loginButton = document.getElementById('login-button');
+    const rememberCheckbox = document.getElementById('remember');
     const token = window.localStorage.getItem('jwtToken');
 
     if (token) {
@@ -69,10 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.token) {
-                console.log(data.token)
-                // Store JWT in localStorage
-                window.localStorage.setItem('jwtToken', data.token);
-                window.location.href = '/Shop'; // Redirect to /Shop after login
+                if (rememberCheckbox.checked) {
+                    window.localStorage.setItem('jwtToken', data.token);
+                }
+                window.location.href = '/Shop';
             } else {
                 throw new Error(data.message || 'Login failed');
             }

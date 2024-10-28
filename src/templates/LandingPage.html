@@ -7,7 +7,7 @@
     <title>The Wardrobe</title>
     <link rel="stylesheet" href="/static/CSS/output.css">
     <style>
-        @keyframes typing {
+@keyframes typing {
             0% {
                 width: 0
             }
@@ -28,6 +28,30 @@
             }
         }
 
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .gradient-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 2.25rem;
+            background: linear-gradient(45deg, #0056ff, #6f7178, #0d0d2b);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 8s ease infinite;
+        }
+
         .typing-text {
             font-family: 'Arial', sans-serif;
             font-size: 2.25rem;
@@ -42,23 +66,91 @@
                 typing 10s steps(25, end) infinite,
                 blink 0.75s step-end infinite;
         }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.6s ease-out;
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.6s ease-out;
+        }
+
+        .slide-in-left.visible,
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #0056ff;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            background: #004ae6;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 
 <body class="font-['Arial',sans-serif] bg-white m-0 p-0 box-border">
 
-    <nav class="flex justify-between items-center px-12 py-4 bg-white">
-        <div class="flex items-center">
-            <a href="#" class="text-xl text-[#0d0d2b] no-underline">The Wardrobe</a>
-        </div>
+    <!-- Scroll to Top -->
+    <div class="scroll-top">↑</div>
 
+    <nav class="flex justify-between items-center px-12 py-4 bg-white z-50 fade-in">
+        <div class="flex items-center">
+            <a href="/" class="text-xl text-[#0d0d2b] no-underline">The Wardrobe</a>
+        </div>
+    
         <ul class="flex gap-8 list-none">
             <li><a href="/Shop" class="text-black hover:underline hover:font-medium text-base">Shop</a></li>
             <li><a href="/info/About" class="text-black hover:underline hover:font-medium text-base">About</a></li>
             <li><a href="/info/Contact" class="text-black hover:underline hover:font-medium text-base">Contact</a></li>
             <li><a href="/cart" class="text-black hover:underline hover:font-medium text-base">Cart</a></li>
         </ul>
-
+    
         <div class="flex gap-2">
             <button id="loginBtn"
                 class="px-4 py-2 border border-[#e1e1e1] rounded text-sm text-black hover:bg-[#e2eaf4] transition-colors duration-300">Login</button>
@@ -67,36 +159,37 @@
                 Up</button>
         </div>
     </nav>
+    
 
     <main>
         <section class="flex justify-between items-center py-12 px-12 bg-white mt-12">
-            <div class="w-1/2 space-y-6">
-                <h1 class="text-4xl text-[#0d0d2b] typing-text">Where Style meets Comfort</h1>
+            <div class="w-1/2 space-y-6 slide-in-left">
+                <h1 class="text-4xl text-[#0d0d2b] typing-text gradient-text">Where Style meets Comfort</h1>
                 <p class="text-lg text-[#6f7178]">Discover the perfect blend of fashion and comfort with our curated
                     collection of clothing, shoes, and watches.</p>
                 <div class="flex space-x-4">
                     <button id="shopBtn"
-                        class="inline-block bg-[#0056ff] text-white px-6 py-3 rounded  hover:bg-[#004ae6] transition-colors duration-300">Shop
+                        class="inline-block bg-[#0056ff] text-white px-6 py-3 rounded hover:bg-[#004ae6] transition-colors duration-300">Shop
                         Now</button>
                     <button id="ExpBtn"
                         class="inline-block border border-[#e1e1e1] text-black px-6 py-3 rounded hover:bg-[#e2eaf4] transition-colors duration-300">Explore
                         Collections</button>
                 </div>
             </div>
-            <div
-                class="w-2/5 h-[300px] bg-[#f9f1f1] rounded-lg bg-[url('/static/Assets/img/hero4.png')] bg-no-repeat bg-cover bg-right hover:filter hover:blur-sm cursor-pointer transition-all duration-300">
+            <div class="w-2/5 h-[300px] slide-in-right bg-[#f9f1f1] rounded-lg bg-[url('/static/Assets/img/hero4.png')] bg-no-repeat bg-cover bg-right">
             </div>
         </section>
 
         <section class="text-center py-16 bg-[#f0f7ff]">
-            <h5 class="text-sm uppercase tracking-wide text-[#6f7178] mb-1">Featured Categories</h5>
-            <h1 class="text-5xl text-[#0d0d2b] mb-4">Explore Our Collections</h1>
-            <p class="text-lg text-[#6f7178] mb-10 max-w-2xl mx-auto">From casual wear to formal attire, our collections
-                cater to every style and occasion.</p>
+            <div class="fade-in">
+                <h5 class="text-sm uppercase tracking-wide text-[#6f7178] mb-1">Featured Categories</h5>
+                <h1 class="text-5xl text-[#0d0d2b] mb-4">Explore Our Collections</h1>
+                <p class="text-lg text-[#6f7178] mb-10 max-w-2xl mx-auto">From casual wear to formal attire, our collections
+                    cater to every style and occasion.</p>
+            </div>
 
             <div class="flex justify-center gap-10">
-                <div
-                    class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
                     <div id="Women" class="h-[220px] bg-[url('/static/Assets/img/blog/b2.jpg')] bg-cover bg-center">
                     </div>
                     <div class="p-6 text-left">
@@ -104,8 +197,7 @@
                         <p class="text-base text-[#6f7178]">Elegant and stylish options</p>
                     </div>
                 </div>
-                <div
-                    class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
                     <div id="Men" class="h-[220px] bg-[url('/static/Assets/img/blog/b8.jpeg')] bg-cover bg-center">
                     </div>
                     <div class="p-6 text-left">
@@ -113,10 +205,9 @@
                         <p class="text-base text-[#6f7178]">Classic and modern designs</p>
                     </div>
                 </div>
-                <div
-                    class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-                    <div id="Accessories"
-                        class="h-[220px] bg-[url('/static/Assets/img/blog/b9.jpg')] bg-cover bg-center"></div>
+                <div class="w-[280px] h-[330px] bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                    <div id="Accessories" class="h-[220px] bg-[url('/static/Assets/img/blog/b9.jpg')] bg-cover bg-center">
+                    </div>
                     <div class="p-6 text-left">
                         <h3 class="text-xl font-semibold text-[#0d0d2b] mb-2">Accessories</h3>
                         <p class="text-base text-[#6f7178]">Complete your look</p>
@@ -126,15 +217,14 @@
         </section>
 
         <section class="flex justify-between items-start px-10 py-16 border-b border-[#e6ecf3]">
-            <div class="max-w-sm mt-[24vh]">
+            <div class="max-w-sm mt-[24vh] slide-in-left">
                 <h2 class="text-3xl text-[#0d0d2b] mb-4">Featured Products</h2>
                 <p class="text-lg text-[#6f7178] leading-7">Discover our latest and most popular products, carefully
                     curated to meet your style and comfort needs.</p>
             </div>
 
-            <div class="grid grid-cols-2 gap-5 w-[600px]">
-                <div
-                    class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+            <div class="grid grid-cols-2 gap-5 w-[600px] slide-in-right">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
                     <div id="Shirt" class="h-[180px] bg-[url('/static/Assets/img/blog/b10.jpeg')] bg-cover bg-center">
                     </div>
                     <div class="p-5 text-left">
@@ -143,8 +233,7 @@
                         <p class="text-xl text-[#0d0d2b]">$49.99</p>
                     </div>
                 </div>
-                <div
-                    class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
                     <div id="Shoes" class="h-[180px] bg-[url('/static/Assets/img/blog/b11.jpeg')] bg-cover bg-center">
                     </div>
                     <div class="p-5 text-left">
@@ -156,26 +245,22 @@
             </div>
         </section>
 
-        <section class="text-center py-20 bg-white">
+        <section class="text-center py-20 bg-white fade-in">
             <h2 class="text-4xl text-[#0d0d2b] mb-5">Affordable Home Delivery</h2>
             <p class="text-lg text-[#6f7178] leading-8 max-w-2xl mx-auto mb-8">Enjoy a seamless shopping experience with
                 our fast and affordable home delivery service, ensuring your style essentials arrive at your doorstep in
                 no time.</p>
-            <button
-                class="bg-[#316bf5] text-white border-none px-8 py-3 text-base font-semibold rounded-lg cursor-pointer hover:bg-[#274dc9] transition-colors duration-300" id="ShopBtn-Secendory">Shop
-                Now</button>
+            <button class="bg-[#316bf5] text-white border-none px-8 py-3 text-base font-semibold rounded-lg cursor-pointer hover:bg-[#274dc9] transition-colors duration-300"
+                id="ShopBtn-Secendory">Shop Now</button>
         </section>
 
-        <footer class="flex justify-around py-10 px-10 bg-[#f0f5f9] text-[#0d0d2b]">
+        <footer class="flex justify-around py-10 px-10 bg-[#f0f5f9] text-[#0d0d2b] fade-in">
             <div class="flex flex-col">
                 <h3 class="text-lg font-semibold mb-4">The Wardrobe</h3>
                 <ul class="list-none p-0">
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">About Us</a>
-                    </li>
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Our Story</a>
-                    </li>
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Careers</a>
-                    </li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">About Us</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Our Story</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Careers</a></li>
                     <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">News</a></li>
                 </ul>
             </div>
@@ -184,49 +269,37 @@
                 <ul class="list-none p-0">
                     <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Women</a></li>
                     <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Men</a></li>
-                    <li class="mb-2"><a href="#"
-                            class="text-[#6f7178] hover:text-[#316bf5] no-underline">Accessories</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Accessories</a></li>
                     <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Sale</a></li>
                 </ul>
             </div>
             <div class="flex flex-col">
                 <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
                 <ul class="list-none p-0">
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Contact Us</a>
-                    </li>
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Returns</a>
-                    </li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Contact Us</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Returns</a></li>
                     <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">FAQs</a></li>
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Shipping</a>
-                    </li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Shipping</a></li>
                 </ul>
             </div>
             <div class="flex flex-col">
                 <h3 class="text-lg font-semibold mb-4">Legal</h3>
                 <ul class="list-none p-0">
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Privacy
-                            Policy</a></li>
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Terms of
-                            Service</a></li>
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Cookie
-                            Policy</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Privacy Policy</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Terms of Service</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Cookie Policy</a></li>
                 </ul>
             </div>
             <div class="flex flex-col">
                 <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
                 <ul class="list-none p-0">
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Instagram</a>
-                    </li>
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Facebook</a>
-                    </li>
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Twitter</a>
-                    </li>
-                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Pinterest</a>
-                    </li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Instagram</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Facebook</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Twitter</a></li>
+                    <li class="mb-2"><a href="#" class="text-[#6f7178] hover:text-[#316bf5] no-underline">Pinterest</a></li>
                 </ul>
             </div>
         </footer>
         <script src="/static/JS/LandingPage.js"></script>
 </body>
-
 </html>
