@@ -1805,10 +1805,6 @@ video {
   line-height: 1rem;
 }
 
-.text-\[100px\] {
-  font-size: 100px;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1944,11 +1940,6 @@ video {
 .text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity));
-}
-
-.text-\[\#ff7043\] {
-  --tw-text-opacity: 1;
-  color: rgb(255 112 67 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2234,16 +2225,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.hover\:text-\[\#ff7043\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 112 67 / var(--tw-text-opacity));
-}
-
-.hover\:text-\[\#ff8a65\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 138 101 / var(--tw-text-opacity));
-}
-
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -2444,21 +2425,17 @@ video {
     padding-bottom: 4rem;
   }
 
-  .sm\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  .sm\:pr-8 {
-    padding-right: 2rem;
-  }
-
   .sm\:text-left {
     text-align: left;
   }
 
   .sm\:text-center {
     text-align: center;
+  }
+
+  .sm\:\!text-3xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
   }
 
   .sm\:text-2xl {
@@ -2498,20 +2475,6 @@ video {
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
-  }
-
-  .sm\:\!text-3xl {
-    font-size: 1.875rem !important;
-    line-height: 2.25rem !important;
-  }
-
-  .sm\:text-\[150px\] {
-    font-size: 150px;
-  }
-
-  .sm\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 
   .sm\:text-xl {
@@ -2692,10 +2655,6 @@ video {
 
   .lg\:px-8 {
     padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .lg\:pr-8 {
     padding-right: 2rem;
   }
 

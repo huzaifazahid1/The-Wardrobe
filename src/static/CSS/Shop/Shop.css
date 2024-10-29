@@ -55,10 +55,12 @@ body {
     color: var(--text-color);
     font-size: 22px;
 }
+
 .navbar-logo a {
     text-decoration: none;
     color: black;
 }
+
 /* Search Bar */
 .navbar-search {
     display: flex;
@@ -167,7 +169,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 70vh;
-    
+
 }
 
 .image-placeholder {
@@ -336,18 +338,21 @@ body {
     height: 250px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
+
 .category-card:hover {
     cursor: pointer;
     transform: translateY(-5px);
 }
+
 .category-image {
     height: 80%;
     background-size: cover;
     background-position: center;
 }
+
 .category-title {
     height: 20%;
     display: flex;
@@ -358,10 +363,22 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
 }
-#category-men { background-image: url('/static/Assets/img/blog/shirt.png'); }
-#category-women { background-image: url('/static/Assets/img/blog/Gemini_Generated_Image_42qxds42qxds42qx.jpeg'); }
-#category-wearables { background-image: url('/static/Assets/img/blog/Gemini_Generated_Image_tt5mnvtt5mnvtt5m.jpeg'); }
-#category-Accessories { background-image: url('/static/Assets/img/blog/Gemini_Generated_Image_e3u6dce3u6dce3u6.jpeg'); }
+
+#category-men {
+    background-image: url('/static/Assets/img/blog/shirt.png');
+}
+
+#category-women {
+    background-image: url('/static/Assets/img/blog/Gemini_Generated_Image_42qxds42qxds42qx.jpeg');
+}
+
+#category-wearables {
+    background-image: url('/static/Assets/img/blog/Gemini_Generated_Image_tt5mnvtt5mnvtt5m.jpeg');
+}
+
+#category-Accessories {
+    background-image: url('/static/Assets/img/blog/Gemini_Generated_Image_e3u6dce3u6dce3u6.jpeg');
+}
 
 .footer-section {
     background-color: #f0f4f8;
@@ -441,58 +458,71 @@ body {
         flex-direction: column;
         text-align: center;
     }
+
     .social-icons {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
+
     .subscribe {
-      display: flex;
-      flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
+
     .subscribes {
         max-width: 100px;
     }
+
     .main-content {
-    display: none;
+        display: none;
     }
+
     .product-cards {
         overflow-x: auto;
         white-space: nowrap;
     }
+
     .promotional-section {
         flex-direction: column;
         gap: 30px;
         align-items: center;
     }
+
     .promo-block {
         width: 100%;
         text-align: center;
     }
+
     .category-card {
-overflow: visible;
+        overflow: visible;
 
     }
+
     .categories-section {
         gap: 30px;
     }
-   .category-image {
-    min-width: 150px;
-   }
-    
+
+    .category-image {
+        min-width: 150px;
+    }
+
 }
+
 /* responsiveness for 384px and above  */
 
 @media (min-width: 384px) {
     .subscribe {
         display: block;
-      }
-      .subscribes {
-          max-width: none;
-      }
-  
+    }
+
+    .subscribes {
+        max-width: none;
+    }
+
 }
+
 /* responsiveness for 551px and above  */
 
 @media (min-width: 551px) {
@@ -500,57 +530,68 @@ overflow: visible;
         width: 45%;
     }
 }
+
 /* responsiveness for 640px and above  */
 
-@media (min-width: 640px) {
+@media (min-width: 640px) {}
 
-}
 /* responsiveness for 768px and above  */
 @media (min-width: 768px) {
     .product-cards {
         overflow-x: none;
         white-space: wrap;
     }
+
     .category-image {
         min-width: 0px;
         width: 100%;
-       }
-    
+    }
+
+    .promotional-section {
+        flex-direction: row;
+        gap: 30px;
+        align-items: center;
+    }
+
 }
+
 /* responsiveness for 1024px and above  */
 
 @media (min-width: 1024px) {
     .footer-container {
         flex-direction: row;
         text-align: left;
-     }
-     .social-icons {
+    }
+
+    .social-icons {
         display: block;
         align-items: none;
         justify-content: none;
-     }
-     .categories-section {
+    }
+
+    .categories-section {
         gap: 0px;
     }
+
     .category-card {
         overflow: hidden;
-            }
-        
-            .promo-block {
-                text-align: left;
-            }
-        
+    }
+
+    .promo-block {
+        text-align: left;
+    }
+
 }
+
 /* responsiveness for 1080px and above  */
 
-@media (min-width: 1080px) {
+@media (min-width: 1080px) {}
 
-}
 /* responsiveness for 1263px and above  */
 
 @media (min-width: 1263px) {
     .main-content {
         display: flex;
-        }
-        
+    }
+
 }

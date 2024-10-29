@@ -59,24 +59,19 @@ async function login(req, res) {
 
 async function verifyUserToken(req, res) {
   try {
-      console.log('Headers received:', req.headers);
       const authHeader = req.headers.authorization;
       
       if (!authHeader) {
-          console.log('No authorization header found');
           return res.status(401).json({ message: 'No token provided' });
       }
 
-      console.log('Auth header:', authHeader);
       const token = authHeader.split(' ')[1];
       
       if (!token) {
-          console.log('No token found in auth header');
           return res.status(401).json({ message: 'No token provided in correct format' });
       }
 
       const verification = verifyToken(token);
-      console.log('Verification result:', verification);
 
       if (!verification.valid) {
           return res.status(401).json({ message: verification.error || 'Invalid token' });
