@@ -57,11 +57,25 @@ async function login(req, res) {
 }
 
 async function resetPassword(req, res) {
-  // const { email } = req.body;
-  try {
-    const user = await getUserByEmail(email);
-    console.log(user);
-    res.status(200).json({ message: 'user is valid', user: user.name })
+      const authHeader = req.headers.authorization;
+      
+      if (!authHeader) {
+          return res.status(401).json({ message: 'No token provided' });
+      }
+
+      const token = authHeader.split(' ')[1];
+      
+      if (!token) {
+          return res.status(401).json({ message: 'No token provided in correct format' });
+      }
+
+      const verification = verifyToken(token);
+
+      if (!verification.valid) {
+          return res.status(401).json({ message: verification.error || 'Invalid token' });
+      }
+
+      return res.status(200).json({ valid: true, userId: verification.userId });
   } catch (error) {
     res.status(500).json({ message: 'User doesn\'t exist', error: error.message });
   }
