@@ -76,9 +76,6 @@ async function resetPassword(req, res) {
       }
 
       return res.status(200).json({ valid: true, userId: verification.userId });
-  } catch (error) {
-    res.status(500).json({ message: 'User doesn\'t exist', error: error.message });
   }
-}
 
 module.exports = { signup, login, resetPassword };
