@@ -10,7 +10,7 @@ const client = new MongoClient(uri);
 async function connectToDatabase() {
   try {
     await client.connect();
-    console.log('Connected to MongoDB Compass');
+    // console.log('Connected to MongoDB Compass');
     return client.db('TheWardrobe');
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
