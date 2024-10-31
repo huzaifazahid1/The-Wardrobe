@@ -37,7 +37,6 @@ async function login(req, res) {
 
   try {
     const user = await getUserByEmail(email);
-    console.log(user.email)
     if (!user || !(await comparePassword(password, user.password))) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
