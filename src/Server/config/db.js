@@ -17,4 +17,13 @@ async function connectToDatabase() {
   }
 }
 
-module.exports = { connectToDatabase };
+async function updateUserPasswordByEmail(email, newPassword) {
+  const db = client.db('TheWardrobe'); // Replace with your database name
+  const result = await db.collection('Users').updateOne(
+    { email: email },
+    { $set: { password: newPassword } }
+  );
+  return result;
+}
+
+module.exports = { connectToDatabase, updateUserPasswordByEmail};

@@ -7,6 +7,7 @@ const port = 8000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
 
 // Use the auth routes
 app.use('/auth', authRoutes);
