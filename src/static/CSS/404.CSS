@@ -1,0 +1,33 @@
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(
+        90deg, 
+        #ff7043 0%, 
+        #ff9a8b 25%, 
+        #ff7043 50%, 
+        #ff8a65 75%, 
+        #ff7043 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient 3s linear infinite;
+}
+
+@media (max-width: 640px) {
+    .gradient-text {
+        line-height: 1;
+    }
+}
