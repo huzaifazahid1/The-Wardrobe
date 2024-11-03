@@ -42,16 +42,3 @@ async function sendEmail({
       throw error;
     }
   }
-
-  sendEmail({
-    senderEmail: "hamdankhubaib959@gmail.com",
-    senderAppPassword: "zgva jbnl bnzs qehz",
-    receiverEmail: "K.alam93899@gmail.com",
-    subject: "Your OTP Code",
-    text: "Here is your OTP: 123456",
-    html: "<h1>Your OTP: 123456</h1>", // Optional HTML version
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-  });
-  
