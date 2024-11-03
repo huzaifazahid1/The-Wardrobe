@@ -7,6 +7,7 @@
 ![Express.js](https://img.shields.io/badge/Express.js-4.x-brightgreen?style=flat-square)
 ![MongoDB](https://img.shields.io/badge/MongoDB-5.x-darkgreen?style=flat-square)
 ![JWT](https://img.shields.io/badge/JWT-JSON_Web_Tokens-red?style=flat-square)
+![Nodemailer](https://img.shields.io/badge/Nodemailer-6.x-lightgrey?style=flat-square)
 
 ## 📖 About
 
@@ -30,6 +31,7 @@
   - 🌐 **Node.js & Express:** Serving static files and handling routing efficiently.
   - 🗃️ **MongoDB:** Storing user data and product information.
   - 🔑 **JWT Authentication:** JSON Web Tokens for secure, stateless user authentication and session management.
+  - 📧 **Nodemailer:** Handles email sending for notifications, password resets, and order confirmations.
 
 ## 💻 Tech Stack
 
@@ -41,6 +43,7 @@
 - ![Express.js](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white&style=flat-square)
 - ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white&style=flat-square)
 - ![JWT](https://img.shields.io/badge/JWT-JSON_Web_Tokens-red?style=flat-square)
+- ![Nodemailer](https://img.shields.io/badge/Nodemailer-6.x-lightgrey?style=flat-square)
 
 ## 📋 Pre-requisites
 
@@ -71,8 +74,10 @@ npm i
 Create a `.env` file in the root directory and add the following:
 ```env
 PORT=3000
-MONGODB_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
+MONGO_URI=MongoDB-URI
+JWT_SECRET=YOUR_JWT_SECRET
+EMAIL_USER=YOUR_EMAIL_ADDRESS
+EMAIL_PASS=YOUR_APP_PASSWORD
 ```
 
 ### Step 5: Run the Application
@@ -230,12 +235,3 @@ The-Wardrobe
                 Profile.html
                 Wishlist.html
 ```
-
-## 🤝 Contributing
-
-We welcome contributions! Please review our [CONTRIBUTING](https://github.com/GitCoder052023/The-Wardrobe/blob/main/CONTRIBUTING.md) guide for more details on how to contribute.
-
-## 📜 License
-
-**The Wardrobe** © 2024 by **GitCoder052023** is licensed under **CC BY-NC 4.0**.  
-To view a copy of this license, visit [here](https://creativecommons.org/licenses/by-nc/4.0/).
