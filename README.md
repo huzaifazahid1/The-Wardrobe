@@ -76,8 +76,8 @@ Create a `.env` file in the root directory and add the following:
 PORT=3000
 MONGO_URI=MongoDB-URI
 JWT_SECRET=YOUR_JWT_SECRET
-EMAIL_USER=YOUR_EMAIL_ADDRESS
-EMAIL_PASS=YOUR_APP_PASSWORD
+SENDER_EMAIL=YOUR_EMAIL_ADDRESS
+SENDER_APP_PASSWORD=YOUR_APP_PASSWORD
 ```
 
 ### Step 5: Run the Application
@@ -134,6 +134,7 @@ The-Wardrobe
     │   └───utils
     │           authUtils.js
     │           passwordUtils.js
+    │           SendMail.js
     │
     ├───static
     │   ├───Assets
@@ -141,6 +142,8 @@ The-Wardrobe
     │   │   │
     │   │   └───Videos
     │   ├───CSS
+    │   │   │   404.CSS
+    │   │   │   LandingPage.css
     │   │   │   main.css
     │   │   │   output.css
     │   │   │
@@ -221,7 +224,7 @@ The-Wardrobe
         │   │
         │   └───Collections
         │       │   Collection.html
-        │       │
+        │       │   
         │       ├───Categories
         │       │       AccessoriesCollection.html
         │       │       MenCollection.html
