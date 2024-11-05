@@ -116,6 +116,8 @@
          flex:0 0 90% !important;
          max-width:90% !important;
        }
+   }.product-card .card-body .card-text{
+    min-height: 97px;
    }
    .promotional-section{
      margin:auto;
