@@ -3,22 +3,11 @@ const { getUserByEmail } = require('../models/User');
 const { updateUserPasswordByEmail } = require('../config/db');
 const { comparePassword } = require('../utils/passwordUtils');
 const jwt = require('jsonwebtoken');
-const nodemailer = require('nodemailer');
+const transporter = require('../utils/SendMail');
 const { verifyUserToken } = require('./authUtils');
 require('dotenv').config();
 
-const { JWT_SECRET, EMAIL_HOST, EMAIL_PORT, EMAIL_USER, EMAIL_PASS } = process.env;
-
-// Configure nodemailer
-const transporter = nodemailer.createTransport({
-    host: EMAIL_HOST,
-    port: EMAIL_PORT || 587,
-    secure: false, // true for port 465, false for other ports
-    auth: {
-        user: EMAIL_USER,
-        pass: EMAIL_PASS,
-    },
-});
+const { JWT_SECRET, SENDER_EMAIL } = process.env;
 
 // Function to generate a 4-digit OTP
 function generateOTP() {
@@ -35,7 +24,7 @@ async function requestPasswordReset(req, res) {
 
         // Send OTP to user's email
         const mailOptions = {
-            from: EMAIL_USER,
+            from: SENDER_EMAIL,
             to: email,
             subject: 'Password Reset OTP',
             text: `Your OTP for password reset is: ${otp}`,
@@ -78,6 +67,7 @@ async function resetPasswordWithOTP(req, res) {
 
         // Fetch the user's old password from the database
         const user = await getUserByEmail(decoded.email);
+        
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
