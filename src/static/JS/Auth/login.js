@@ -82,10 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error:', error);
             emailInput.value = '';
             passwordInput.value = '';
-            emailInput.classList.add('error-placeholder');
-            passwordInput.classList.add('error-placeholder');
-            emailInput.placeholder = 'Invalid credentials';
-            passwordInput.placeholder = 'Invalid credentials';
         });
     });
 });
