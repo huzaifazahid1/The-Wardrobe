@@ -3,6 +3,7 @@ const { getUserByEmail } = require('../models/User');
 const { updateUserPasswordByEmail } = require('../config/db');
 const { comparePassword } = require('../utils/passwordUtils');
 const jwt = require('jsonwebtoken');
+const crypto = require('crypto');
 const transporter = require('../utils/SendMail');
 const { verifyUserToken } = require('./authUtils');
 require('dotenv').config();
@@ -10,9 +11,14 @@ require('dotenv').config();
 const { JWT_SECRET, SENDER_EMAIL } = process.env;
 
 // Function to generate a 4-digit OTP
-function generateOTP() {
-    return Math.floor(1000 + Math.random() * 9000).toString();
-}
+function generateOTP(length = 4) {
+    const buffer = crypto.randomBytes(length);
+    const numbers = [];
+    for (let i = 0; i < length; i++) {
+      numbers.push(buffer.readUInt8(i) % 10);
+    }
+    return numbers.join("");
+  }
 
 // Function to request for Password Reset
 async function requestPasswordReset(req, res) {
