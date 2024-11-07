@@ -5,7 +5,7 @@ SEND.addEventListener("click", () => {
     const emailValue = Email.value.trim();
     
     if (emailValue !== "" && emailValue.includes("@") && emailValue.endsWith(".com")) {
-        fetch("http://localhost:8000/auth/request-password-reset", {
+        fetch("http://localhost:8000/auth/password-reset/request", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

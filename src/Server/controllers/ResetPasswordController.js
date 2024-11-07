@@ -5,7 +5,7 @@ const { comparePassword } = require('../utils/passwordUtils');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const transporter = require('../utils/SendMail');
-const { verifyUserToken } = require('./authUtils');
+const { verifyUserToken } = require('../utils/authUtils');
 require('dotenv').config();
 
 const { JWT_SECRET, SENDER_EMAIL } = process.env;

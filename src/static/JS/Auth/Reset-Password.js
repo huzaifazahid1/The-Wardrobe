@@ -29,7 +29,7 @@ submitButton.addEventListener("click", function(event) {
         const otp = window.localStorage.getItem("otp");
         const otpToken = window.localStorage.getItem("otpToken");
 
-       fetch("http://localhost:8000/auth/reset-password-with-otp", {
+       fetch("http://localhost:8000/auth/password-reset/verify-otp", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${otpToken}`,
