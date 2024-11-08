@@ -114,4 +114,3 @@ document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
 });
 
 updateSteps();
-
