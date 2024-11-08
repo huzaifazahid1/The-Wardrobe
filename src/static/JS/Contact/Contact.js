@@ -37,6 +37,29 @@ document.getElementById('SubmitBtn').addEventListener('click', function(e) {
         .then(response => response.json())
         .then(data => {
             if (data.message === "Email Sent Successfully") {
+                fetch('http://localhost:8000/Contact/email/notify-support', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        Name: formData.name,
+                        Email: formData.email,
+                        Subject: formData.subject,
+                        Message: formData.message
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message === "Email Sent Successfully") {
+                        alert('Email sent successfully');
+                    } else {
+                        alert('Failed to send email');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error sending email:', error);
+                });
                 alert('Email sent successfully');
             } else {
                 alert('Failed to send email');
