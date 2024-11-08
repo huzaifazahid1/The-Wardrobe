@@ -7,350 +7,207 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
   <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
   <link rel="stylesheet" href="/static/CSS/Shop/Shop.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
-      <div class="container-fluid">
-        <a class="navbar-brand" style="color:#0a235a;font-weight:bold;font-size:22px;font-family:'nunito'" href="#">The Wardrobe
-        </a>
-        <div class="search-box">
-          <button class="btn-search"><i class="fas fa-search"></i></button>
-          <input type="text" class="input-search" placeholder="Type to Search...">
-        </div>
-        <button class="navbar-toggler" style="background:white;border:none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon" style="width:30px;height:30px"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent"  >
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto " >
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle px-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#0a235a">
-                Categories
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="border:none">
-                <li><a class="dropdown-item" href="/shop/Collection/Categories/Mens" >Men</a></li>
-                <li><a class="dropdown-item" href="/shop/Collection/Categories/Womens" >Women</a></li>
-                <li><a class="dropdown-item" href="/shop/Collection/Categories/Wearables" >Wearable</a></li>
-                <li><a class="dropdown-item" href="/shop/Collection/Categories/Accessories">
-                  Accessories
-                </a></li>
-                
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-4" href="#"style="color:#0a235a">Offer</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle px-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="color:#0a235a">
-                Acount
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="border:none">
-                <li><a class="dropdown-item" href="/User/Profile/">Profile</a></li>
-                <li><a class="dropdown-item" href="/User/Orders/">Order</a></li>
-                <li><a class="dropdown-item" href="/info/Contact">Support</a></li>
-                <li><a class="dropdown-item" href="#">Login</a></li>
+    <nav>
+      <div class="logo">The Wardrobe</div>
+          <div class="search-bar">
+            <input placeholder="search..."/>
+            <button><div class="fas fa-search"></div></button>
+          </div>
+          <div class="navbar">
+            <ul>
+               <!-- Categories Dropdown -->
+      <li class="dropdown">
+        <a href="#categories" id="categories">Categories<i class="fa-solid fa-angle-down"></i></a>
+        <ul class="dropdown-menu" >
+          <li><a href="#men">Men</a></li>
+          <li><a href="#women">Women</a></li>
+          <li><a href="#accessories">Accessories</a></li>
+          <li><a href="#wearable">Wearable</a></li>
+        </ul>
+      </li>
+              <li><a href="#Pricing">Offers</a>
               
-                
-              </ul>
-            </li>
-           
-            <li class="nav-item px-4">
-              <a class="nav-link" href="/cart" tabindex="-1"style="color:#0a235a">Cart</a>
-            </li>
-          </ul>
-          <form class="d-flex nav-search" style="position:relative">
-            <input class="form-control me-2" type="search" placeholder="Search here..." aria-label="Search" style="padding:10px 50px;border-radius:35px">
-            <button class="btn btn-primary" type="submit" style="position:absolute;right:0;border-radius:35px;padding:10px 20px">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      </div>
-      <div class="carousel-inner" >
-        <div class="carousel-item active"style="background:#54aedc">
-          <img src="../../static/Assets/img/shop-hero-4.jpg" class="d-block w-100 desktop-img" alt="...">
-          <img src="../../static/Assets/img/bg-1.png" class="" style="" class="mobile-img" id="mobile-img-1" alt="...">
-          <div class="carousel-caption d-block ">
-            <div class="h1">Discover Your Perfect Style</div>
-            <div class="h3">Explore the Latest Trends & Timeless Classics in One Place</div>
-            <div class="btn btn-primary ">Shop Now</div>
+              </li>
+              <li class="dropdown">
+                <a href="#account" id="account">Account<i class="fa-solid fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#profile">Profile</a></li>
+                  <li><a href="#order">Order</a></li>
+                  <li><a href="#support">Support</a></li>
+                  <li><a href="#logout">Logout</a></li>
+                </ul>
+              </li>
+              <li><a href="#review"><i class="fa-solid fa-cart-shopping"></i></a></li>
+              
+            </ul>
           </div>
-        </div>
-        <div class="carousel-item" style="background:#54aedc">
-          <img src="../../static/Assets/img/shop-hero-3.jpg" class="d-block w-100 desktop-img" alt="...">
-          <img src="../../static/Assets/img/bg-2.png" style="display:none" id="mobile-img-2" alt="...">
-          <div class="carousel-caption d-block ">
-            <div class="h1">Shop the Best Deals Now</div>
-            <div class="h3">Discover Amazing Products at Unbeatable Prices</div>
-            <div class="btn btn-primary ">Shop Now</div>
-          </div>
-        </div>
+    </nav> 
+    
+    <div class="mobile-navbar">
+      <ul>
+        <li>
+          <a href="#home" >Home</a>
+          <i class="fas fa-home"></i>
+        </li>
+        <li class="dropdown">
+          <a href="" id="cat">Categories</a>
+          <i class="fa-solid fa-list"></i>
+        </li>
+        <li><a href="#Pricing">Offers</a>
+          <i class="fa-solid fa-gift"></i>
+        </li>
+        <li class="dropdown">
+          <a href="#account" id="acc">Account</a>
+          <i class="fa-regular fa-user"></i>
+        </li>
+        <li><a href="#review"><i class="fa-solid fa-cart-shopping"></i></a></li>
         
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      </ul>
     </div>
-
-   
-
-
-
-
     
-    
-    <div class="h1 text-center" style="margin:40px 0;font-family:'nunito';font-size:40px;font-weight:bold">Featured Products</div>
-   <section class="product-cards">
-    <div class="card product-card" >
-      <div class="card-img" >
-        <img src="https://placehold.jp/250x250.png" class="card-img-top" alt="...">
+  <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to the Wardrobe</h1>
+        <p>Discover your style with our latest collection</p>
+        <button>Shop Now</button>
       </div>
-      <div class="card-body text-left">
-        <h5 class="card-title">Casual Shirt</h5>
-        <p class="card-text">$49.99</p>
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <a href="#" class="btn btn-primary" >Add to Cart</a>
-          <i class="fa-regular fa-heart" style="font-size:25px;cursor:pointer"></i>
-        </div>
-      </div>
+      <img class="hero-img" src="https://placehold.co/400">
+  </section>
+  <h1 class="heading">Featured Products</h1>
+  <section class="featured-box-all">
+    <div class="featured-box">
+      <div class="img"></div>
+      <div class="name">Product Name</div>
+      <div class="price"> $99.99</div>
     </div>
-    <div class="card product-card" >
-      <div class="card-img" >
-        <img src="https://placehold.jp/250x250.png" class="card-img-top" alt="...">
-      </div>
-      <div class="card-body text-left">
-        <h5 class="card-title">Casual Shirt</h5>
-        <p class="card-text">$49.99</p>
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <a href="#" class="btn btn-primary" >Add to Cart</a>
-          <i class="fa-regular fa-heart" style="font-size:25px;cursor:pointer"></i>
-        </div>
-      </div>
+    <div class="featured-box">
+      <div class="img"></div>
+      <div class="name">Product Name</div>
+      <div class="price"> $99.99</div>
     </div>
-    <div class="card product-card" >
-      <div class="card-img" >
-        <img src="https://placehold.jp/250x250.png" class="card-img-top" alt="...">
-      </div>
-      <div class="card-body text-left">
-        <h5 class="card-title">Casual Shirt</h5>
-        <p class="card-text">$49.99</p>
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <a href="#" class="btn btn-primary" >Add to Cart</a>
-          <i class="fa-regular fa-heart" style="font-size:25px;cursor:pointer"></i>
-        </div>
-      </div>
+    <div class="featured-box">
+      <div class="img"></div>
+      <div class="name">Product Name</div>
+      <div class="price"> $99.99</div>
     </div>
-    <div class="card product-card" >
-      <div class="card-img" >
-        <img src="https://placehold.jp/250x250.png" class="card-img-top" alt="...">
-      </div>
-      <div class="card-body text-left">
-        <h5 class="card-title">Casual Shirt</h5>
-        <p class="card-text">$49.99</p>
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <a href="#" class="btn btn-primary" >Add to Cart</a>
-          <i class="fa-regular fa-heart" style="font-size:25px;cursor:pointer"></i>
-        </div>
-      </div>
-    </div>
-   </section>
-
-   <section class="promotional-section">
-    <!-- Tab buttons -->
-    <button id="new-arrival-btn" class="btn btn-primary">New Arrival</button>
-    <button id="best-sellers-btn" class="btn btn-primary">Best Sellers</button>
-  
-    <!-- Cards -->
-    <div class="card" id="card-new-arrival">
- 
-      <div class="card-body">
-        <h5 class="card-title" style="font-size:35px">New Arrivals</h5>
-        <p class="card-text"style="font-size:25px">Check out our latest collection</p>
-        <a href="#" class="btn btn-primary">Shop Now</a>
-      </div>
-    </div>
-  
-    <div class="card" id="card-best-sellers" style="display: none;">
-
-      <div class="card-body">
-        <h5 class="card-title" style="font-size:35px">Best Sellers</h5>
-        <p class="card-text" style="font-size:25px">Our most popular products</p>
-        <a href="#" class="btn btn-primary">Shop Now</a>
-      </div>
+    <div class="featured-box">
+      <div class="img"></div>
+      <div class="name">Product Name</div>
+      <div class="price"> $99.99</div>
     </div>
   </section>
-  
-  
-  <div class="h1 text-center" style="margin:40px 0;font-family:'nunito';font-size:40px;font-weight:bold">Shop by Category</div>
-    <section class="product-cards">
-      <div class="card product-card" >
-        <div class="card-img">
-          <img src="/static/Assets/img/blog/shirt.png" class="card-img-top" alt="...">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Men</h5>
-          <p class="card-text">Upgrade your style with essential men's clothing, from casual tees to sleek jackets.</p>
-          <a href="/shop/Collection/Categories/Mens" class="btn btn-primary">Shop Now</a>
-        </div>
-      </div>
-      <div class="card product-card" >
-        <div class="card-img" >
-          <img src="/static/Assets/img/blog/Gemini_Generated_Image_42qxds42qxds42qx.jpeg" class="card-img-top" alt="...">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Women</h5>
-          <p class="card-text">Discover must-have pieces for women—chic, comfortable, and perfect for any look.</p>
-          <a href="/shop/Collection/Categories/Womens" class="btn btn-primary">Shop Now</a>
-        </div>
-      </div>
-      <div class="card product-card" >
-        <div class="card-img" >
-          <img src="/static/Assets/img/blog/Gemini_Generated_Image_tt5mnvtt5mnvtt5m.jpeg" class="card-img-top" alt="...">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Wearable</h5>
-          <p class="card-text">Explore smart, stylish wearables that blend fashion with function</p>
-          <a href="/shop/Collection/Categories/Wearable" class="btn btn-primary">Shop Now</a>
-        </div>
-      </div>
-      <div class="card product-card" >
-        <div class="card-img" >
-          <img src="/static/Assets/img/blog/Gemini_Generated_Image_e3u6dce3u6dce3u6.jpeg" class="card-img-top" alt="...">
-        </div>
-      <div class="card-body">
-        <h5 class="card-title">Accessories</h5>
-        <p class="card-text">Complete your outfit with versatile scarves, belts, and hats for every style.
-        </p>
-        <a href="/shop/Collection/Categories/Accessories" class="btn btn-primary">Shop Now</a>
-      </div>
+  <h1 class="heading">Shop by Category</h1>
+  <section class="featured-box-all">
+    <div class="featured-box">
+      <div class="img"></div>
+      <div class="name">Product Name</div>
+      <div class="price"> Explore our men collection</div>
     </div>
-    </section>
-
-
-  <footer class="text-center text-lg-start border border-white mt-xl-5 pt-4">
-  <!-- Grid container -->
-  <div class="container p-4">
-    <!--Grid row-->
-    <div class="row">
-      <!--Grid column-->
-      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-        <h5 class="text-uppercase mb-4"style="font-size:22px">OUR WORLD</h5>
-
-        <ul class="list-unstyled mb-4"style="font-size:20px">
-          <li>
-            <a href="#!" class="text-white">About us</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Careers</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Press</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Blogs</a>
-          </li>
-        </ul>
-      </div>
-      <!--Grid column-->
-
-      <!--Grid column-->
-      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-        <h5 class="text-uppercase mb-4"style="font-size:22px">Our Shop</h5>
-
-        <ul class="list-unstyled"style="font-size:20px">
-          <li>
-            <a href="/shop/Collection/Categories/Mens" class="text-white">Men</a>
-          </li>
-          <li>
-            <a href="/shop/Collection/Categories/Womens" class="text-white">Women</a>
-          </li>
-          <li>
-            <a href="/shop/Collection/Categories/Wearable" class="text-white">Wearable</a>
-          </li>
-          <li>
-            <a href="/shop/Collection/Categories/Accessories" class="text-white">Acessories</a>
-          </li>
-        </ul>
-      </div>
-      <!--Grid column-->
-
-      <!--Grid column-->
-      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-        <h5 class="text-uppercase mb-4"style="font-size:22px">Supports</h5>
-
-        <ul class="list-unstyled" style="font-size:20px">
-          <li>
-            <a href="#!" class="text-white" style="padding-bottom:40px">Contact</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">FAQs</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Returns</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Shiping</a>
-          </li>
-        </ul>
-      </div>
-      <!--Grid column-->
-
-      <!--Grid column-->
-      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-        <h5 class="text-uppercase mb-4 text-center"style="font-size:22px">Stay Conncted with us</h5>
-        <p class="text-center">Few images by <a href="https://www.freepik.com/" target="_blank" style="text-docoration:none;font-style:italic;font-weight:bold;color:white">FreePik</a></p>
-        <div class="d-flex justify-content-center py-2">
-          <button type="button" class="btn btn-primary btn-lg btn-floating rounded-circle mx-2" style="background-color: white;color:#0a235a">
-            <i class="fab fa-facebook-f"></i>
-          </button>
-          <button type="button" class="btn btn-primary btn-floating rounded-circle mx-2" style="background-color: white;color:#0a235a">
-            <i class="fab fa-youtube"></i>
-          </button>
-          <button type="button" class="btn btn-primary  btn-floating rounded-circle mx-2" style="background-color: white;color:#0a235a">
-            <i class="fab fa-instagram"></i>
-          </button>
-          <button type="button" class="btn btn-primary btn-floating mx-2 rounded-circle" style="background-color: white;color:#0a235a">
-            <i class="fab fa-twitter"></i>
-          </button>
-        </div>
-        <div class="form-outline form-white mb-4" style="position:relative;">
-          <input type="email" id="form5Example2" class="form-control" />
-          <button type="submit" class="btn btn-primary" style="position:absolute;top:0;right:0;">Subscribe</button> 
-        </div>
-
-      </div>
-      <!--Grid column-->
+    <div class="featured-box">
+      <div class="img"></div>
+      <div class="name">Product Name</div>
+      <div class="price"> Explore our women collection</div>
     </div>
-    <!--Grid row-->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3  border-top border-white"style="font-size:20px">
-    © 2024 The Wardrobe. All rights reserved.
-  </div>
-  <!-- Copyright -->
+    <div class="featured-box">
+      <div class="img"></div>
+      <div class="name">Product Name</div>
+      <div class="price">Explore our wearables  collection</div>
+    </div>
+    <div class="featured-box">
+      <div class="img"></div>
+      <div class="name">Product Name</div>
+      <div class="price">Explore our accessories  collection</div>
+    </div>
+  </section>
+  <h1 class="heading">New Arrivals</h1>
+  <section class="Arrival-box-all">
+    <div class="Arrival-box">
+      <div class="img"></div>
+      <div class="name">Product Name</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <button>View Detail</button>
+    </div>
+    <div class="Arrival-box">
+      <div class="img"></div>
+      <div class="name">Product Name</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <button>View Detail</button>
+    </div>
+    <div class="Arrival-box">
+      <div class="img"></div>
+      <div class="name">Product Name</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <button>View Detail</button>
+    </div>
+    
+  </section>
+  <section class="newsletter">
+    <h1>Subscribe to Our Newsletter</h1>
+    <p>Stay updated with our latest offers and new arrivals</p>
+    <div class="flex">
+      <input placeholder="Enter your email"/>
+      <button>Subscribe</button>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-box-all">
+         <div class="footer-box">
+              <div class="title" style="margin-bottom: 30px;">About us</div>
+              <div class="content">The Wardrobe is your destination for stylish and quality clothing.</div>
+          
+         </div>
+        
+         <div class="footer-box">
+              <div class="title">Customer Service</div>
+              <ul>
+                   <li><a href="">Contact us</a></li>
+                   <li><a href="">Shipping & Returns</a></li>
+                   <li><a href="">FAQ</a></li>
+                  
+              </ul>
+         </div>
+         <div class="footer-box">
+              <div class="title">Quick Links</div>
+              <ul>
+                   <li><a href="">Men's Collection</a></li>
+                   <li><a href="">Women's Collection</a></li>
+                   <li><a href="">Accessories</a></li>
+              </ul>
+         </div>
+         <div class="footer-box" style="border-bottom: none;">
+              <div class="title">Follow Us</div>
+              <ul class="icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+              </ul>
+         </div>
+    </div>
+    <div class="line">
+      © 2023 The Wardrobe. All rights reserved.
+    </div>
+    <ul class="dropdown-menu2" id="dropdown-menu2">
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#order">Order</a></li>
+      <li><a href="#support">Support</a></li>
+      <li><a href="#logout">Logout</a></li>
+    </ul>
+    <ul class="dropdown-menu3" id="dropdown-menu3">
+      <li><a href="#men">Men</a></li>
+      <li><a href="#women">Women</a></li>
+      <li><a href="#accessories">Accessories</a></li>
+      <li><a href="#wearable">Wearable</a></li>
+    </ul>
 </footer>
-<button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating btn-lg" id="btn-back-to-top">
-  <i class="fas fa-arrow-up"></i>
-</button>
-<!-- End of .container -->
-  </body>
+</body>
   <script src="/static/JS/Shop/Shop.js"></script>
   
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
 </html>
