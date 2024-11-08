@@ -1,43 +1,36 @@
- // Get references to buttons and cards
- const newArrivalBtn = document.getElementById("new-arrival-btn");
- const bestSellersBtn = document.getElementById("best-sellers-btn");
- const newArrivalCard = document.getElementById("card-new-arrival");
- const bestSellersCard = document.getElementById("card-best-sellers");
+document.addEventListener('DOMContentLoaded', function () {
+     // Select navbar items and dropdown menus
+     const categoriesLink = document.getElementById('cat');
+     const accountLink = document.getElementById('acc');
+     const dropdownMenu2 = document.getElementById('dropdown-menu2');
+     const dropdownMenu3 = document.getElementById('dropdown-menu3');
  
- // Add click event listeners to buttons
- newArrivalBtn.addEventListener("click", () => {
-   // Show the New Arrival card and hide the Best Sellers card
-   newArrivalCard.style.display = "block",opacity="1";
-   bestSellersCard.style.display = "none",opacity="0";
+     // Toggle dropdown on click for Categories
+     categoriesLink.addEventListener('click', (event) => {
+         event.preventDefault(); // Prevent default link behavior
+         const isVisible = dropdownMenu3.style.opacity === '1';
+         dropdownMenu3.style.opacity = isVisible ? '0' : '1';
+         dropdownMenu3.style.visibility = isVisible ? 'hidden' : 'visible';
+     });
+ 
+     // Toggle dropdown on click for Account
+     accountLink.addEventListener('click', (event) => {
+         event.preventDefault(); // Prevent default link behavior
+         const isVisible = dropdownMenu2.style.opacity === '1';
+         dropdownMenu2.style.opacity = isVisible ? '0' : '1';
+         dropdownMenu2.style.visibility = isVisible ? 'hidden' : 'visible';
+     });
+ 
+     // Hide the dropdown when clicking outside of it
+     document.addEventListener('click', (event) => {
+         if (!categoriesLink.contains(event.target) && !dropdownMenu3.contains(event.target)) {
+             dropdownMenu3.style.opacity = '0';
+             dropdownMenu3.style.visibility = 'hidden';
+         }
+         if (!accountLink.contains(event.target) && !dropdownMenu2.contains(event.target)) {
+             dropdownMenu2.style.opacity = '0';
+             dropdownMenu2.style.visibility = 'hidden';
+         }
+     });
  });
  
- bestSellersBtn.addEventListener("click", () => {
-   // Show the Best Sellers card and hide the New Arrival card
-   bestSellersCard.style.display = "block",opacity="1";
-   newArrivalCard.style.display = "none",opacity="0";
- });
- //Get the button
-let mybutton = document.getElementById("btn-back-to-top");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-scrollFunction();
-};
-
-function scrollFunction() {
-if (
-document.body.scrollTop > 20 ||
-document.documentElement.scrollTop > 20
-) {
-mybutton.style.display = "block";
-} else {
-mybutton.style.display = "none";
-}
-}
-// When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click", backToTop);
-
-function backToTop() {
-document.body.scrollTop = 0;
-document.documentElement.scrollTop = 0;
-}
