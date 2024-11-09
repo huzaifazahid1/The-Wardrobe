@@ -183,10 +183,20 @@ nav .search-bar input{
   border-radius: 10px;
   /* height: 450px; */
 }
+
+.hero-img {
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
 @media(max-width:870px){
   .hero .hero-img{
     flex: 0 0 90%;
     max-width: 90%;
+  }
+
+  .hero-img {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
    .hero .hero-content{
     display: none;
