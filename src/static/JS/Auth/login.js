@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (rememberCheckbox.checked) {
                     window.localStorage.setItem('jwtToken', data.token);
                 }
+                window.localStorage.setItem('userId', data.userId);
                 window.location.href = '/Shop';
             } else {
                 throw new Error(data.message || 'Login failed');
