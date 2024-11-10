@@ -44,8 +44,7 @@
             <!-- Personal Info Section -->
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-2xl font-semibold text-gray-700">Personal Information</h3>
-                <button id="editButton"
-                    class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none">
+                <button id="editButton" class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none">
                     <i class="fas fa-edit mr-2"></i> Edit
                 </button>
             </div>
@@ -54,31 +53,31 @@
             <div id="displaySection" class="grid gap-6 sm:grid-cols-2">
                 <div>
                     <label class="block text-gray-600">Name</label>
-                    <p id="displayName" class="mt-1 text-gray-800">Emily Johnson</p>
+                    <p id="displayName" class="mt-1 text-gray-800"></p>
                 </div>
                 <div>
                     <label class="block text-gray-600">Email Address</label>
-                    <p id="displayEmail" class="mt-1 text-gray-800">emily.johnson@example.com</p>
+                    <p id="displayEmail" class="mt-1 text-gray-800"></p>
                 </div>
                 <div>
                     <label class="block text-gray-600">Phone Number</label>
-                    <p id="displayPhone" class="mt-1 text-gray-800">+91 5551234567</p>
+                    <p id="displayPhone" class="mt-1 text-gray-800"></p>
                 </div>
                 <div>
                     <label class="block text-gray-600">Locality</label>
-                    <p id="displayLocality" class="mt-1 text-gray-800">Your Locality</p>
+                    <p id="displayLocality" class="mt-1 text-gray-800"></p>
                 </div>
                 <div>
                     <label class="block text-gray-600">Road Name</label>
-                    <p id="displayRoadName" class="mt-1 text-gray-800">Your Road Name</p>
+                    <p id="displayRoadName" class="mt-1 text-gray-800"></p>
                 </div>
                 <div>
                     <label class="block text-gray-600">House Number</label>
-                    <p id="displayHouseNumber" class="mt-1 text-gray-800">1234</p>
+                    <p id="displayHouseNumber" class="mt-1 text-gray-800"></p>
                 </div>
                 <div>
                     <label class="block text-gray-600">Landmark</label>
-                    <p id="displayLandmark" class="mt-1 text-gray-800">Near Central Park</p>
+                    <p id="displayLandmark" class="mt-1 text-gray-800"></p>
                 </div>
             </div>
 
@@ -87,47 +86,38 @@
                 <div class="grid gap-6 sm:grid-cols-2">
                     <div>
                         <label for="name" class="block text-gray-600">Name</label>
-                        <input type="text" id="name" value="Emily Johnson"
-                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                        <input type="text" id="name" class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
                     </div>
                     <div>
                         <label for="email" class="block text-gray-600">Email Address</label>
-                        <input type="email" id="email" value="emily.johnson@example.com"
-                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                        <input type="email" id="email" class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
                     </div>
                     <div>
                         <label for="phone" class="block text-gray-600">Phone Number</label>
-                        <input type="tel" id="phone" value="+1 (555) 123-4567"
-                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                        <input type="tel" id="phone" class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
                     </div>
                     <div>
                         <label for="locality" class="block text-gray-600">Locality</label>
-                        <input type="text" id="locality" value="Lucknow"
-                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                        <input type="text" id="locality" class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
                     </div>
                     <div>
                         <label for="roadName" class="block text-gray-600">Road Name</label>
-                        <input type="text" id="roadName" value="Fashion Avenue"
-                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                        <input type="text" id="roadName" class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
                     </div>
                     <div>
                         <label for="houseNumber" class="block text-gray-600">House Number</label>
-                        <input type="text" id="houseNumber" value="1234"
-                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                        <input type="text" id="houseNumber" class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
                     </div>
                     <div>
                         <label for="landmark" class="block text-gray-600">Landmark</label>
-                        <input type="text" id="landmark" value="Near Central Park"
-                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
+                        <input type="text" id="landmark" class="mt-1 block w-full bg-white border border-gray-300 rounded-md p-3">
                     </div>
                 </div>
                 <div class="flex justify-end mt-6">
-                    <button type="button" id="cancelButton"
-                        class="flex items-center px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 focus:outline-none mr-4">
+                    <button type="button" id="cancelButton" class="flex items-center px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 focus:outline-none mr-4">
                         <i class="fas fa-times mr-2"></i> Cancel
                     </button>
-                    <button type="submit"
-                        class="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none">
+                    <button type="submit" class="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none">
                         <i class="fas fa-save mr-2"></i> Save
                     </button>
                 </div>

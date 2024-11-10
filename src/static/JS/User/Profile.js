@@ -1,10 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const editButton = document.getElementById('editButton');
-    const editForm = document.getElementById('editForm');
-    const displaySection = document.getElementById('displaySection');
-    const cancelButton = document.getElementById('cancelButton');
-
-    // Elements to display user information
+document.addEventListener('DOMContentLoaded', async () => {
     const displayFields = {
         name: document.getElementById('displayName'),
         email: document.getElementById('displayEmail'),
@@ -15,50 +9,55 @@ document.addEventListener('DOMContentLoaded', () => {
         landmark: document.getElementById('displayLandmark'),
     };
 
-    // Handle Edit Button Click
-    editButton.addEventListener('click', () => {
-        displaySection.classList.add('hidden');
-        editForm.classList.remove('hidden');
-        editButton.classList.add('hidden');
-    });
+    async function getUserProfile() {
+        const userId = localStorage.getItem('userId');
 
-    // Handle Cancel Button Click
-    cancelButton.addEventListener('click', () => {
-        editForm.reset(); // Reset form to original values
-        displaySection.classList.remove('hidden');
-        editForm.classList.add('hidden');
-        editButton.classList.remove('hidden');
-    });
-
-    // Handle Form Submission
-    editForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // Gather form data
-        const updatedData = {
-            name: document.getElementById('name').value.trim(),
-            email: document.getElementById('email').value.trim(),
-            phone: document.getElementById('phone').value.trim(),
-            locality: document.getElementById('locality').value.trim(),
-            roadName: document.getElementById('roadName').value.trim(),
-            houseNumber: document.getElementById('houseNumber').value.trim(),
-            landmark: document.getElementById('landmark').value.trim(),
-        };
-
-        // Simple validation (you can enhance this as needed)
-        if (!updatedData.name || !updatedData.email) {
-            alert('Name and Email are required fields.');
+        if (!userId) {
+            window.location.href = '/login';
             return;
         }
 
-        // Update display fields with new data
-        for (let key in displayFields) {
-            displayFields[key].textContent = updatedData[key];
-        }
+        try {
+            const response = await fetch('http://localhost:8000/profile/get/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "UserId": userId
+                })
+            });
 
-        // Toggle visibility
-        displaySection.classList.remove('hidden');
-        editForm.classList.add('hidden');
-        editButton.classList.remove('hidden');
-    });
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error('Error fetching user profile:', error);
+            throw error;
+        }
+    }
+
+    function updateDisplayFields(userData) {
+        const fields = {
+            name: userData.name,
+            email: userData.email,
+            phone: userData.phone,
+            locality: userData.locality,
+            roadName: userData.road,
+            houseNumber: userData.house,
+            landmark: userData.landmark,
+        };
+
+        Object.keys(fields).forEach(field => {
+            displayFields[field].textContent = fields[field] || '';
+        });
+    }
+
+
+    // Initial load
+    try {
+        const profileData = await getUserProfile();
+        updateDisplayFields(profileData.user);
+    } catch (error) {
+        console.error('Failed to load user profile:', error);
+    }
 });
