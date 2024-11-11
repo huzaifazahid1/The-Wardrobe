@@ -101,6 +101,7 @@ The-Wardrobe
 |   package.json
 |   tailwind.config.js
 |   README.md│
+│
 └───src
     │   app.js
     │
@@ -124,12 +125,18 @@ The-Wardrobe
     │   │
     │   ├───controllers
     │   │       authController.js
+    │   │       ContactController.js
+    │   │       profileController.js
+    │   │       ResetPasswordController.js
     │   │
     │   ├───models
     │   │       User.js
     │   │
     │   ├───routes
     │   │       authRoutes.js
+    │   │       ContactRoutes.js
+    │   │       index.js
+    │   │       profileRoutes.js
     │   │
     │   └───utils
     │           authUtils.js
@@ -164,6 +171,9 @@ The-Wardrobe
     │   │   │       cart.js
     │   │   │       checkout.js
     │   │   │
+    │   │   ├───Contact
+    │   │   │       Contact.js
+    │   │   │
     │   │   ├───Orders
     │   │   │       Orders.js
     │   │   │       TrackOrders.js
@@ -194,7 +204,6 @@ The-Wardrobe
     │           CategoriesCollection.js
     │
     └───templates
-        │   404.html
         │   LandingPage.html
         │
         ├───Auth
@@ -224,7 +233,7 @@ The-Wardrobe
         │   │
         │   └───Collections
         │       │   Collection.html
-        │       │   
+        │       │
         │       ├───Categories
         │       │       AccessoriesCollection.html
         │       │       MenCollection.html
@@ -234,7 +243,10 @@ The-Wardrobe
         │       └───Product
         │               Product.html
         │
-        └───User
-                Profile.html
-                Wishlist.html
+        ├───User
+        │       Profile.html
+        │       Wishlist.html
+        │
+        └───Utility
+                404.html
 ```

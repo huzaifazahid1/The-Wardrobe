@@ -16,4 +16,12 @@ async function getUserById(userId) {
   return db.collection('Users').findOne({ _id: new ObjectId(userId) });
 }
 
-module.exports = { getUserByEmail, createUser, getUserById };
+async function updateUserById(userId, updateData) {
+  const db = await connectToDatabase();
+  return db.collection('Users').updateOne(
+    { _id: new ObjectId(userId) },
+    { $set: updateData }
+  );
+}
+
+module.exports = { getUserByEmail, createUser, getUserById, updateUserById };

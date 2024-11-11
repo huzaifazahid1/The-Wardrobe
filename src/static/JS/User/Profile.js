@@ -9,9 +9,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         landmark: document.getElementById('displayLandmark'),
     };
 
+    const editForm = document.getElementById('editForm');
+    const displaySection = document.getElementById('displaySection');
+    const editButton = document.getElementById('editButton');
+    const cancelButton = document.getElementById('cancelButton');
+
     async function getUserProfile() {
         const userId = localStorage.getItem('userId');
-
         if (!userId) {
             window.location.href = '/login';
             return;
@@ -36,6 +40,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
+    async function updateUserProfile(updates) {
+        const userId = localStorage.getItem('userId');
+        try {
+            const response = await fetch('http://localhost:8000/profile/update/user', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    UserId: userId,
+                    updates
+                })
+            });
+            return await response.json();
+        } catch (error) {
+            console.error('Error updating profile:', error);
+            throw error;
+        }
+    }
+
     function updateDisplayFields(userData) {
         const fields = {
             name: userData.name,
@@ -52,6 +76,54 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    function populateEditForm(userData) {
+        document.getElementById('name').value = userData.name || '';
+        document.getElementById('email').value = userData.email || '';
+        document.getElementById('phone').value = userData.phone || '';
+        document.getElementById('locality').value = userData.locality || '';
+        document.getElementById('roadName').value = userData.road || '';
+        document.getElementById('houseNumber').value = userData.house || '';
+        document.getElementById('landmark').value = userData.landmark || '';
+    }
+
+    // Edit button click handler
+    editButton.addEventListener('click', async () => {
+        const profileData = await getUserProfile();
+        populateEditForm(profileData.user);
+        displaySection.classList.add('hidden');
+        editForm.classList.remove('hidden');
+    });
+
+    // Cancel button click handler
+    cancelButton.addEventListener('click', () => {
+        editForm.classList.add('hidden');
+        displaySection.classList.remove('hidden');
+    });
+
+    // Form submission handler
+    editForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const updates = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            locality: document.getElementById('locality').value,
+            road: document.getElementById('roadName').value,
+            house: document.getElementById('houseNumber').value,
+            landmark: document.getElementById('landmark').value
+        };
+
+        try {
+            await updateUserProfile(updates);
+            const updatedProfile = await getUserProfile();
+            updateDisplayFields(updatedProfile.user);
+            editForm.classList.add('hidden');
+            displaySection.classList.remove('hidden');
+        } catch (error) {
+            console.error('Failed to update profile:', error);
+        }
+    });
 
     // Initial load
     try {
