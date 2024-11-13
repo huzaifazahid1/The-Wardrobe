@@ -183,6 +183,9 @@ nav .search-bar input{
   border-radius: 10px;
   /* height: 450px; */
 }
+.hero .hero-img{
+  margin-top: 5rem;
+}
 @media(max-width:870px){
   .hero .hero-img{
     flex: 0 0 90%;
@@ -361,6 +364,9 @@ nav .search-bar input{
 @media(max-width:550px){
   .flex input{
     max-width: 400px;
+  }
+  .hero .hero-img{
+    height: 250px;
   }
 }
 @media(max-width:420px){
