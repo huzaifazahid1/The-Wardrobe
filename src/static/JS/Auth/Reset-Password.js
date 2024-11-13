@@ -25,6 +25,45 @@ submitButton.addEventListener("click", function(event) {
         return;
     }
 
-    alert("Password reset successful!");
-    // password reset logic here
+    try {
+        const otp = window.localStorage.getItem("otp");
+        const otpToken = window.localStorage.getItem("otpToken");
+
+       fetch("http://localhost:8000/auth/password-reset/verify-otp", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${otpToken}`,
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                otp: otp,
+                newPassword: newPassword.value,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === "Password reset successful") {
+                window.localStorage.removeItem("otp");
+                window.localStorage.removeItem("otpToken");
+                window.location.href = "/Auth/Login";
+            } else {
+                window.localStorage.removeItem("otp");
+                window.localStorage.removeItem("otpToken");
+                alert("Password reset failed. Please try again.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            window.localStorage.removeItem("otp");
+            window.localStorage.removeItem("otpToken");
+            alert("An error occurred while resetting the password. Please try again later.");
+        });
+    }
+    catch (error) {
+        console.error("Error:", error);
+        window.localStorage.removeItem("otp");
+        window.localStorage.removeItem("otpToken");
+        alert("An error occurred while resetting the password. Please try again later.");
+        return;
+    }
 });

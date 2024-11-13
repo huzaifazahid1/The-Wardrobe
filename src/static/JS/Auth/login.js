@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const token = window.localStorage.getItem('jwtToken');
 
     if (token) {
-        fetch("http://192.168.1.5:8000/auth/verify-token", {
+        fetch("http://localhost:8000/auth/verify-token", {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (hasEmptyFields) return;
 
-        fetch("http://192.168.1.5:8000/auth/login", {
+        fetch("http://localhost:8000/auth/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (rememberCheckbox.checked) {
                     window.localStorage.setItem('jwtToken', data.token);
                 }
+                window.localStorage.setItem('userId', data.userId);
                 window.location.href = '/Shop';
             } else {
                 throw new Error(data.message || 'Login failed');
@@ -82,10 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error:', error);
             emailInput.value = '';
             passwordInput.value = '';
-            emailInput.classList.add('error-placeholder');
-            passwordInput.classList.add('error-placeholder');
-            emailInput.placeholder = 'Invalid credentials';
-            passwordInput.placeholder = 'Invalid credentials';
         });
     });
 });

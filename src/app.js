@@ -36,7 +36,7 @@ app.use("/User/Orders/", ordersRoutes)
 app.use("/Payments/", PaymentmentRoutes)
 
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, "templates", "404.html"));
+  res.status(404).sendFile(path.join(__dirname, "templates/Utility", "404.html"));
 })
 
 app.listen(port, () => {

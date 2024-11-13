@@ -5,34 +5,36 @@ const transporter = nodemailer.createTransport({
   host: 'smtp.ethereal.email',
   port: 587,
   auth: {
-      user: process.env.SENDER_EMAIL,
-      pass: process.env.SENDER_APP_PASSWORD
+    user: process.env.SENDER_EMAIL,
+    pass: process.env.SENDER_APP_PASSWORD
   }
 });
 
-async function sendEmail({
-  receiverEmail,
-  subject = "No Subject",
-  text = "",
-  html = "",
-  fromName = "No-Reply",
-  replyTo,
-}) {
-  const mailOptions = {
-    from: `"${fromName}" <${process.env.SENDER_EMAIL}>`,
-    to: receiverEmail,
-    subject,
-    text,
-    html,
-    replyTo,
-  };
+// async function sendEmail({
+//   receiverEmail,
+//   subject = "No Subject",
+//   text = "",
+//   html = "",
+//   fromName = "No-Reply",
+//   replyTo,
+// }) 
 
-  try {
-    const info = await transporter.sendMail(mailOptions);
-    return { message: "Email sent successfully", messageId: info.messageId, info };
-  } catch (error) {
-    throw new Error(`Error sending email: ${error.message}`);
-  }
-}
+// {
+//   const mailOptions = {
+//     from: `"${fromName}" <${process.env.SENDER_EMAIL}>`,
+//     to: receiverEmail,
+//     subject,
+//     text,
+//     html,
+//     replyTo,
+//   };
 
-module.exports = sendEmail
+//   try {
+//     const info = await transporter.sendMail(mailOptions);
+//     return { message: "Email sent successfully", messageId: info.messageId, info };
+//   } catch (error) {
+//     throw new Error(`Error sending email: ${error.message}`);
+//   }
+// }
+
+module.exports = transporter
